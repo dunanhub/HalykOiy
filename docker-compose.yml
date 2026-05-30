@@ -1,0 +1,72 @@
+services:
+  postgres:
+    image: pgvector/pgvector:pg16
+    container_name: halyk_postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-halyk_travel}
+      POSTGRES_USER: ${POSTGRES_USER:-halyk}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-halyk_secret}
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-halyk}"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  redis:
+    image: redis:7-alpine
+    container_name: halyk_redis
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+
+  # БЭКЕНД 
+
+  backend:
+    build: ./backend
+    container_name: halyk_backend
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      DATABASE_URL: postgresql://${POSTGRES_USER:-halyk}:${POSTGRES_PASSWORD:-halyk_secret}@postgres:5432/${POSTGRES_DB:-halyk_travel}
+      REDIS_URL: redis://redis:6379
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend:/app   # hot reload — код монтируется внутрь
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+
+  # ФРОНТЕНД
+
+  frontend:
+    build: ./frontend
+    container_name: halyk_frontend
+    restart: unless-stopped
+    environment:
+      NUXT_PUBLIC_API_URL: http://localhost:8000
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./frontend:/app          # hot reload
+      - /app/node_modules        # node_modules остаются внутри контейнера
+    depends_on:
+      - backend
+
+volumes:
+  postgres_data:
+  redis_data:
