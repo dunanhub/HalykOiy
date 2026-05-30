@@ -2,21 +2,1501 @@
   {
     "id": "flight_1",
     "airline": "Air Astana",
-    "from": "ALA",
+    "from": "DZN",
     "to": "NQZ",
-    "departure": "08:20",
-    "arrival": "10:05",
-    "duration": "1h 45m",
-    "price_per_person": 25000
+    "departure": "13:10",
+    "arrival": "14:35",
+    "duration": "1ч 25м",
+    "price_per_person": 30000
   },
   {
     "id": "flight_2",
+    "airline": "Air Astana",
+    "from": "URA",
+    "to": "NQZ",
+    "departure": "18:00",
+    "arrival": "18:55",
+    "duration": "0ч 55м",
+    "price_per_person": 24000
+  },
+  {
+    "id": "flight_3",
+    "airline": "Air Astana",
+    "from": "SCO",
+    "to": "GUW",
+    "departure": "22:10",
+    "arrival": "00:50",
+    "duration": "2ч 40м",
+    "price_per_person": 66500
+  },
+  {
+    "id": "flight_4",
+    "airline": "SCAT Airlines",
+    "from": "SCO",
+    "to": "PLX",
+    "departure": "05:10",
+    "arrival": "07:15",
+    "duration": "2ч 05м",
+    "price_per_person": 56500
+  },
+  {
+    "id": "flight_5",
+    "airline": "FlyArystan",
+    "from": "GUW",
+    "to": "CIT",
+    "departure": "15:00",
+    "arrival": "16:05",
+    "duration": "1ч 05м",
+    "price_per_person": 61500
+  },
+  {
+    "id": "flight_6",
+    "airline": "SCAT Airlines",
+    "from": "NQZ",
+    "to": "AKX",
+    "departure": "13:00",
+    "arrival": "15:20",
+    "duration": "2ч 20м",
+    "price_per_person": 82000
+  },
+  {
+    "id": "flight_7",
+    "airline": "Air Astana",
+    "from": "NQZ",
+    "to": "PWQ",
+    "departure": "22:20",
+    "arrival": "01:20",
+    "duration": "3ч 00м",
+    "price_per_person": 59000
+  },
+  {
+    "id": "flight_8",
+    "airline": "Air Astana",
+    "from": "KSN",
+    "to": "SCO",
+    "departure": "06:50",
+    "arrival": "08:15",
+    "duration": "1ч 25м",
+    "price_per_person": 49500
+  },
+  {
+    "id": "flight_9",
+    "airline": "Air Astana",
+    "from": "NQZ",
+    "to": "GUW",
+    "departure": "17:20",
+    "arrival": "19:40",
+    "duration": "2ч 20м",
+    "price_per_person": 59500
+  },
+  {
+    "id": "flight_10",
+    "airline": "SCAT Airlines",
+    "from": "CIT",
+    "to": "AKX",
+    "departure": "11:50",
+    "arrival": "13:30",
+    "duration": "1ч 40м",
+    "price_per_person": 21000
+  },
+  {
+    "id": "flight_11",
+    "airline": "FlyArystan",
+    "from": "KSN",
+    "to": "URA",
+    "departure": "22:50",
+    "arrival": "00:15",
+    "duration": "1ч 25м",
+    "price_per_person": 33000
+  },
+  {
+    "id": "flight_12",
+    "airline": "SCAT Airlines",
+    "from": "PWQ",
+    "to": "AKX",
+    "departure": "22:10",
+    "arrival": "00:05",
+    "duration": "1ч 55м",
+    "price_per_person": 19000
+  },
+  {
+    "id": "flight_13",
+    "airline": "SCAT Airlines",
+    "from": "SCO",
+    "to": "ALA",
+    "departure": "17:20",
+    "arrival": "18:25",
+    "duration": "1ч 05м",
+    "price_per_person": 39500
+  },
+  {
+    "id": "flight_14",
+    "airline": "FlyArystan",
+    "from": "KSN",
+    "to": "KGF",
+    "departure": "20:30",
+    "arrival": "22:50",
+    "duration": "2ч 20м",
+    "price_per_person": 30500
+  },
+  {
+    "id": "flight_15",
+    "airline": "FlyArystan",
+    "from": "GUW",
+    "to": "CIT",
+    "departure": "22:40",
+    "arrival": "00:20",
+    "duration": "1ч 40м",
+    "price_per_person": 88500
+  },
+  {
+    "id": "flight_16",
+    "airline": "Qazaq Air",
+    "from": "AKX",
+    "to": "DZN",
+    "departure": "16:10",
+    "arrival": "17:25",
+    "duration": "1ч 15м",
+    "price_per_person": 78500
+  },
+  {
+    "id": "flight_17",
+    "airline": "Air Astana",
+    "from": "PWQ",
+    "to": "NQZ",
+    "departure": "08:10",
+    "arrival": "09:25",
+    "duration": "1ч 15м",
+    "price_per_person": 67000
+  },
+  {
+    "id": "flight_18",
+    "airline": "Qazaq Air",
+    "from": "KSN",
+    "to": "NQZ",
+    "departure": "17:40",
+    "arrival": "20:00",
+    "duration": "2ч 20м",
+    "price_per_person": 81000
+  },
+  {
+    "id": "flight_19",
+    "airline": "Air Astana",
+    "from": "GUW",
+    "to": "KSN",
+    "departure": "08:50",
+    "arrival": "11:30",
+    "duration": "2ч 40м",
+    "price_per_person": 46500
+  },
+  {
+    "id": "flight_20",
+    "airline": "Air Astana",
+    "from": "DZN",
+    "to": "KGF",
+    "departure": "14:30",
+    "arrival": "15:45",
+    "duration": "1ч 15м",
+    "price_per_person": 71000
+  },
+  {
+    "id": "flight_21",
     "airline": "FlyArystan",
     "from": "ALA",
+    "to": "KGF",
+    "departure": "21:00",
+    "arrival": "22:40",
+    "duration": "1ч 40м",
+    "price_per_person": 78500
+  },
+  {
+    "id": "flight_22",
+    "airline": "FlyArystan",
+    "from": "KSN",
+    "to": "SCO",
+    "departure": "16:10",
+    "arrival": "18:50",
+    "duration": "2ч 40м",
+    "price_per_person": 81500
+  },
+  {
+    "id": "flight_23",
+    "airline": "SCAT Airlines",
+    "from": "ALA",
+    "to": "DZN",
+    "departure": "20:00",
+    "arrival": "21:05",
+    "duration": "1ч 05м",
+    "price_per_person": 59500
+  },
+  {
+    "id": "flight_24",
+    "airline": "Air Astana",
+    "from": "GUW",
+    "to": "SCO",
+    "departure": "12:40",
+    "arrival": "13:45",
+    "duration": "1ч 05м",
+    "price_per_person": 23000
+  },
+  {
+    "id": "flight_25",
+    "airline": "Air Astana",
+    "from": "URA",
+    "to": "PWQ",
+    "departure": "22:10",
+    "arrival": "23:25",
+    "duration": "1ч 15м",
+    "price_per_person": 74000
+  },
+  {
+    "id": "flight_26",
+    "airline": "SCAT Airlines",
+    "from": "PLX",
+    "to": "CIT",
+    "departure": "21:40",
+    "arrival": "23:45",
+    "duration": "2ч 05м",
+    "price_per_person": 39500
+  },
+  {
+    "id": "flight_27",
+    "airline": "SCAT Airlines",
+    "from": "PLX",
+    "to": "SCO",
+    "departure": "17:50",
+    "arrival": "19:45",
+    "duration": "1ч 55м",
+    "price_per_person": 69000
+  },
+  {
+    "id": "flight_28",
+    "airline": "Air Astana",
+    "from": "PLX",
+    "to": "PWQ",
+    "departure": "12:10",
+    "arrival": "13:15",
+    "duration": "1ч 05м",
+    "price_per_person": 56000
+  },
+  {
+    "id": "flight_29",
+    "airline": "FlyArystan",
+    "from": "ALA",
+    "to": "DZN",
+    "departure": "12:00",
+    "arrival": "13:05",
+    "duration": "1ч 05м",
+    "price_per_person": 19500
+  },
+  {
+    "id": "flight_30",
+    "airline": "Air Astana",
+    "from": "SCO",
     "to": "NQZ",
-    "departure": "14:40",
+    "departure": "15:00",
+    "arrival": "17:40",
+    "duration": "2ч 40м",
+    "price_per_person": 43000
+  },
+  {
+    "id": "flight_31",
+    "airline": "Qazaq Air",
+    "from": "GUW",
+    "to": "URA",
+    "departure": "11:40",
+    "arrival": "12:55",
+    "duration": "1ч 15м",
+    "price_per_person": 86500
+  },
+  {
+    "id": "flight_32",
+    "airline": "FlyArystan",
+    "from": "KSN",
+    "to": "PWQ",
+    "departure": "20:30",
+    "arrival": "21:55",
+    "duration": "1ч 25м",
+    "price_per_person": 24000
+  },
+  {
+    "id": "flight_33",
+    "airline": "Qazaq Air",
+    "from": "NQZ",
+    "to": "URA",
+    "departure": "16:30",
+    "arrival": "18:35",
+    "duration": "2ч 05м",
+    "price_per_person": 73000
+  },
+  {
+    "id": "flight_34",
+    "airline": "Air Astana",
+    "from": "URA",
+    "to": "ALA",
+    "departure": "06:30",
+    "arrival": "08:25",
+    "duration": "1ч 55м",
+    "price_per_person": 26000
+  },
+  {
+    "id": "flight_35",
+    "airline": "FlyArystan",
+    "from": "SCO",
+    "to": "GUW",
+    "departure": "22:30",
+    "arrival": "23:45",
+    "duration": "1ч 15м",
+    "price_per_person": 67000
+  },
+  {
+    "id": "flight_36",
+    "airline": "Qazaq Air",
+    "from": "CIT",
+    "to": "KGF",
+    "departure": "12:00",
+    "arrival": "14:20",
+    "duration": "2ч 20м",
+    "price_per_person": 84000
+  },
+  {
+    "id": "flight_37",
+    "airline": "Air Astana",
+    "from": "NQZ",
+    "to": "ALA",
+    "departure": "07:10",
+    "arrival": "08:25",
+    "duration": "1ч 15м",
+    "price_per_person": 65000
+  },
+  {
+    "id": "flight_38",
+    "airline": "FlyArystan",
+    "from": "PWQ",
+    "to": "PLX",
+    "departure": "17:00",
+    "arrival": "18:15",
+    "duration": "1ч 15м",
+    "price_per_person": 61500
+  },
+  {
+    "id": "flight_39",
+    "airline": "SCAT Airlines",
+    "from": "ALA",
+    "to": "PWQ",
+    "departure": "19:20",
+    "arrival": "21:25",
+    "duration": "2ч 05м",
+    "price_per_person": 84500
+  },
+  {
+    "id": "flight_40",
+    "airline": "FlyArystan",
+    "from": "DZN",
+    "to": "PWQ",
+    "departure": "11:20",
+    "arrival": "12:45",
+    "duration": "1ч 25м",
+    "price_per_person": 19500
+  },
+  {
+    "id": "flight_41",
+    "airline": "Air Astana",
+    "from": "KSN",
+    "to": "PLX",
+    "departure": "15:00",
+    "arrival": "15:55",
+    "duration": "0ч 55м",
+    "price_per_person": 88500
+  },
+  {
+    "id": "flight_42",
+    "airline": "FlyArystan",
+    "from": "PWQ",
+    "to": "KSN",
+    "departure": "06:40",
+    "arrival": "07:45",
+    "duration": "1ч 05м",
+    "price_per_person": 36000
+  },
+  {
+    "id": "flight_43",
+    "airline": "Air Astana",
+    "from": "NQZ",
+    "to": "DZN",
+    "departure": "12:30",
+    "arrival": "13:35",
+    "duration": "1ч 05м",
+    "price_per_person": 86500
+  },
+  {
+    "id": "flight_44",
+    "airline": "Air Astana",
+    "from": "SCO",
+    "to": "DZN",
+    "departure": "07:30",
+    "arrival": "10:30",
+    "duration": "3ч 00м",
+    "price_per_person": 86000
+  },
+  {
+    "id": "flight_45",
+    "airline": "SCAT Airlines",
+    "from": "PLX",
+    "to": "KGF",
+    "departure": "11:50",
+    "arrival": "13:45",
+    "duration": "1ч 55м",
+    "price_per_person": 43000
+  },
+  {
+    "id": "flight_46",
+    "airline": "FlyArystan",
+    "from": "GUW",
+    "to": "PWQ",
+    "departure": "14:30",
     "arrival": "16:25",
-    "duration": "1h 45m",
+    "duration": "1ч 55м",
+    "price_per_person": 21500
+  },
+  {
+    "id": "flight_47",
+    "airline": "Air Astana",
+    "from": "ALA",
+    "to": "PLX",
+    "departure": "07:40",
+    "arrival": "09:05",
+    "duration": "1ч 25м",
+    "price_per_person": 78000
+  },
+  {
+    "id": "flight_48",
+    "airline": "SCAT Airlines",
+    "from": "GUW",
+    "to": "CIT",
+    "departure": "07:10",
+    "arrival": "09:05",
+    "duration": "1ч 55м",
+    "price_per_person": 49000
+  },
+  {
+    "id": "flight_49",
+    "airline": "SCAT Airlines",
+    "from": "CIT",
+    "to": "PLX",
+    "departure": "21:00",
+    "arrival": "23:40",
+    "duration": "2ч 40м",
+    "price_per_person": 51000
+  },
+  {
+    "id": "flight_50",
+    "airline": "FlyArystan",
+    "from": "DZN",
+    "to": "NQZ",
+    "departure": "13:00",
+    "arrival": "14:05",
+    "duration": "1ч 05м",
+    "price_per_person": 84500
+  },
+  {
+    "id": "flight_51",
+    "airline": "SCAT Airlines",
+    "from": "CIT",
+    "to": "KGF",
+    "departure": "11:50",
+    "arrival": "13:45",
+    "duration": "1ч 55м",
+    "price_per_person": 38500
+  },
+  {
+    "id": "flight_52",
+    "airline": "SCAT Airlines",
+    "from": "DZN",
+    "to": "URA",
+    "departure": "21:30",
+    "arrival": "23:10",
+    "duration": "1ч 40м",
+    "price_per_person": 18500
+  },
+  {
+    "id": "flight_53",
+    "airline": "Qazaq Air",
+    "from": "NQZ",
+    "to": "URA",
+    "departure": "13:00",
+    "arrival": "13:55",
+    "duration": "0ч 55м",
+    "price_per_person": 55500
+  },
+  {
+    "id": "flight_54",
+    "airline": "SCAT Airlines",
+    "from": "CIT",
+    "to": "URA",
+    "departure": "10:50",
+    "arrival": "13:10",
+    "duration": "2ч 20м",
+    "price_per_person": 84000
+  },
+  {
+    "id": "flight_55",
+    "airline": "Air Astana",
+    "from": "URA",
+    "to": "AKX",
+    "departure": "08:00",
+    "arrival": "09:15",
+    "duration": "1ч 15м",
+    "price_per_person": 83500
+  },
+  {
+    "id": "flight_56",
+    "airline": "FlyArystan",
+    "from": "ALA",
+    "to": "AKX",
+    "departure": "18:10",
+    "arrival": "19:05",
+    "duration": "0ч 55м",
+    "price_per_person": 52000
+  },
+  {
+    "id": "flight_57",
+    "airline": "SCAT Airlines",
+    "from": "KGF",
+    "to": "ALA",
+    "departure": "11:50",
+    "arrival": "13:15",
+    "duration": "1ч 25м",
+    "price_per_person": 25000
+  },
+  {
+    "id": "flight_58",
+    "airline": "Qazaq Air",
+    "from": "KGF",
+    "to": "KSN",
+    "departure": "09:10",
+    "arrival": "10:25",
+    "duration": "1ч 15м",
+    "price_per_person": 35000
+  },
+  {
+    "id": "flight_59",
+    "airline": "FlyArystan",
+    "from": "AKX",
+    "to": "ALA",
+    "departure": "15:30",
+    "arrival": "16:55",
+    "duration": "1ч 25м",
+    "price_per_person": 46500
+  },
+  {
+    "id": "flight_60",
+    "airline": "Qazaq Air",
+    "from": "CIT",
+    "to": "NQZ",
+    "departure": "06:30",
+    "arrival": "07:55",
+    "duration": "1ч 25м",
+    "price_per_person": 38000
+  },
+  {
+    "id": "flight_61",
+    "airline": "SCAT Airlines",
+    "from": "PWQ",
+    "to": "KGF",
+    "departure": "12:10",
+    "arrival": "13:05",
+    "duration": "0ч 55м",
+    "price_per_person": 37000
+  },
+  {
+    "id": "flight_62",
+    "airline": "SCAT Airlines",
+    "from": "AKX",
+    "to": "KGF",
+    "departure": "07:20",
+    "arrival": "09:15",
+    "duration": "1ч 55м",
+    "price_per_person": 78500
+  },
+  {
+    "id": "flight_63",
+    "airline": "SCAT Airlines",
+    "from": "AKX",
+    "to": "URA",
+    "departure": "05:00",
+    "arrival": "06:40",
+    "duration": "1ч 40м",
+    "price_per_person": 35000
+  },
+  {
+    "id": "flight_64",
+    "airline": "Air Astana",
+    "from": "KSN",
+    "to": "GUW",
+    "departure": "08:40",
+    "arrival": "10:45",
+    "duration": "2ч 05м",
+    "price_per_person": 57000
+  },
+  {
+    "id": "flight_65",
+    "airline": "Qazaq Air",
+    "from": "URA",
+    "to": "KGF",
+    "departure": "21:00",
+    "arrival": "23:05",
+    "duration": "2ч 05м",
+    "price_per_person": 87500
+  },
+  {
+    "id": "flight_66",
+    "airline": "Air Astana",
+    "from": "SCO",
+    "to": "KGF",
+    "departure": "18:00",
+    "arrival": "20:40",
+    "duration": "2ч 40м",
+    "price_per_person": 82500
+  },
+  {
+    "id": "flight_67",
+    "airline": "FlyArystan",
+    "from": "DZN",
+    "to": "URA",
+    "departure": "16:30",
+    "arrival": "17:35",
+    "duration": "1ч 05м",
+    "price_per_person": 55000
+  },
+  {
+    "id": "flight_68",
+    "airline": "Air Astana",
+    "from": "KSN",
+    "to": "KGF",
+    "departure": "14:40",
+    "arrival": "16:20",
+    "duration": "1ч 40м",
+    "price_per_person": 65500
+  },
+  {
+    "id": "flight_69",
+    "airline": "SCAT Airlines",
+    "from": "KGF",
+    "to": "PWQ",
+    "departure": "22:10",
+    "arrival": "23:35",
+    "duration": "1ч 25м",
+    "price_per_person": 67000
+  },
+  {
+    "id": "flight_70",
+    "airline": "FlyArystan",
+    "from": "DZN",
+    "to": "AKX",
+    "departure": "14:30",
+    "arrival": "17:10",
+    "duration": "2ч 40м",
+    "price_per_person": 12000
+  },
+  {
+    "id": "flight_71",
+    "airline": "FlyArystan",
+    "from": "GUW",
+    "to": "KGF",
+    "departure": "18:40",
+    "arrival": "21:40",
+    "duration": "3ч 00м",
+    "price_per_person": 54000
+  },
+  {
+    "id": "flight_72",
+    "airline": "Qazaq Air",
+    "from": "PWQ",
+    "to": "PLX",
+    "departure": "11:40",
+    "arrival": "14:00",
+    "duration": "2ч 20м",
+    "price_per_person": 34000
+  },
+  {
+    "id": "flight_73",
+    "airline": "SCAT Airlines",
+    "from": "DZN",
+    "to": "NQZ",
+    "departure": "21:50",
+    "arrival": "00:50",
+    "duration": "3ч 00м",
+    "price_per_person": 55500
+  },
+  {
+    "id": "flight_74",
+    "airline": "SCAT Airlines",
+    "from": "NQZ",
+    "to": "GUW",
+    "departure": "12:10",
+    "arrival": "13:25",
+    "duration": "1ч 15м",
+    "price_per_person": 15000
+  },
+  {
+    "id": "flight_75",
+    "airline": "Qazaq Air",
+    "from": "ALA",
+    "to": "GUW",
+    "departure": "07:30",
+    "arrival": "09:35",
+    "duration": "2ч 05м",
+    "price_per_person": 87000
+  },
+  {
+    "id": "flight_76",
+    "airline": "Qazaq Air",
+    "from": "SCO",
+    "to": "PWQ",
+    "departure": "17:10",
+    "arrival": "18:25",
+    "duration": "1ч 15м",
+    "price_per_person": 12500
+  },
+  {
+    "id": "flight_77",
+    "airline": "FlyArystan",
+    "from": "NQZ",
+    "to": "PWQ",
+    "departure": "10:50",
+    "arrival": "13:30",
+    "duration": "2ч 40м",
+    "price_per_person": 72500
+  },
+  {
+    "id": "flight_78",
+    "airline": "FlyArystan",
+    "from": "ALA",
+    "to": "KSN",
+    "departure": "08:30",
+    "arrival": "09:45",
+    "duration": "1ч 15м",
+    "price_per_person": 72500
+  },
+  {
+    "id": "flight_79",
+    "airline": "SCAT Airlines",
+    "from": "DZN",
+    "to": "PLX",
+    "departure": "19:40",
+    "arrival": "22:20",
+    "duration": "2ч 40м",
+    "price_per_person": 67500
+  },
+  {
+    "id": "flight_80",
+    "airline": "FlyArystan",
+    "from": "PLX",
+    "to": "PWQ",
+    "departure": "20:30",
+    "arrival": "22:10",
+    "duration": "1ч 40м",
+    "price_per_person": 44000
+  },
+  {
+    "id": "flight_81",
+    "airline": "Qazaq Air",
+    "from": "DZN",
+    "to": "GUW",
+    "departure": "12:20",
+    "arrival": "14:40",
+    "duration": "2ч 20м",
     "price_per_person": 22000
+  },
+  {
+    "id": "flight_82",
+    "airline": "FlyArystan",
+    "from": "URA",
+    "to": "GUW",
+    "departure": "13:20",
+    "arrival": "15:15",
+    "duration": "1ч 55м",
+    "price_per_person": 82500
+  },
+  {
+    "id": "flight_83",
+    "airline": "FlyArystan",
+    "from": "NQZ",
+    "to": "SCO",
+    "departure": "12:30",
+    "arrival": "13:45",
+    "duration": "1ч 15м",
+    "price_per_person": 40000
+  },
+  {
+    "id": "flight_84",
+    "airline": "Qazaq Air",
+    "from": "NQZ",
+    "to": "PWQ",
+    "departure": "15:40",
+    "arrival": "18:00",
+    "duration": "2ч 20м",
+    "price_per_person": 66000
+  },
+  {
+    "id": "flight_85",
+    "airline": "Qazaq Air",
+    "from": "ALA",
+    "to": "GUW",
+    "departure": "17:40",
+    "arrival": "18:35",
+    "duration": "0ч 55м",
+    "price_per_person": 87000
+  },
+  {
+    "id": "flight_86",
+    "airline": "Air Astana",
+    "from": "AKX",
+    "to": "PLX",
+    "departure": "16:20",
+    "arrival": "18:25",
+    "duration": "2ч 05м",
+    "price_per_person": 66500
+  },
+  {
+    "id": "flight_87",
+    "airline": "FlyArystan",
+    "from": "PLX",
+    "to": "KSN",
+    "departure": "20:10",
+    "arrival": "21:50",
+    "duration": "1ч 40м",
+    "price_per_person": 69000
+  },
+  {
+    "id": "flight_88",
+    "airline": "Qazaq Air",
+    "from": "PWQ",
+    "to": "ALA",
+    "departure": "15:50",
+    "arrival": "17:55",
+    "duration": "2ч 05м",
+    "price_per_person": 33500
+  },
+  {
+    "id": "flight_89",
+    "airline": "Air Astana",
+    "from": "PWQ",
+    "to": "CIT",
+    "departure": "17:40",
+    "arrival": "20:40",
+    "duration": "3ч 00м",
+    "price_per_person": 15500
+  },
+  {
+    "id": "flight_90",
+    "airline": "Qazaq Air",
+    "from": "NQZ",
+    "to": "URA",
+    "departure": "09:30",
+    "arrival": "10:45",
+    "duration": "1ч 15м",
+    "price_per_person": 18500
+  },
+  {
+    "id": "flight_91",
+    "airline": "SCAT Airlines",
+    "from": "GUW",
+    "to": "PWQ",
+    "departure": "11:30",
+    "arrival": "13:25",
+    "duration": "1ч 55м",
+    "price_per_person": 56000
+  },
+  {
+    "id": "flight_92",
+    "airline": "Qazaq Air",
+    "from": "AKX",
+    "to": "GUW",
+    "departure": "13:00",
+    "arrival": "15:20",
+    "duration": "2ч 20м",
+    "price_per_person": 14500
+  },
+  {
+    "id": "flight_93",
+    "airline": "Air Astana",
+    "from": "URA",
+    "to": "PLX",
+    "departure": "16:10",
+    "arrival": "17:15",
+    "duration": "1ч 05м",
+    "price_per_person": 17000
+  },
+  {
+    "id": "flight_94",
+    "airline": "FlyArystan",
+    "from": "ALA",
+    "to": "GUW",
+    "departure": "05:40",
+    "arrival": "06:55",
+    "duration": "1ч 15м",
+    "price_per_person": 43000
+  },
+  {
+    "id": "flight_95",
+    "airline": "Air Astana",
+    "from": "CIT",
+    "to": "PLX",
+    "departure": "11:30",
+    "arrival": "13:10",
+    "duration": "1ч 40м",
+    "price_per_person": 60000
+  },
+  {
+    "id": "flight_96",
+    "airline": "Air Astana",
+    "from": "CIT",
+    "to": "DZN",
+    "departure": "10:20",
+    "arrival": "11:25",
+    "duration": "1ч 05м",
+    "price_per_person": 87500
+  },
+  {
+    "id": "flight_97",
+    "airline": "Qazaq Air",
+    "from": "ALA",
+    "to": "KGF",
+    "departure": "17:50",
+    "arrival": "19:15",
+    "duration": "1ч 25м",
+    "price_per_person": 21500
+  },
+  {
+    "id": "flight_98",
+    "airline": "FlyArystan",
+    "from": "KSN",
+    "to": "URA",
+    "departure": "08:50",
+    "arrival": "10:30",
+    "duration": "1ч 40м",
+    "price_per_person": 27500
+  },
+  {
+    "id": "flight_99",
+    "airline": "SCAT Airlines",
+    "from": "KSN",
+    "to": "ALA",
+    "departure": "22:30",
+    "arrival": "00:25",
+    "duration": "1ч 55м",
+    "price_per_person": 21000
+  },
+  {
+    "id": "flight_100",
+    "airline": "SCAT Airlines",
+    "from": "PLX",
+    "to": "URA",
+    "departure": "05:30",
+    "arrival": "07:50",
+    "duration": "2ч 20м",
+    "price_per_person": 25500
+  },
+  {
+    "id": "flight_101",
+    "airline": "Qazaq Air",
+    "from": "AKX",
+    "to": "KGF",
+    "departure": "09:30",
+    "arrival": "10:45",
+    "duration": "1ч 15м",
+    "price_per_person": 80000
+  },
+  {
+    "id": "flight_102",
+    "airline": "Qazaq Air",
+    "from": "DZN",
+    "to": "GUW",
+    "departure": "19:30",
+    "arrival": "22:30",
+    "duration": "3ч 00м",
+    "price_per_person": 47000
+  },
+  {
+    "id": "flight_103",
+    "airline": "Air Astana",
+    "from": "KGF",
+    "to": "SCO",
+    "departure": "13:30",
+    "arrival": "14:55",
+    "duration": "1ч 25м",
+    "price_per_person": 72500
+  },
+  {
+    "id": "flight_104",
+    "airline": "Qazaq Air",
+    "from": "KSN",
+    "to": "DZN",
+    "departure": "15:00",
+    "arrival": "17:20",
+    "duration": "2ч 20м",
+    "price_per_person": 54500
+  },
+  {
+    "id": "flight_105",
+    "airline": "FlyArystan",
+    "from": "CIT",
+    "to": "PLX",
+    "departure": "16:20",
+    "arrival": "18:15",
+    "duration": "1ч 55м",
+    "price_per_person": 48500
+  },
+  {
+    "id": "flight_106",
+    "airline": "Air Astana",
+    "from": "KSN",
+    "to": "GUW",
+    "departure": "21:10",
+    "arrival": "22:15",
+    "duration": "1ч 05м",
+    "price_per_person": 43500
+  },
+  {
+    "id": "flight_107",
+    "airline": "Qazaq Air",
+    "from": "URA",
+    "to": "AKX",
+    "departure": "22:10",
+    "arrival": "00:30",
+    "duration": "2ч 20м",
+    "price_per_person": 76000
+  },
+  {
+    "id": "flight_108",
+    "airline": "Air Astana",
+    "from": "PWQ",
+    "to": "ALA",
+    "departure": "14:10",
+    "arrival": "16:15",
+    "duration": "2ч 05м",
+    "price_per_person": 43500
+  },
+  {
+    "id": "flight_109",
+    "airline": "SCAT Airlines",
+    "from": "GUW",
+    "to": "URA",
+    "departure": "20:40",
+    "arrival": "23:20",
+    "duration": "2ч 40м",
+    "price_per_person": 57000
+  },
+  {
+    "id": "flight_110",
+    "airline": "SCAT Airlines",
+    "from": "AKX",
+    "to": "KSN",
+    "departure": "16:50",
+    "arrival": "19:10",
+    "duration": "2ч 20м",
+    "price_per_person": 47500
+  },
+  {
+    "id": "flight_111",
+    "airline": "FlyArystan",
+    "from": "GUW",
+    "to": "KGF",
+    "departure": "08:50",
+    "arrival": "10:15",
+    "duration": "1ч 25м",
+    "price_per_person": 53000
+  },
+  {
+    "id": "flight_112",
+    "airline": "FlyArystan",
+    "from": "NQZ",
+    "to": "KSN",
+    "departure": "11:10",
+    "arrival": "13:30",
+    "duration": "2ч 20м",
+    "price_per_person": 48000
+  },
+  {
+    "id": "flight_113",
+    "airline": "SCAT Airlines",
+    "from": "URA",
+    "to": "KSN",
+    "departure": "08:10",
+    "arrival": "09:50",
+    "duration": "1ч 40м",
+    "price_per_person": 41500
+  },
+  {
+    "id": "flight_114",
+    "airline": "SCAT Airlines",
+    "from": "KGF",
+    "to": "CIT",
+    "departure": "05:50",
+    "arrival": "08:30",
+    "duration": "2ч 40м",
+    "price_per_person": 28500
+  },
+  {
+    "id": "flight_115",
+    "airline": "Air Astana",
+    "from": "GUW",
+    "to": "ALA",
+    "departure": "22:20",
+    "arrival": "23:35",
+    "duration": "1ч 15м",
+    "price_per_person": 76000
+  },
+  {
+    "id": "flight_116",
+    "airline": "SCAT Airlines",
+    "from": "NQZ",
+    "to": "ALA",
+    "departure": "20:30",
+    "arrival": "22:50",
+    "duration": "2ч 20м",
+    "price_per_person": 56500
+  },
+  {
+    "id": "flight_117",
+    "airline": "SCAT Airlines",
+    "from": "CIT",
+    "to": "ALA",
+    "departure": "20:00",
+    "arrival": "21:05",
+    "duration": "1ч 05м",
+    "price_per_person": 64500
+  },
+  {
+    "id": "flight_118",
+    "airline": "Air Astana",
+    "from": "PWQ",
+    "to": "NQZ",
+    "departure": "09:10",
+    "arrival": "12:10",
+    "duration": "3ч 00м",
+    "price_per_person": 51500
+  },
+  {
+    "id": "flight_119",
+    "airline": "Air Astana",
+    "from": "NQZ",
+    "to": "GUW",
+    "departure": "22:30",
+    "arrival": "01:30",
+    "duration": "3ч 00м",
+    "price_per_person": 41500
+  },
+  {
+    "id": "flight_120",
+    "airline": "Qazaq Air",
+    "from": "PLX",
+    "to": "AKX",
+    "departure": "19:20",
+    "arrival": "22:20",
+    "duration": "3ч 00м",
+    "price_per_person": 68000
+  },
+  {
+    "id": "flight_121",
+    "airline": "Air Astana",
+    "from": "GUW",
+    "to": "DZN",
+    "departure": "08:10",
+    "arrival": "09:35",
+    "duration": "1ч 25м",
+    "price_per_person": 46500
+  },
+  {
+    "id": "flight_122",
+    "airline": "FlyArystan",
+    "from": "DZN",
+    "to": "NQZ",
+    "departure": "12:10",
+    "arrival": "14:50",
+    "duration": "2ч 40м",
+    "price_per_person": 21500
+  },
+  {
+    "id": "flight_123",
+    "airline": "Qazaq Air",
+    "from": "CIT",
+    "to": "ALA",
+    "departure": "19:50",
+    "arrival": "22:50",
+    "duration": "3ч 00м",
+    "price_per_person": 73500
+  },
+  {
+    "id": "flight_124",
+    "airline": "FlyArystan",
+    "from": "GUW",
+    "to": "ALA",
+    "departure": "14:50",
+    "arrival": "16:30",
+    "duration": "1ч 40м",
+    "price_per_person": 71500
+  },
+  {
+    "id": "flight_125",
+    "airline": "FlyArystan",
+    "from": "NQZ",
+    "to": "URA",
+    "departure": "13:50",
+    "arrival": "16:50",
+    "duration": "3ч 00м",
+    "price_per_person": 37500
+  },
+  {
+    "id": "flight_126",
+    "airline": "FlyArystan",
+    "from": "AKX",
+    "to": "NQZ",
+    "departure": "09:20",
+    "arrival": "10:35",
+    "duration": "1ч 15м",
+    "price_per_person": 21000
+  },
+  {
+    "id": "flight_127",
+    "airline": "SCAT Airlines",
+    "from": "ALA",
+    "to": "SCO",
+    "departure": "14:30",
+    "arrival": "15:35",
+    "duration": "1ч 05м",
+    "price_per_person": 73000
+  },
+  {
+    "id": "flight_128",
+    "airline": "Qazaq Air",
+    "from": "URA",
+    "to": "GUW",
+    "departure": "13:40",
+    "arrival": "16:20",
+    "duration": "2ч 40м",
+    "price_per_person": 76500
+  },
+  {
+    "id": "flight_129",
+    "airline": "Air Astana",
+    "from": "PWQ",
+    "to": "NQZ",
+    "departure": "18:50",
+    "arrival": "20:45",
+    "duration": "1ч 55м",
+    "price_per_person": 44500
+  },
+  {
+    "id": "flight_130",
+    "airline": "FlyArystan",
+    "from": "ALA",
+    "to": "CIT",
+    "departure": "05:50",
+    "arrival": "07:30",
+    "duration": "1ч 40м",
+    "price_per_person": 87500
+  },
+  {
+    "id": "flight_131",
+    "airline": "Qazaq Air",
+    "from": "ALA",
+    "to": "SCO",
+    "departure": "21:50",
+    "arrival": "00:10",
+    "duration": "2ч 20м",
+    "price_per_person": 48000
+  },
+  {
+    "id": "flight_132",
+    "airline": "Qazaq Air",
+    "from": "CIT",
+    "to": "DZN",
+    "departure": "20:00",
+    "arrival": "22:20",
+    "duration": "2ч 20м",
+    "price_per_person": 57500
+  },
+  {
+    "id": "flight_133",
+    "airline": "SCAT Airlines",
+    "from": "AKX",
+    "to": "KGF",
+    "departure": "08:10",
+    "arrival": "10:05",
+    "duration": "1ч 55м",
+    "price_per_person": 65500
+  },
+  {
+    "id": "flight_134",
+    "airline": "SCAT Airlines",
+    "from": "URA",
+    "to": "PWQ",
+    "departure": "17:40",
+    "arrival": "18:35",
+    "duration": "0ч 55м",
+    "price_per_person": 71500
+  },
+  {
+    "id": "flight_135",
+    "airline": "SCAT Airlines",
+    "from": "NQZ",
+    "to": "AKX",
+    "departure": "15:00",
+    "arrival": "17:05",
+    "duration": "2ч 05м",
+    "price_per_person": 79000
+  },
+  {
+    "id": "flight_136",
+    "airline": "Qazaq Air",
+    "from": "ALA",
+    "to": "URA",
+    "departure": "18:00",
+    "arrival": "19:25",
+    "duration": "1ч 25м",
+    "price_per_person": 79500
+  },
+  {
+    "id": "flight_137",
+    "airline": "Qazaq Air",
+    "from": "KGF",
+    "to": "DZN",
+    "departure": "19:00",
+    "arrival": "20:25",
+    "duration": "1ч 25м",
+    "price_per_person": 47000
+  },
+  {
+    "id": "flight_138",
+    "airline": "SCAT Airlines",
+    "from": "PLX",
+    "to": "CIT",
+    "departure": "19:50",
+    "arrival": "22:10",
+    "duration": "2ч 20м",
+    "price_per_person": 27500
+  },
+  {
+    "id": "flight_139",
+    "airline": "FlyArystan",
+    "from": "ALA",
+    "to": "URA",
+    "departure": "10:20",
+    "arrival": "13:00",
+    "duration": "2ч 40м",
+    "price_per_person": 13500
+  },
+  {
+    "id": "flight_140",
+    "airline": "Air Astana",
+    "from": "PLX",
+    "to": "AKX",
+    "departure": "12:00",
+    "arrival": "14:20",
+    "duration": "2ч 20м",
+    "price_per_person": 27000
+  },
+  {
+    "id": "flight_141",
+    "airline": "Qazaq Air",
+    "from": "DZN",
+    "to": "CIT",
+    "departure": "14:40",
+    "arrival": "16:20",
+    "duration": "1ч 40м",
+    "price_per_person": 66000
+  },
+  {
+    "id": "flight_142",
+    "airline": "FlyArystan",
+    "from": "PWQ",
+    "to": "PLX",
+    "departure": "19:40",
+    "arrival": "20:55",
+    "duration": "1ч 15м",
+    "price_per_person": 62000
+  },
+  {
+    "id": "flight_143",
+    "airline": "FlyArystan",
+    "from": "SCO",
+    "to": "DZN",
+    "departure": "07:20",
+    "arrival": "09:25",
+    "duration": "2ч 05м",
+    "price_per_person": 56500
+  },
+  {
+    "id": "flight_144",
+    "airline": "Air Astana",
+    "from": "PLX",
+    "to": "GUW",
+    "departure": "14:50",
+    "arrival": "16:30",
+    "duration": "1ч 40м",
+    "price_per_person": 88500
+  },
+  {
+    "id": "flight_145",
+    "airline": "Qazaq Air",
+    "from": "KSN",
+    "to": "URA",
+    "departure": "09:30",
+    "arrival": "12:10",
+    "duration": "2ч 40м",
+    "price_per_person": 75000
+  },
+  {
+    "id": "flight_146",
+    "airline": "Qazaq Air",
+    "from": "KGF",
+    "to": "AKX",
+    "departure": "19:20",
+    "arrival": "20:45",
+    "duration": "1ч 25м",
+    "price_per_person": 43000
+  },
+  {
+    "id": "flight_147",
+    "airline": "FlyArystan",
+    "from": "KSN",
+    "to": "AKX",
+    "departure": "18:00",
+    "arrival": "19:55",
+    "duration": "1ч 55м",
+    "price_per_person": 73500
+  },
+  {
+    "id": "flight_148",
+    "airline": "Qazaq Air",
+    "from": "URA",
+    "to": "AKX",
+    "departure": "09:30",
+    "arrival": "10:25",
+    "duration": "0ч 55м",
+    "price_per_person": 28500
+  },
+  {
+    "id": "flight_149",
+    "airline": "SCAT Airlines",
+    "from": "PLX",
+    "to": "DZN",
+    "departure": "08:30",
+    "arrival": "09:35",
+    "duration": "1ч 05м",
+    "price_per_person": 80500
+  },
+  {
+    "id": "flight_150",
+    "airline": "FlyArystan",
+    "from": "PWQ",
+    "to": "ALA",
+    "departure": "18:50",
+    "arrival": "20:05",
+    "duration": "1ч 15м",
+    "price_per_person": 21500
   }
 ]

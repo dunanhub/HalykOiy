@@ -1,16 +1,1052 @@
 [
   {
     "id": "insurance_1",
-    "provider": "Halyk Insurance",
-    "title": "Family Travel Insurance",
-    "coverage": 1000000,
-    "price": 2500
+    "provider": "Nomad Insurance",
+    "title": "Страховка для пожилых путешественников",
+    "coverage": 700000,
+    "price": 2323
   },
   {
     "id": "insurance_2",
-    "provider": "Nomad Insurance",
-    "title": "Standard Travel Package",
+    "provider": "Freedom Insurance",
+    "title": "Студенческий туристический пакет",
+    "coverage": 600000,
+    "price": 1512
+  },
+  {
+    "id": "insurance_3",
+    "provider": "Jusan Insurance",
+    "title": "Медицинская помощь Плюс",
+    "coverage": 800000,
+    "price": 1838
+  },
+  {
+    "id": "insurance_4",
+    "provider": "Eurasia Insurance",
+    "title": "Базовое покрытие для короткой поездки",
+    "coverage": 400000,
+    "price": 1150
+  },
+  {
+    "id": "insurance_5",
+    "provider": "Halyk Insurance",
+    "title": "Страховка для активного отдыха",
+    "coverage": 1200000,
+    "price": 3063
+  },
+  {
+    "id": "insurance_6",
+    "provider": "Eurasia Insurance",
+    "title": "Золотая туристическая защита",
+    "coverage": 2000000,
+    "price": 4655
+  },
+  {
+    "id": "insurance_7",
+    "provider": "Freedom Insurance",
+    "title": "Медицинская помощь Плюс",
+    "coverage": 800000,
+    "price": 2286
+  },
+  {
+    "id": "insurance_8",
+    "provider": "Jusan Insurance",
+    "title": "Платиновое покрытие «Всё включено»",
+    "coverage": 3000000,
+    "price": 6097
+  },
+  {
+    "id": "insurance_9",
+    "provider": "Halyk Insurance",
+    "title": "Годовая мультипоездка",
+    "coverage": 1500000,
+    "price": 8196
+  },
+  {
+    "id": "insurance_10",
+    "provider": "Eurasia Insurance",
+    "title": "Стандартный туристический пакет",
     "coverage": 750000,
-    "price": 1800
+    "price": 1974
+  },
+  {
+    "id": "insurance_11",
+    "provider": "Jusan Insurance",
+    "title": "Студенческий туристический пакет",
+    "coverage": 600000,
+    "price": 1640
+  },
+  {
+    "id": "insurance_12",
+    "provider": "Eurasia Insurance",
+    "title": "Платиновое покрытие «Всё включено»",
+    "coverage": 3000000,
+    "price": 6235
+  },
+  {
+    "id": "insurance_13",
+    "provider": "Halyk Insurance",
+    "title": "Базовое покрытие для короткой поездки",
+    "coverage": 400000,
+    "price": 973
+  },
+  {
+    "id": "insurance_14",
+    "provider": "Jusan Insurance",
+    "title": "Премиум туристическая защита",
+    "coverage": 1500000,
+    "price": 3795
+  },
+  {
+    "id": "insurance_15",
+    "provider": "Jusan Insurance",
+    "title": "Годовая мультипоездка",
+    "coverage": 1500000,
+    "price": 7908
+  },
+  {
+    "id": "insurance_16",
+    "provider": "Jusan Insurance",
+    "title": "Золотая туристическая защита",
+    "coverage": 2000000,
+    "price": 4465
+  },
+  {
+    "id": "insurance_17",
+    "provider": "Freedom Insurance",
+    "title": "Платиновое покрытие «Всё включено»",
+    "coverage": 3000000,
+    "price": 6080
+  },
+  {
+    "id": "insurance_18",
+    "provider": "Kazakhstan Insurance",
+    "title": "Семейная туристическая страховка",
+    "coverage": 1000000,
+    "price": 2589
+  },
+  {
+    "id": "insurance_19",
+    "provider": "Jusan Insurance",
+    "title": "Базовое покрытие для короткой поездки",
+    "coverage": 400000,
+    "price": 875
+  },
+  {
+    "id": "insurance_20",
+    "provider": "Eurasia Insurance",
+    "title": "Базовое покрытие для короткой поездки",
+    "coverage": 400000,
+    "price": 724
+  },
+  {
+    "id": "insurance_21",
+    "provider": "Halyk Insurance",
+    "title": "Стандартный туристический пакет",
+    "coverage": 750000,
+    "price": 1920
+  },
+  {
+    "id": "insurance_22",
+    "provider": "Jusan Insurance",
+    "title": "Базовая туристическая страховка",
+    "coverage": 500000,
+    "price": 1063
+  },
+  {
+    "id": "insurance_23",
+    "provider": "Nomad Insurance",
+    "title": "Медицинская помощь Плюс",
+    "coverage": 800000,
+    "price": 2033
+  },
+  {
+    "id": "insurance_24",
+    "provider": "Halyk Insurance",
+    "title": "Страховка для активного отдыха",
+    "coverage": 1200000,
+    "price": 2903
+  },
+  {
+    "id": "insurance_25",
+    "provider": "Eurasia Insurance",
+    "title": "Страховка для экстремального спорта",
+    "coverage": 1800000,
+    "price": 3867
+  },
+  {
+    "id": "insurance_26",
+    "provider": "Eurasia Insurance",
+    "title": "Золотая туристическая защита",
+    "coverage": 2000000,
+    "price": 4381
+  },
+  {
+    "id": "insurance_27",
+    "provider": "Freedom Insurance",
+    "title": "Стандартный туристический пакет",
+    "coverage": 750000,
+    "price": 1935
+  },
+  {
+    "id": "insurance_28",
+    "provider": "Freedom Insurance",
+    "title": "Золотая туристическая защита",
+    "coverage": 2000000,
+    "price": 4342
+  },
+  {
+    "id": "insurance_29",
+    "provider": "Freedom Insurance",
+    "title": "Студенческий туристический пакет",
+    "coverage": 600000,
+    "price": 1762
+  },
+  {
+    "id": "insurance_30",
+    "provider": "Eurasia Insurance",
+    "title": "Семейная туристическая страховка",
+    "coverage": 1000000,
+    "price": 2326
+  },
+  {
+    "id": "insurance_31",
+    "provider": "Jusan Insurance",
+    "title": "Студенческий туристический пакет",
+    "coverage": 600000,
+    "price": 1456
+  },
+  {
+    "id": "insurance_32",
+    "provider": "Eurasia Insurance",
+    "title": "Групповая туристическая страховка",
+    "coverage": 2000000,
+    "price": 5186
+  },
+  {
+    "id": "insurance_33",
+    "provider": "Nomad Insurance",
+    "title": "Страховка для активного отдыха",
+    "coverage": 1200000,
+    "price": 3135
+  },
+  {
+    "id": "insurance_34",
+    "provider": "Halyk Insurance",
+    "title": "Групповая туристическая страховка",
+    "coverage": 2000000,
+    "price": 4848
+  },
+  {
+    "id": "insurance_35",
+    "provider": "Halyk Insurance",
+    "title": "Премиум туристическая защита",
+    "coverage": 1500000,
+    "price": 3544
+  },
+  {
+    "id": "insurance_36",
+    "provider": "Halyk Insurance",
+    "title": "Семейная туристическая страховка",
+    "coverage": 1000000,
+    "price": 2603
+  },
+  {
+    "id": "insurance_37",
+    "provider": "Nomad Insurance",
+    "title": "Деловой туристический план",
+    "coverage": 1000000,
+    "price": 2948
+  },
+  {
+    "id": "insurance_38",
+    "provider": "Jusan Insurance",
+    "title": "Базовая туристическая страховка",
+    "coverage": 500000,
+    "price": 1004
+  },
+  {
+    "id": "insurance_39",
+    "provider": "Eurasia Insurance",
+    "title": "Платиновое покрытие «Всё включено»",
+    "coverage": 3000000,
+    "price": 6218
+  },
+  {
+    "id": "insurance_40",
+    "provider": "Halyk Insurance",
+    "title": "Годовая мультипоездка",
+    "coverage": 1500000,
+    "price": 8016
+  },
+  {
+    "id": "insurance_41",
+    "provider": "Eurasia Insurance",
+    "title": "Семейная туристическая страховка",
+    "coverage": 1000000,
+    "price": 2544
+  },
+  {
+    "id": "insurance_42",
+    "provider": "Halyk Insurance",
+    "title": "Премиум туристическая защита",
+    "coverage": 1500000,
+    "price": 3496
+  },
+  {
+    "id": "insurance_43",
+    "provider": "Halyk Insurance",
+    "title": "Групповая туристическая страховка",
+    "coverage": 2000000,
+    "price": 5212
+  },
+  {
+    "id": "insurance_44",
+    "provider": "Halyk Insurance",
+    "title": "Стандартный туристический пакет",
+    "coverage": 750000,
+    "price": 1760
+  },
+  {
+    "id": "insurance_45",
+    "provider": "Freedom Insurance",
+    "title": "Страховка для экстремального спорта",
+    "coverage": 1800000,
+    "price": 3953
+  },
+  {
+    "id": "insurance_46",
+    "provider": "Nomad Insurance",
+    "title": "Страховка для активного отдыха",
+    "coverage": 1200000,
+    "price": 3196
+  },
+  {
+    "id": "insurance_47",
+    "provider": "Nomad Insurance",
+    "title": "Студенческий туристический пакет",
+    "coverage": 600000,
+    "price": 1646
+  },
+  {
+    "id": "insurance_48",
+    "provider": "Nomad Insurance",
+    "title": "Стандартный туристический пакет",
+    "coverage": 750000,
+    "price": 1871
+  },
+  {
+    "id": "insurance_49",
+    "provider": "Kazakhstan Insurance",
+    "title": "Базовая туристическая страховка",
+    "coverage": 500000,
+    "price": 1312
+  },
+  {
+    "id": "insurance_50",
+    "provider": "Eurasia Insurance",
+    "title": "Семейная туристическая страховка",
+    "coverage": 1000000,
+    "price": 2525
+  },
+  {
+    "id": "insurance_51",
+    "provider": "Freedom Insurance",
+    "title": "Групповая туристическая страховка",
+    "coverage": 2000000,
+    "price": 4909
+  },
+  {
+    "id": "insurance_52",
+    "provider": "Eurasia Insurance",
+    "title": "Групповая туристическая страховка",
+    "coverage": 2000000,
+    "price": 4877
+  },
+  {
+    "id": "insurance_53",
+    "provider": "Jusan Insurance",
+    "title": "Страховка для пожилых путешественников",
+    "coverage": 700000,
+    "price": 2351
+  },
+  {
+    "id": "insurance_54",
+    "provider": "Jusan Insurance",
+    "title": "Годовая мультипоездка",
+    "coverage": 1500000,
+    "price": 7911
+  },
+  {
+    "id": "insurance_55",
+    "provider": "Halyk Insurance",
+    "title": "Страховка для экстремального спорта",
+    "coverage": 1800000,
+    "price": 3851
+  },
+  {
+    "id": "insurance_56",
+    "provider": "Nomad Insurance",
+    "title": "Базовое покрытие для короткой поездки",
+    "coverage": 400000,
+    "price": 763
+  },
+  {
+    "id": "insurance_57",
+    "provider": "Kazakhstan Insurance",
+    "title": "Групповая туристическая страховка",
+    "coverage": 2000000,
+    "price": 4996
+  },
+  {
+    "id": "insurance_58",
+    "provider": "Freedom Insurance",
+    "title": "Страховка для активного отдыха",
+    "coverage": 1200000,
+    "price": 2961
+  },
+  {
+    "id": "insurance_59",
+    "provider": "Nomad Insurance",
+    "title": "Премиум туристическая защита",
+    "coverage": 1500000,
+    "price": 3441
+  },
+  {
+    "id": "insurance_60",
+    "provider": "Eurasia Insurance",
+    "title": "Стандартный туристический пакет",
+    "coverage": 750000,
+    "price": 1727
+  },
+  {
+    "id": "insurance_61",
+    "provider": "Kazakhstan Insurance",
+    "title": "Страховка для пожилых путешественников",
+    "coverage": 700000,
+    "price": 2307
+  },
+  {
+    "id": "insurance_62",
+    "provider": "Eurasia Insurance",
+    "title": "Страховка для пожилых путешественников",
+    "coverage": 700000,
+    "price": 2145
+  },
+  {
+    "id": "insurance_63",
+    "provider": "Eurasia Insurance",
+    "title": "Базовая туристическая страховка",
+    "coverage": 500000,
+    "price": 1434
+  },
+  {
+    "id": "insurance_64",
+    "provider": "Eurasia Insurance",
+    "title": "Страховка для экстремального спорта",
+    "coverage": 1800000,
+    "price": 3954
+  },
+  {
+    "id": "insurance_65",
+    "provider": "Nomad Insurance",
+    "title": "Деловой туристический план",
+    "coverage": 1000000,
+    "price": 2910
+  },
+  {
+    "id": "insurance_66",
+    "provider": "Kazakhstan Insurance",
+    "title": "Премиум туристическая защита",
+    "coverage": 1500000,
+    "price": 3682
+  },
+  {
+    "id": "insurance_67",
+    "provider": "Jusan Insurance",
+    "title": "Золотая туристическая защита",
+    "coverage": 2000000,
+    "price": 4630
+  },
+  {
+    "id": "insurance_68",
+    "provider": "Halyk Insurance",
+    "title": "Базовое покрытие для короткой поездки",
+    "coverage": 400000,
+    "price": 1159
+  },
+  {
+    "id": "insurance_69",
+    "provider": "Nomad Insurance",
+    "title": "Медицинская помощь Плюс",
+    "coverage": 800000,
+    "price": 1997
+  },
+  {
+    "id": "insurance_70",
+    "provider": "Halyk Insurance",
+    "title": "Премиум туристическая защита",
+    "coverage": 1500000,
+    "price": 3555
+  },
+  {
+    "id": "insurance_71",
+    "provider": "Eurasia Insurance",
+    "title": "Страховка для пожилых путешественников",
+    "coverage": 700000,
+    "price": 2036
+  },
+  {
+    "id": "insurance_72",
+    "provider": "Kazakhstan Insurance",
+    "title": "Страховка для экстремального спорта",
+    "coverage": 1800000,
+    "price": 4300
+  },
+  {
+    "id": "insurance_73",
+    "provider": "Halyk Insurance",
+    "title": "Платиновое покрытие «Всё включено»",
+    "coverage": 3000000,
+    "price": 6278
+  },
+  {
+    "id": "insurance_74",
+    "provider": "Freedom Insurance",
+    "title": "Семейная туристическая страховка",
+    "coverage": 1000000,
+    "price": 2498
+  },
+  {
+    "id": "insurance_75",
+    "provider": "Kazakhstan Insurance",
+    "title": "Страховка для активного отдыха",
+    "coverage": 1200000,
+    "price": 2987
+  },
+  {
+    "id": "insurance_76",
+    "provider": "Kazakhstan Insurance",
+    "title": "Студенческий туристический пакет",
+    "coverage": 600000,
+    "price": 1388
+  },
+  {
+    "id": "insurance_77",
+    "provider": "Jusan Insurance",
+    "title": "Базовое покрытие для короткой поездки",
+    "coverage": 400000,
+    "price": 737
+  },
+  {
+    "id": "insurance_78",
+    "provider": "Halyk Insurance",
+    "title": "Страховка для пожилых путешественников",
+    "coverage": 700000,
+    "price": 2034
+  },
+  {
+    "id": "insurance_79",
+    "provider": "Halyk Insurance",
+    "title": "Золотая туристическая защита",
+    "coverage": 2000000,
+    "price": 4410
+  },
+  {
+    "id": "insurance_80",
+    "provider": "Halyk Insurance",
+    "title": "Страховка для экстремального спорта",
+    "coverage": 1800000,
+    "price": 3830
+  },
+  {
+    "id": "insurance_81",
+    "provider": "Jusan Insurance",
+    "title": "Деловой туристический план",
+    "coverage": 1000000,
+    "price": 2746
+  },
+  {
+    "id": "insurance_82",
+    "provider": "Eurasia Insurance",
+    "title": "Групповая туристическая страховка",
+    "coverage": 2000000,
+    "price": 5056
+  },
+  {
+    "id": "insurance_83",
+    "provider": "Jusan Insurance",
+    "title": "Страховка для активного отдыха",
+    "coverage": 1200000,
+    "price": 3159
+  },
+  {
+    "id": "insurance_84",
+    "provider": "Jusan Insurance",
+    "title": "Стандартный туристический пакет",
+    "coverage": 750000,
+    "price": 1927
+  },
+  {
+    "id": "insurance_85",
+    "provider": "Kazakhstan Insurance",
+    "title": "Деловой туристический план",
+    "coverage": 1000000,
+    "price": 2915
+  },
+  {
+    "id": "insurance_86",
+    "provider": "Nomad Insurance",
+    "title": "Золотая туристическая защита",
+    "coverage": 2000000,
+    "price": 4342
+  },
+  {
+    "id": "insurance_87",
+    "provider": "Freedom Insurance",
+    "title": "Стандартный туристический пакет",
+    "coverage": 750000,
+    "price": 1861
+  },
+  {
+    "id": "insurance_88",
+    "provider": "Nomad Insurance",
+    "title": "Базовое покрытие для короткой поездки",
+    "coverage": 400000,
+    "price": 779
+  },
+  {
+    "id": "insurance_89",
+    "provider": "Kazakhstan Insurance",
+    "title": "Платиновое покрытие «Всё включено»",
+    "coverage": 3000000,
+    "price": 6000
+  },
+  {
+    "id": "insurance_90",
+    "provider": "Kazakhstan Insurance",
+    "title": "Студенческий туристический пакет",
+    "coverage": 600000,
+    "price": 1690
+  },
+  {
+    "id": "insurance_91",
+    "provider": "Eurasia Insurance",
+    "title": "Студенческий туристический пакет",
+    "coverage": 600000,
+    "price": 1629
+  },
+  {
+    "id": "insurance_92",
+    "provider": "Halyk Insurance",
+    "title": "Золотая туристическая защита",
+    "coverage": 2000000,
+    "price": 4657
+  },
+  {
+    "id": "insurance_93",
+    "provider": "Jusan Insurance",
+    "title": "Групповая туристическая страховка",
+    "coverage": 2000000,
+    "price": 5288
+  },
+  {
+    "id": "insurance_94",
+    "provider": "Nomad Insurance",
+    "title": "Базовая туристическая страховка",
+    "coverage": 500000,
+    "price": 1125
+  },
+  {
+    "id": "insurance_95",
+    "provider": "Halyk Insurance",
+    "title": "Страховка для экстремального спорта",
+    "coverage": 1800000,
+    "price": 4022
+  },
+  {
+    "id": "insurance_96",
+    "provider": "Halyk Insurance",
+    "title": "Медицинская помощь Плюс",
+    "coverage": 800000,
+    "price": 2113
+  },
+  {
+    "id": "insurance_97",
+    "provider": "Kazakhstan Insurance",
+    "title": "Базовая туристическая страховка",
+    "coverage": 500000,
+    "price": 1158
+  },
+  {
+    "id": "insurance_98",
+    "provider": "Eurasia Insurance",
+    "title": "Групповая туристическая страховка",
+    "coverage": 2000000,
+    "price": 5136
+  },
+  {
+    "id": "insurance_99",
+    "provider": "Eurasia Insurance",
+    "title": "Семейная туристическая страховка",
+    "coverage": 1000000,
+    "price": 2361
+  },
+  {
+    "id": "insurance_100",
+    "provider": "Halyk Insurance",
+    "title": "Групповая туристическая страховка",
+    "coverage": 2000000,
+    "price": 4870
+  },
+  {
+    "id": "insurance_101",
+    "provider": "Eurasia Insurance",
+    "title": "Базовая туристическая страховка",
+    "coverage": 500000,
+    "price": 1083
+  },
+  {
+    "id": "insurance_102",
+    "provider": "Jusan Insurance",
+    "title": "Платиновое покрытие «Всё включено»",
+    "coverage": 3000000,
+    "price": 6067
+  },
+  {
+    "id": "insurance_103",
+    "provider": "Kazakhstan Insurance",
+    "title": "Базовое покрытие для короткой поездки",
+    "coverage": 400000,
+    "price": 1121
+  },
+  {
+    "id": "insurance_104",
+    "provider": "Eurasia Insurance",
+    "title": "Золотая туристическая защита",
+    "coverage": 2000000,
+    "price": 4385
+  },
+  {
+    "id": "insurance_105",
+    "provider": "Freedom Insurance",
+    "title": "Семейная туристическая страховка",
+    "coverage": 1000000,
+    "price": 2683
+  },
+  {
+    "id": "insurance_106",
+    "provider": "Freedom Insurance",
+    "title": "Групповая туристическая страховка",
+    "coverage": 2000000,
+    "price": 5253
+  },
+  {
+    "id": "insurance_107",
+    "provider": "Halyk Insurance",
+    "title": "Базовое покрытие для короткой поездки",
+    "coverage": 400000,
+    "price": 1160
+  },
+  {
+    "id": "insurance_108",
+    "provider": "Halyk Insurance",
+    "title": "Платиновое покрытие «Всё включено»",
+    "coverage": 3000000,
+    "price": 6213
+  },
+  {
+    "id": "insurance_109",
+    "provider": "Jusan Insurance",
+    "title": "Золотая туристическая защита",
+    "coverage": 2000000,
+    "price": 4568
+  },
+  {
+    "id": "insurance_110",
+    "provider": "Halyk Insurance",
+    "title": "Золотая туристическая защита",
+    "coverage": 2000000,
+    "price": 4664
+  },
+  {
+    "id": "insurance_111",
+    "provider": "Kazakhstan Insurance",
+    "title": "Студенческий туристический пакет",
+    "coverage": 600000,
+    "price": 1339
+  },
+  {
+    "id": "insurance_112",
+    "provider": "Jusan Insurance",
+    "title": "Медицинская помощь Плюс",
+    "coverage": 800000,
+    "price": 2061
+  },
+  {
+    "id": "insurance_113",
+    "provider": "Freedom Insurance",
+    "title": "Базовая туристическая страховка",
+    "coverage": 500000,
+    "price": 1255
+  },
+  {
+    "id": "insurance_114",
+    "provider": "Kazakhstan Insurance",
+    "title": "Семейная туристическая страховка",
+    "coverage": 1000000,
+    "price": 2488
+  },
+  {
+    "id": "insurance_115",
+    "provider": "Nomad Insurance",
+    "title": "Золотая туристическая защита",
+    "coverage": 2000000,
+    "price": 4695
+  },
+  {
+    "id": "insurance_116",
+    "provider": "Halyk Insurance",
+    "title": "Страховка для экстремального спорта",
+    "coverage": 1800000,
+    "price": 4093
+  },
+  {
+    "id": "insurance_117",
+    "provider": "Eurasia Insurance",
+    "title": "Групповая туристическая страховка",
+    "coverage": 2000000,
+    "price": 4859
+  },
+  {
+    "id": "insurance_118",
+    "provider": "Nomad Insurance",
+    "title": "Групповая туристическая страховка",
+    "coverage": 2000000,
+    "price": 5060
+  },
+  {
+    "id": "insurance_119",
+    "provider": "Halyk Insurance",
+    "title": "Базовая туристическая страховка",
+    "coverage": 500000,
+    "price": 1439
+  },
+  {
+    "id": "insurance_120",
+    "provider": "Halyk Insurance",
+    "title": "Премиум туристическая защита",
+    "coverage": 1500000,
+    "price": 3323
+  },
+  {
+    "id": "insurance_121",
+    "provider": "Jusan Insurance",
+    "title": "Платиновое покрытие «Всё включено»",
+    "coverage": 3000000,
+    "price": 5996
+  },
+  {
+    "id": "insurance_122",
+    "provider": "Nomad Insurance",
+    "title": "Семейная туристическая страховка",
+    "coverage": 1000000,
+    "price": 2776
+  },
+  {
+    "id": "insurance_123",
+    "provider": "Halyk Insurance",
+    "title": "Деловой туристический план",
+    "coverage": 1000000,
+    "price": 3011
+  },
+  {
+    "id": "insurance_124",
+    "provider": "Eurasia Insurance",
+    "title": "Групповая туристическая страховка",
+    "coverage": 2000000,
+    "price": 5135
+  },
+  {
+    "id": "insurance_125",
+    "provider": "Jusan Insurance",
+    "title": "Премиум туристическая защита",
+    "coverage": 1500000,
+    "price": 3464
+  },
+  {
+    "id": "insurance_126",
+    "provider": "Nomad Insurance",
+    "title": "Страховка для активного отдыха",
+    "coverage": 1200000,
+    "price": 3268
+  },
+  {
+    "id": "insurance_127",
+    "provider": "Eurasia Insurance",
+    "title": "Платиновое покрытие «Всё включено»",
+    "coverage": 3000000,
+    "price": 5938
+  },
+  {
+    "id": "insurance_128",
+    "provider": "Halyk Insurance",
+    "title": "Страховка для пожилых путешественников",
+    "coverage": 700000,
+    "price": 2190
+  },
+  {
+    "id": "insurance_129",
+    "provider": "Halyk Insurance",
+    "title": "Деловой туристический план",
+    "coverage": 1000000,
+    "price": 2944
+  },
+  {
+    "id": "insurance_130",
+    "provider": "Halyk Insurance",
+    "title": "Семейная туристическая страховка",
+    "coverage": 1000000,
+    "price": 2414
+  },
+  {
+    "id": "insurance_131",
+    "provider": "Kazakhstan Insurance",
+    "title": "Базовая туристическая страховка",
+    "coverage": 500000,
+    "price": 1488
+  },
+  {
+    "id": "insurance_132",
+    "provider": "Jusan Insurance",
+    "title": "Стандартный туристический пакет",
+    "coverage": 750000,
+    "price": 2049
+  },
+  {
+    "id": "insurance_133",
+    "provider": "Jusan Insurance",
+    "title": "Годовая мультипоездка",
+    "coverage": 1500000,
+    "price": 7944
+  },
+  {
+    "id": "insurance_134",
+    "provider": "Freedom Insurance",
+    "title": "Платиновое покрытие «Всё включено»",
+    "coverage": 3000000,
+    "price": 5844
+  },
+  {
+    "id": "insurance_135",
+    "provider": "Kazakhstan Insurance",
+    "title": "Медицинская помощь Плюс",
+    "coverage": 800000,
+    "price": 1804
+  },
+  {
+    "id": "insurance_136",
+    "provider": "Freedom Insurance",
+    "title": "Премиум туристическая защита",
+    "coverage": 1500000,
+    "price": 3449
+  },
+  {
+    "id": "insurance_137",
+    "provider": "Kazakhstan Insurance",
+    "title": "Базовое покрытие для короткой поездки",
+    "coverage": 400000,
+    "price": 855
+  },
+  {
+    "id": "insurance_138",
+    "provider": "Eurasia Insurance",
+    "title": "Страховка для пожилых путешественников",
+    "coverage": 700000,
+    "price": 2124
+  },
+  {
+    "id": "insurance_139",
+    "provider": "Jusan Insurance",
+    "title": "Платиновое покрытие «Всё включено»",
+    "coverage": 3000000,
+    "price": 6102
+  },
+  {
+    "id": "insurance_140",
+    "provider": "Jusan Insurance",
+    "title": "Базовое покрытие для короткой поездки",
+    "coverage": 400000,
+    "price": 1097
+  },
+  {
+    "id": "insurance_141",
+    "provider": "Nomad Insurance",
+    "title": "Групповая туристическая страховка",
+    "coverage": 2000000,
+    "price": 5261
+  },
+  {
+    "id": "insurance_142",
+    "provider": "Kazakhstan Insurance",
+    "title": "Базовое покрытие для короткой поездки",
+    "coverage": 400000,
+    "price": 1107
+  },
+  {
+    "id": "insurance_143",
+    "provider": "Nomad Insurance",
+    "title": "Семейная туристическая страховка",
+    "coverage": 1000000,
+    "price": 2303
+  },
+  {
+    "id": "insurance_144",
+    "provider": "Jusan Insurance",
+    "title": "Базовая туристическая страховка",
+    "coverage": 500000,
+    "price": 1119
+  },
+  {
+    "id": "insurance_145",
+    "provider": "Kazakhstan Insurance",
+    "title": "Платиновое покрытие «Всё включено»",
+    "coverage": 3000000,
+    "price": 6125
+  },
+  {
+    "id": "insurance_146",
+    "provider": "Eurasia Insurance",
+    "title": "Страховка для экстремального спорта",
+    "coverage": 1800000,
+    "price": 3804
+  },
+  {
+    "id": "insurance_147",
+    "provider": "Freedom Insurance",
+    "title": "Базовая туристическая страховка",
+    "coverage": 500000,
+    "price": 1388
+  },
+  {
+    "id": "insurance_148",
+    "provider": "Eurasia Insurance",
+    "title": "Страховка для активного отдыха",
+    "coverage": 1200000,
+    "price": 3234
+  },
+  {
+    "id": "insurance_149",
+    "provider": "Eurasia Insurance",
+    "title": "Групповая туристическая страховка",
+    "coverage": 2000000,
+    "price": 4957
+  },
+  {
+    "id": "insurance_150",
+    "provider": "Halyk Insurance",
+    "title": "Премиум туристическая защита",
+    "coverage": 1500000,
+    "price": 3571
   }
 ]

@@ -1,20 +1,1352 @@
 [
   {
     "id": "hotel_1",
-    "title": "Comfort Hotel Astana",
-    "city": "Astana",
-    "rating": 4.6,
-    "distance_to_center": "2.1 km",
-    "price_per_night": 15000,
+    "title": "Mega Инн Павлодар",
+    "city": "Павлодар",
+    "rating": 4.1,
+    "distance_to_center": "5.4 км",
+    "price_per_night": 52000,
     "family_friendly": true
   },
   {
     "id": "hotel_2",
-    "title": "Nomad Family Hotel",
-    "city": "Astana",
+    "title": "Steppe Апарт-отель Караганда",
+    "city": "Караганда",
     "rating": 4.4,
-    "distance_to_center": "3.5 km",
-    "price_per_night": 13000,
+    "distance_to_center": "8.1 км",
+    "price_per_night": 57500,
     "family_friendly": true
+  },
+  {
+    "id": "hotel_3",
+    "title": "Hilton Апарт-отель Семей",
+    "city": "Семей",
+    "rating": 4.5,
+    "distance_to_center": "2.2 км",
+    "price_per_night": 16500,
+    "family_friendly": true
+  },
+  {
+    "id": "hotel_4",
+    "title": "Khan Отель Актау",
+    "city": "Актау",
+    "rating": 4.6,
+    "distance_to_center": "8.3 км",
+    "price_per_night": 64500,
+    "family_friendly": false
+  },
+  {
+    "id": "hotel_5",
+    "title": "Central Сюиты Астана",
+    "city": "Астана",
+    "rating": 3.6,
+    "distance_to_center": "7.7 км",
+    "price_per_night": 47000,
+    "family_friendly": true
+  },
+  {
+    "id": "hotel_6",
+    "title": "Plaza Инн Атырау",
+    "city": "Атырау",
+    "rating": 4.3,
+    "distance_to_center": "1.5 км",
+    "price_per_night": 64000,
+    "family_friendly": false
+  },
+  {
+    "id": "hotel_7",
+    "title": "Mega Сюиты Тараз",
+    "city": "Тараз",
+    "rating": 4.4,
+    "distance_to_center": "1.7 км",
+    "price_per_night": 30000,
+    "family_friendly": true
+  },
+  {
+    "id": "hotel_8",
+    "title": "Steppe Сюиты Костанай",
+    "city": "Костанай",
+    "rating": 3.7,
+    "distance_to_center": "7.8 км",
+    "price_per_night": 73000,
+    "family_friendly": true
+  },
+  {
+    "id": "hotel_9",
+    "title": "Comfort Резорт Тараз",
+    "city": "Тараз",
+    "rating": 4.8,
+    "distance_to_center": "5.8 км",
+    "price_per_night": 41000,
+    "family_friendly": true
+  },
+  {
+    "id": "hotel_10",
+    "title": "Steppe Апарт-отель Атырау",
+    "city": "Атырау",
+    "rating": 4.9,
+    "distance_to_center": "0.9 км",
+    "price_per_night": 28500,
+    "family_friendly": false
+  },
+  {
+    "id": "hotel_11",
+    "title": "Silk Road Резорт Атырау",
+    "city": "Атырау",
+    "rating": 4.0,
+    "distance_to_center": "4.0 км",
+    "price_per_night": 40500,
+    "family_friendly": true
+  },
+  {
+    "id": "hotel_12",
+    "title": "Ramada Сюиты Павлодар",
+    "city": "Павлодар",
+    "rating": 4.4,
+    "distance_to_center": "5.0 км",
+    "price_per_night": 57500,
+    "family_friendly": false
+  },
+  {
+    "id": "hotel_13",
+    "title": "Rixos Бутик-отель Атырау",
+    "city": "Атырау",
+    "rating": 4.3,
+    "distance_to_center": "2.6 км",
+    "price_per_night": 59500,
+    "family_friendly": false
+  },
+  {
+    "id": "hotel_14",
+    "title": "Hilton Апарт-отель Орал",
+    "city": "Орал",
+    "rating": 4.9,
+    "distance_to_center": "7.1 км",
+    "price_per_night": 73000,
+    "family_friendly": true
+  },
+  {
+    "id": "hotel_15",
+    "title": "Mega Инн Костанай",
+    "city": "Костанай",
+    "rating": 4.4,
+    "distance_to_center": "5.5 км",
+    "price_per_night": 36500,
+    "family_friendly": false
+  },
+  {
+    "id": "hotel_16",
+    "title": "Atlas Бутик-отель Орал",
+    "city": "Орал",
+    "rating": 4.9,
+    "distance_to_center": "5.5 км",
+    "price_per_night": 25500,
+    "family_friendly": false
+  },
+  {
+    "id": "hotel_17",
+    "title": "Premier Резорт Алматы",
+    "city": "Алматы",
+    "rating": 4.6,
+    "distance_to_center": "5.1 км",
+    "price_per_night": 12000,
+    "family_friendly": true
+  },
+  {
+    "id": "hotel_18",
+    "title": "Grand Бутик-отель Атырау",
+    "city": "Атырау",
+    "rating": 3.7,
+    "distance_to_center": "1.7 км",
+    "price_per_night": 62000,
+    "family_friendly": false
+  },
+  {
+    "id": "hotel_19",
+    "title": "Imperial Апарт-отель Караганда",
+    "city": "Караганда",
+    "rating": 3.9,
+    "distance_to_center": "7.1 км",
+    "price_per_night": 43500,
+    "family_friendly": true
+  },
+  {
+    "id": "hotel_20",
+    "title": "Khan Инн Атырау",
+    "city": "Атырау",
+    "rating": 3.6,
+    "distance_to_center": "4.1 км",
+    "price_per_night": 23000,
+    "family_friendly": true
+  },
+  {
+    "id": "hotel_21",
+    "title": "Khan Бутик-отель Тараз",
+    "city": "Тараз",
+    "rating": 4.7,
+    "distance_to_center": "8.2 км",
+    "price_per_night": 60000,
+    "family_friendly": true
+  },
+  {
+    "id": "hotel_22",
+    "title": "Mega Резорт Астана",
+    "city": "Астана",
+    "rating": 3.7,
+    "distance_to_center": "2.5 км",
+    "price_per_night": 9500,
+    "family_friendly": true
+  },
+  {
+    "id": "hotel_23",
+    "title": "Khan Бутик-отель Тараз",
+    "city": "Тараз",
+    "rating": 4.7,
+    "distance_to_center": "5.1 км",
+    "price_per_night": 42000,
+    "family_friendly": true
+  },
+  {
+    "id": "hotel_24",
+    "title": "Steppe Сюиты Астана",
+    "city": "Астана",
+    "rating": 4.8,
+    "distance_to_center": "0.5 км",
+    "price_per_night": 69500,
+    "family_friendly": false
+  },
+  {
+    "id": "hotel_25",
+    "title": "Kazakh Сюиты Караганда",
+    "city": "Караганда",
+    "rating": 4.2,
+    "distance_to_center": "5.5 км",
+    "price_per_night": 16000,
+    "family_friendly": false
+  },
+  {
+    "id": "hotel_26",
+    "title": "Silk Road Резорт Атырау",
+    "city": "Атырау",
+    "rating": 4.9,
+    "distance_to_center": "1.4 км",
+    "price_per_night": 23000,
+    "family_friendly": true
+  },
+  {
+    "id": "hotel_27",
+    "title": "Ramada Отель Павлодар",
+    "city": "Павлодар",
+    "rating": 3.7,
+    "distance_to_center": "7.6 км",
+    "price_per_night": 38500,
+    "family_friendly": true
+  },
+  {
+    "id": "hotel_28",
+    "title": "Steppe Бутик-отель Караганда",
+    "city": "Караганда",
+    "rating": 4.6,
+    "distance_to_center": "3.7 км",
+    "price_per_night": 78500,
+    "family_friendly": true
+  },
+  {
+    "id": "hotel_29",
+    "title": "Silk Road Отель Актобе",
+    "city": "Актобе",
+    "rating": 4.9,
+    "distance_to_center": "5.3 км",
+    "price_per_night": 72000,
+    "family_friendly": true
+  },
+  {
+    "id": "hotel_30",
+    "title": "Baiterek Инн Алматы",
+    "city": "Алматы",
+    "rating": 4.9,
+    "distance_to_center": "3.9 км",
+    "price_per_night": 36000,
+    "family_friendly": true
+  },
+  {
+    "id": "hotel_31",
+    "title": "Steppe Инн Астана",
+    "city": "Астана",
+    "rating": 4.5,
+    "distance_to_center": "7.7 км",
+    "price_per_night": 79000,
+    "family_friendly": true
+  },
+  {
+    "id": "hotel_32",
+    "title": "Comfort Сюиты Актобе",
+    "city": "Актобе",
+    "rating": 4.7,
+    "distance_to_center": "8.1 км",
+    "price_per_night": 24000,
+    "family_friendly": true
+  },
+  {
+    "id": "hotel_33",
+    "title": "Best Western Бутик-отель Тараз",
+    "city": "Тараз",
+    "rating": 4.0,
+    "distance_to_center": "0.7 км",
+    "price_per_night": 10500,
+    "family_friendly": true
+  },
+  {
+    "id": "hotel_34",
+    "title": "Best Western Отель Костанай",
+    "city": "Костанай",
+    "rating": 4.7,
+    "distance_to_center": "5.1 км",
+    "price_per_night": 35000,
+    "family_friendly": true
+  },
+  {
+    "id": "hotel_35",
+    "title": "Atlas Сюиты Караганда",
+    "city": "Караганда",
+    "rating": 5.0,
+    "distance_to_center": "2.6 км",
+    "price_per_night": 8000,
+    "family_friendly": true
+  },
+  {
+    "id": "hotel_36",
+    "title": "Comfort Сюиты Семей",
+    "city": "Семей",
+    "rating": 3.5,
+    "distance_to_center": "5.7 км",
+    "price_per_night": 22000,
+    "family_friendly": true
+  },
+  {
+    "id": "hotel_37",
+    "title": "Mega Сюиты Караганда",
+    "city": "Караганда",
+    "rating": 3.9,
+    "distance_to_center": "0.4 км",
+    "price_per_night": 50000,
+    "family_friendly": true
+  },
+  {
+    "id": "hotel_38",
+    "title": "Park Апарт-отель Орал",
+    "city": "Орал",
+    "rating": 4.2,
+    "distance_to_center": "6.4 км",
+    "price_per_night": 22500,
+    "family_friendly": true
+  },
+  {
+    "id": "hotel_39",
+    "title": "Nomad Отель Семей",
+    "city": "Семей",
+    "rating": 4.9,
+    "distance_to_center": "4.4 км",
+    "price_per_night": 67000,
+    "family_friendly": true
+  },
+  {
+    "id": "hotel_40",
+    "title": "Mega Бутик-отель Орал",
+    "city": "Орал",
+    "rating": 4.5,
+    "distance_to_center": "2.8 км",
+    "price_per_night": 76000,
+    "family_friendly": true
+  },
+  {
+    "id": "hotel_41",
+    "title": "Royal Резорт Алматы",
+    "city": "Алматы",
+    "rating": 4.2,
+    "distance_to_center": "5.9 км",
+    "price_per_night": 63500,
+    "family_friendly": true
+  },
+  {
+    "id": "hotel_42",
+    "title": "Marriott Инн Астана",
+    "city": "Астана",
+    "rating": 3.9,
+    "distance_to_center": "0.8 км",
+    "price_per_night": 27000,
+    "family_friendly": false
+  },
+  {
+    "id": "hotel_43",
+    "title": "Golden Бутик-отель Костанай",
+    "city": "Костанай",
+    "rating": 4.4,
+    "distance_to_center": "3.4 км",
+    "price_per_night": 50500,
+    "family_friendly": true
+  },
+  {
+    "id": "hotel_44",
+    "title": "Imperial Апарт-отель Павлодар",
+    "city": "Павлодар",
+    "rating": 4.6,
+    "distance_to_center": "1.1 км",
+    "price_per_night": 64000,
+    "family_friendly": false
+  },
+  {
+    "id": "hotel_45",
+    "title": "Atlas Апарт-отель Тараз",
+    "city": "Тараз",
+    "rating": 4.8,
+    "distance_to_center": "3.8 км",
+    "price_per_night": 36000,
+    "family_friendly": true
+  },
+  {
+    "id": "hotel_46",
+    "title": "Central Резорт Караганда",
+    "city": "Караганда",
+    "rating": 4.0,
+    "distance_to_center": "6.3 км",
+    "price_per_night": 62500,
+    "family_friendly": true
+  },
+  {
+    "id": "hotel_47",
+    "title": "Comfort Инн Тараз",
+    "city": "Тараз",
+    "rating": 4.2,
+    "distance_to_center": "5.9 км",
+    "price_per_night": 28000,
+    "family_friendly": true
+  },
+  {
+    "id": "hotel_48",
+    "title": "Marriott Резорт Астана",
+    "city": "Астана",
+    "rating": 4.1,
+    "distance_to_center": "6.4 км",
+    "price_per_night": 20500,
+    "family_friendly": true
+  },
+  {
+    "id": "hotel_49",
+    "title": "Hilton Апарт-отель Семей",
+    "city": "Семей",
+    "rating": 4.1,
+    "distance_to_center": "5.8 км",
+    "price_per_night": 51000,
+    "family_friendly": false
+  },
+  {
+    "id": "hotel_50",
+    "title": "Khan Отель Актобе",
+    "city": "Актобе",
+    "rating": 4.0,
+    "distance_to_center": "5.2 км",
+    "price_per_night": 45500,
+    "family_friendly": false
+  },
+  {
+    "id": "hotel_51",
+    "title": "Best Western Сюиты Семей",
+    "city": "Семей",
+    "rating": 3.7,
+    "distance_to_center": "2.1 км",
+    "price_per_night": 71000,
+    "family_friendly": false
+  },
+  {
+    "id": "hotel_52",
+    "title": "Ramada Инн Караганда",
+    "city": "Караганда",
+    "rating": 4.8,
+    "distance_to_center": "6.9 км",
+    "price_per_night": 37500,
+    "family_friendly": false
+  },
+  {
+    "id": "hotel_53",
+    "title": "Steppe Бутик-отель Костанай",
+    "city": "Костанай",
+    "rating": 4.5,
+    "distance_to_center": "5.3 км",
+    "price_per_night": 11000,
+    "family_friendly": false
+  },
+  {
+    "id": "hotel_54",
+    "title": "Rixos Сюиты Атырау",
+    "city": "Атырау",
+    "rating": 4.0,
+    "distance_to_center": "6.1 км",
+    "price_per_night": 43500,
+    "family_friendly": true
+  },
+  {
+    "id": "hotel_55",
+    "title": "Rixos Сюиты Караганда",
+    "city": "Караганда",
+    "rating": 4.1,
+    "distance_to_center": "4.9 км",
+    "price_per_night": 26500,
+    "family_friendly": true
+  },
+  {
+    "id": "hotel_56",
+    "title": "Silk Road Отель Орал",
+    "city": "Орал",
+    "rating": 3.8,
+    "distance_to_center": "6.4 км",
+    "price_per_night": 20000,
+    "family_friendly": true
+  },
+  {
+    "id": "hotel_57",
+    "title": "Grand Сюиты Павлодар",
+    "city": "Павлодар",
+    "rating": 4.0,
+    "distance_to_center": "2.9 км",
+    "price_per_night": 56500,
+    "family_friendly": false
+  },
+  {
+    "id": "hotel_58",
+    "title": "Marriott Отель Костанай",
+    "city": "Костанай",
+    "rating": 4.4,
+    "distance_to_center": "1.6 км",
+    "price_per_night": 28000,
+    "family_friendly": false
+  },
+  {
+    "id": "hotel_59",
+    "title": "Comfort Резорт Астана",
+    "city": "Астана",
+    "rating": 4.2,
+    "distance_to_center": "4.3 км",
+    "price_per_night": 63500,
+    "family_friendly": true
+  },
+  {
+    "id": "hotel_60",
+    "title": "Atlas Апарт-отель Актау",
+    "city": "Актау",
+    "rating": 3.7,
+    "distance_to_center": "3.1 км",
+    "price_per_night": 22500,
+    "family_friendly": false
+  },
+  {
+    "id": "hotel_61",
+    "title": "Nomad Резорт Тараз",
+    "city": "Тараз",
+    "rating": 3.6,
+    "distance_to_center": "5.8 км",
+    "price_per_night": 77000,
+    "family_friendly": true
+  },
+  {
+    "id": "hotel_62",
+    "title": "Hilton Отель Костанай",
+    "city": "Костанай",
+    "rating": 3.8,
+    "distance_to_center": "2.8 км",
+    "price_per_night": 34500,
+    "family_friendly": true
+  },
+  {
+    "id": "hotel_63",
+    "title": "Premier Инн Атырау",
+    "city": "Атырау",
+    "rating": 4.6,
+    "distance_to_center": "0.4 км",
+    "price_per_night": 23500,
+    "family_friendly": true
+  },
+  {
+    "id": "hotel_64",
+    "title": "City Апарт-отель Шымкент",
+    "city": "Шымкент",
+    "rating": 4.8,
+    "distance_to_center": "4.4 км",
+    "price_per_night": 38000,
+    "family_friendly": true
+  },
+  {
+    "id": "hotel_65",
+    "title": "City Бутик-отель Астана",
+    "city": "Астана",
+    "rating": 4.2,
+    "distance_to_center": "3.9 км",
+    "price_per_night": 13500,
+    "family_friendly": true
+  },
+  {
+    "id": "hotel_66",
+    "title": "Nomad Резорт Караганда",
+    "city": "Караганда",
+    "rating": 4.1,
+    "distance_to_center": "6.1 км",
+    "price_per_night": 61000,
+    "family_friendly": true
+  },
+  {
+    "id": "hotel_67",
+    "title": "Rixos Инн Актобе",
+    "city": "Актобе",
+    "rating": 4.4,
+    "distance_to_center": "6.9 км",
+    "price_per_night": 30500,
+    "family_friendly": false
+  },
+  {
+    "id": "hotel_68",
+    "title": "Marriott Резорт Караганда",
+    "city": "Караганда",
+    "rating": 4.4,
+    "distance_to_center": "2.3 км",
+    "price_per_night": 21500,
+    "family_friendly": false
+  },
+  {
+    "id": "hotel_69",
+    "title": "City Инн Астана",
+    "city": "Астана",
+    "rating": 4.7,
+    "distance_to_center": "2.1 км",
+    "price_per_night": 52500,
+    "family_friendly": true
+  },
+  {
+    "id": "hotel_70",
+    "title": "Silk Road Отель Семей",
+    "city": "Семей",
+    "rating": 4.9,
+    "distance_to_center": "4.5 км",
+    "price_per_night": 77500,
+    "family_friendly": true
+  },
+  {
+    "id": "hotel_71",
+    "title": "Khan Бутик-отель Караганда",
+    "city": "Караганда",
+    "rating": 3.7,
+    "distance_to_center": "2.2 км",
+    "price_per_night": 27000,
+    "family_friendly": true
+  },
+  {
+    "id": "hotel_72",
+    "title": "Kazakh Сюиты Шымкент",
+    "city": "Шымкент",
+    "rating": 4.7,
+    "distance_to_center": "1.8 км",
+    "price_per_night": 17500,
+    "family_friendly": true
+  },
+  {
+    "id": "hotel_73",
+    "title": "Atlas Апарт-отель Павлодар",
+    "city": "Павлодар",
+    "rating": 4.8,
+    "distance_to_center": "5.9 км",
+    "price_per_night": 66500,
+    "family_friendly": false
+  },
+  {
+    "id": "hotel_74",
+    "title": "Kazakh Инн Тараз",
+    "city": "Тараз",
+    "rating": 3.6,
+    "distance_to_center": "1.5 км",
+    "price_per_night": 49000,
+    "family_friendly": true
+  },
+  {
+    "id": "hotel_75",
+    "title": "Premier Инн Тараз",
+    "city": "Тараз",
+    "rating": 3.6,
+    "distance_to_center": "3.2 км",
+    "price_per_night": 15000,
+    "family_friendly": true
+  },
+  {
+    "id": "hotel_76",
+    "title": "Hilton Отель Павлодар",
+    "city": "Павлодар",
+    "rating": 3.6,
+    "distance_to_center": "7.1 км",
+    "price_per_night": 56000,
+    "family_friendly": true
+  },
+  {
+    "id": "hotel_77",
+    "title": "Kazakh Апарт-отель Костанай",
+    "city": "Костанай",
+    "rating": 4.3,
+    "distance_to_center": "4.1 км",
+    "price_per_night": 58000,
+    "family_friendly": false
+  },
+  {
+    "id": "hotel_78",
+    "title": "Central Апарт-отель Алматы",
+    "city": "Алматы",
+    "rating": 4.2,
+    "distance_to_center": "2.9 км",
+    "price_per_night": 32500,
+    "family_friendly": true
+  },
+  {
+    "id": "hotel_79",
+    "title": "Central Отель Алматы",
+    "city": "Алматы",
+    "rating": 3.6,
+    "distance_to_center": "8.4 км",
+    "price_per_night": 53000,
+    "family_friendly": false
+  },
+  {
+    "id": "hotel_80",
+    "title": "Hilton Сюиты Шымкент",
+    "city": "Шымкент",
+    "rating": 4.3,
+    "distance_to_center": "8.4 км",
+    "price_per_night": 65000,
+    "family_friendly": false
+  },
+  {
+    "id": "hotel_81",
+    "title": "Plaza Инн Шымкент",
+    "city": "Шымкент",
+    "rating": 4.7,
+    "distance_to_center": "3.5 км",
+    "price_per_night": 45000,
+    "family_friendly": false
+  },
+  {
+    "id": "hotel_82",
+    "title": "Hilton Бутик-отель Костанай",
+    "city": "Костанай",
+    "rating": 3.6,
+    "distance_to_center": "0.8 км",
+    "price_per_night": 51500,
+    "family_friendly": false
+  },
+  {
+    "id": "hotel_83",
+    "title": "Premier Инн Актобе",
+    "city": "Актобе",
+    "rating": 4.4,
+    "distance_to_center": "3.0 км",
+    "price_per_night": 27500,
+    "family_friendly": true
+  },
+  {
+    "id": "hotel_84",
+    "title": "Premier Бутик-отель Караганда",
+    "city": "Караганда",
+    "rating": 4.6,
+    "distance_to_center": "1.4 км",
+    "price_per_night": 59000,
+    "family_friendly": true
+  },
+  {
+    "id": "hotel_85",
+    "title": "Golden Резорт Атырау",
+    "city": "Атырау",
+    "rating": 4.5,
+    "distance_to_center": "7.0 км",
+    "price_per_night": 51000,
+    "family_friendly": false
+  },
+  {
+    "id": "hotel_86",
+    "title": "Imperial Отель Тараз",
+    "city": "Тараз",
+    "rating": 3.5,
+    "distance_to_center": "4.5 км",
+    "price_per_night": 63000,
+    "family_friendly": true
+  },
+  {
+    "id": "hotel_87",
+    "title": "Best Western Инн Шымкент",
+    "city": "Шымкент",
+    "rating": 5.0,
+    "distance_to_center": "1.9 км",
+    "price_per_night": 71500,
+    "family_friendly": true
+  },
+  {
+    "id": "hotel_88",
+    "title": "Premier Отель Астана",
+    "city": "Астана",
+    "rating": 4.8,
+    "distance_to_center": "6.6 км",
+    "price_per_night": 74500,
+    "family_friendly": false
+  },
+  {
+    "id": "hotel_89",
+    "title": "Steppe Инн Алматы",
+    "city": "Алматы",
+    "rating": 3.7,
+    "distance_to_center": "5.2 км",
+    "price_per_night": 25000,
+    "family_friendly": true
+  },
+  {
+    "id": "hotel_90",
+    "title": "Atlas Апарт-отель Орал",
+    "city": "Орал",
+    "rating": 3.6,
+    "distance_to_center": "6.2 км",
+    "price_per_night": 29500,
+    "family_friendly": true
+  },
+  {
+    "id": "hotel_91",
+    "title": "Khan Сюиты Тараз",
+    "city": "Тараз",
+    "rating": 4.6,
+    "distance_to_center": "5.3 км",
+    "price_per_night": 66000,
+    "family_friendly": true
+  },
+  {
+    "id": "hotel_92",
+    "title": "Golden Сюиты Актау",
+    "city": "Актау",
+    "rating": 4.7,
+    "distance_to_center": "8.2 км",
+    "price_per_night": 48500,
+    "family_friendly": true
+  },
+  {
+    "id": "hotel_93",
+    "title": "Steppe Апарт-отель Караганда",
+    "city": "Караганда",
+    "rating": 3.9,
+    "distance_to_center": "4.1 км",
+    "price_per_night": 65500,
+    "family_friendly": true
+  },
+  {
+    "id": "hotel_94",
+    "title": "Imperial Резорт Семей",
+    "city": "Семей",
+    "rating": 4.7,
+    "distance_to_center": "7.0 км",
+    "price_per_night": 29000,
+    "family_friendly": true
+  },
+  {
+    "id": "hotel_95",
+    "title": "Hilton Бутик-отель Атырау",
+    "city": "Атырау",
+    "rating": 4.3,
+    "distance_to_center": "7.5 км",
+    "price_per_night": 70500,
+    "family_friendly": true
+  },
+  {
+    "id": "hotel_96",
+    "title": "Imperial Отель Орал",
+    "city": "Орал",
+    "rating": 3.7,
+    "distance_to_center": "1.0 км",
+    "price_per_night": 45000,
+    "family_friendly": true
+  },
+  {
+    "id": "hotel_97",
+    "title": "Holiday Инн Resort Семей",
+    "city": "Семей",
+    "rating": 3.8,
+    "distance_to_center": "8.1 км",
+    "price_per_night": 20000,
+    "family_friendly": true
+  },
+  {
+    "id": "hotel_98",
+    "title": "Rixos Резорт Караганда",
+    "city": "Караганда",
+    "rating": 4.1,
+    "distance_to_center": "3.6 км",
+    "price_per_night": 14500,
+    "family_friendly": true
+  },
+  {
+    "id": "hotel_99",
+    "title": "Plaza Сюиты Астана",
+    "city": "Астана",
+    "rating": 3.6,
+    "distance_to_center": "2.9 км",
+    "price_per_night": 11500,
+    "family_friendly": false
+  },
+  {
+    "id": "hotel_100",
+    "title": "Grand Сюиты Тараз",
+    "city": "Тараз",
+    "rating": 4.9,
+    "distance_to_center": "0.6 км",
+    "price_per_night": 26000,
+    "family_friendly": true
+  },
+  {
+    "id": "hotel_101",
+    "title": "Holiday Инн Boutique Орал",
+    "city": "Орал",
+    "rating": 3.5,
+    "distance_to_center": "4.0 км",
+    "price_per_night": 69000,
+    "family_friendly": true
+  },
+  {
+    "id": "hotel_102",
+    "title": "Comfort Сюиты Алматы",
+    "city": "Алматы",
+    "rating": 4.6,
+    "distance_to_center": "4.8 км",
+    "price_per_night": 27500,
+    "family_friendly": false
+  },
+  {
+    "id": "hotel_103",
+    "title": "Ramada Инн Актобе",
+    "city": "Актобе",
+    "rating": 3.6,
+    "distance_to_center": "2.8 км",
+    "price_per_night": 39000,
+    "family_friendly": true
+  },
+  {
+    "id": "hotel_104",
+    "title": "Mega Апарт-отель Тараз",
+    "city": "Тараз",
+    "rating": 4.8,
+    "distance_to_center": "0.8 км",
+    "price_per_night": 67500,
+    "family_friendly": true
+  },
+  {
+    "id": "hotel_105",
+    "title": "Golden Отель Костанай",
+    "city": "Костанай",
+    "rating": 4.6,
+    "distance_to_center": "5.0 км",
+    "price_per_night": 75500,
+    "family_friendly": true
+  },
+  {
+    "id": "hotel_106",
+    "title": "Rixos Апарт-отель Актобе",
+    "city": "Актобе",
+    "rating": 4.1,
+    "distance_to_center": "2.3 км",
+    "price_per_night": 54000,
+    "family_friendly": false
+  },
+  {
+    "id": "hotel_107",
+    "title": "Marriott Апарт-отель Тараз",
+    "city": "Тараз",
+    "rating": 4.3,
+    "distance_to_center": "0.9 км",
+    "price_per_night": 55000,
+    "family_friendly": false
+  },
+  {
+    "id": "hotel_108",
+    "title": "Golden Отель Семей",
+    "city": "Семей",
+    "rating": 3.6,
+    "distance_to_center": "7.5 км",
+    "price_per_night": 59000,
+    "family_friendly": true
+  },
+  {
+    "id": "hotel_109",
+    "title": "Comfort Бутик-отель Караганда",
+    "city": "Караганда",
+    "rating": 3.6,
+    "distance_to_center": "3.2 км",
+    "price_per_night": 10000,
+    "family_friendly": true
+  },
+  {
+    "id": "hotel_110",
+    "title": "Steppe Бутик-отель Орал",
+    "city": "Орал",
+    "rating": 4.6,
+    "distance_to_center": "6.6 км",
+    "price_per_night": 21500,
+    "family_friendly": true
+  },
+  {
+    "id": "hotel_111",
+    "title": "Hilton Инн Шымкент",
+    "city": "Шымкент",
+    "rating": 4.5,
+    "distance_to_center": "3.1 км",
+    "price_per_night": 79500,
+    "family_friendly": false
+  },
+  {
+    "id": "hotel_112",
+    "title": "Baiterek Резорт Павлодар",
+    "city": "Павлодар",
+    "rating": 3.6,
+    "distance_to_center": "7.0 км",
+    "price_per_night": 31500,
+    "family_friendly": true
+  },
+  {
+    "id": "hotel_113",
+    "title": "Premier Сюиты Алматы",
+    "city": "Алматы",
+    "rating": 4.8,
+    "distance_to_center": "6.8 км",
+    "price_per_night": 13500,
+    "family_friendly": true
+  },
+  {
+    "id": "hotel_114",
+    "title": "Imperial Резорт Атырау",
+    "city": "Атырау",
+    "rating": 3.6,
+    "distance_to_center": "4.2 км",
+    "price_per_night": 79000,
+    "family_friendly": false
+  },
+  {
+    "id": "hotel_115",
+    "title": "Premier Инн Актау",
+    "city": "Актау",
+    "rating": 4.0,
+    "distance_to_center": "7.4 км",
+    "price_per_night": 14000,
+    "family_friendly": true
+  },
+  {
+    "id": "hotel_116",
+    "title": "Park Резорт Караганда",
+    "city": "Караганда",
+    "rating": 4.1,
+    "distance_to_center": "7.6 км",
+    "price_per_night": 65500,
+    "family_friendly": true
+  },
+  {
+    "id": "hotel_117",
+    "title": "Baiterek Резорт Павлодар",
+    "city": "Павлодар",
+    "rating": 4.3,
+    "distance_to_center": "7.9 км",
+    "price_per_night": 56000,
+    "family_friendly": true
+  },
+  {
+    "id": "hotel_118",
+    "title": "Park Отель Орал",
+    "city": "Орал",
+    "rating": 4.7,
+    "distance_to_center": "5.2 км",
+    "price_per_night": 64000,
+    "family_friendly": false
+  },
+  {
+    "id": "hotel_119",
+    "title": "Grand Отель Атырау",
+    "city": "Атырау",
+    "rating": 3.9,
+    "distance_to_center": "3.0 км",
+    "price_per_night": 18000,
+    "family_friendly": true
+  },
+  {
+    "id": "hotel_120",
+    "title": "Baiterek Резорт Костанай",
+    "city": "Костанай",
+    "rating": 4.0,
+    "distance_to_center": "6.0 км",
+    "price_per_night": 29500,
+    "family_friendly": true
+  },
+  {
+    "id": "hotel_121",
+    "title": "Plaza Апарт-отель Орал",
+    "city": "Орал",
+    "rating": 5.0,
+    "distance_to_center": "2.6 км",
+    "price_per_night": 65000,
+    "family_friendly": true
+  },
+  {
+    "id": "hotel_122",
+    "title": "Steppe Бутик-отель Астана",
+    "city": "Астана",
+    "rating": 4.7,
+    "distance_to_center": "3.3 км",
+    "price_per_night": 61000,
+    "family_friendly": false
+  },
+  {
+    "id": "hotel_123",
+    "title": "Rixos Сюиты Шымкент",
+    "city": "Шымкент",
+    "rating": 3.6,
+    "distance_to_center": "0.6 км",
+    "price_per_night": 65000,
+    "family_friendly": false
+  },
+  {
+    "id": "hotel_124",
+    "title": "Plaza Резорт Караганда",
+    "city": "Караганда",
+    "rating": 4.5,
+    "distance_to_center": "5.3 км",
+    "price_per_night": 12000,
+    "family_friendly": true
+  },
+  {
+    "id": "hotel_125",
+    "title": "Central Отель Караганда",
+    "city": "Караганда",
+    "rating": 4.1,
+    "distance_to_center": "4.6 км",
+    "price_per_night": 26000,
+    "family_friendly": false
+  },
+  {
+    "id": "hotel_126",
+    "title": "Wyndham Отель Атырау",
+    "city": "Атырау",
+    "rating": 4.2,
+    "distance_to_center": "6.3 км",
+    "price_per_night": 11000,
+    "family_friendly": true
+  },
+  {
+    "id": "hotel_127",
+    "title": "Ramada Инн Семей",
+    "city": "Семей",
+    "rating": 3.8,
+    "distance_to_center": "6.1 км",
+    "price_per_night": 42000,
+    "family_friendly": false
+  },
+  {
+    "id": "hotel_128",
+    "title": "Baiterek Резорт Атырау",
+    "city": "Атырау",
+    "rating": 4.8,
+    "distance_to_center": "1.3 км",
+    "price_per_night": 34000,
+    "family_friendly": true
+  },
+  {
+    "id": "hotel_129",
+    "title": "Baiterek Резорт Шымкент",
+    "city": "Шымкент",
+    "rating": 5.0,
+    "distance_to_center": "6.9 км",
+    "price_per_night": 19500,
+    "family_friendly": true
+  },
+  {
+    "id": "hotel_130",
+    "title": "Plaza Бутик-отель Тараз",
+    "city": "Тараз",
+    "rating": 3.9,
+    "distance_to_center": "4.8 км",
+    "price_per_night": 16500,
+    "family_friendly": true
+  },
+  {
+    "id": "hotel_131",
+    "title": "Baiterek Бутик-отель Шымкент",
+    "city": "Шымкент",
+    "rating": 4.3,
+    "distance_to_center": "6.8 км",
+    "price_per_night": 30500,
+    "family_friendly": true
+  },
+  {
+    "id": "hotel_132",
+    "title": "Mega Сюиты Актау",
+    "city": "Актау",
+    "rating": 3.5,
+    "distance_to_center": "6.8 км",
+    "price_per_night": 39000,
+    "family_friendly": false
+  },
+  {
+    "id": "hotel_133",
+    "title": "Plaza Резорт Костанай",
+    "city": "Костанай",
+    "rating": 3.6,
+    "distance_to_center": "5.3 км",
+    "price_per_night": 25000,
+    "family_friendly": true
+  },
+  {
+    "id": "hotel_134",
+    "title": "Baiterek Бутик-отель Актобе",
+    "city": "Актобе",
+    "rating": 4.7,
+    "distance_to_center": "4.6 км",
+    "price_per_night": 70500,
+    "family_friendly": false
+  },
+  {
+    "id": "hotel_135",
+    "title": "Holiday Инн Inn Астана",
+    "city": "Астана",
+    "rating": 4.5,
+    "distance_to_center": "4.0 км",
+    "price_per_night": 17500,
+    "family_friendly": true
+  },
+  {
+    "id": "hotel_136",
+    "title": "Atlas Апарт-отель Шымкент",
+    "city": "Шымкент",
+    "rating": 3.7,
+    "distance_to_center": "6.6 км",
+    "price_per_night": 31500,
+    "family_friendly": false
+  },
+  {
+    "id": "hotel_137",
+    "title": "Ramada Апарт-отель Алматы",
+    "city": "Алматы",
+    "rating": 3.7,
+    "distance_to_center": "2.8 км",
+    "price_per_night": 28000,
+    "family_friendly": false
+  },
+  {
+    "id": "hotel_138",
+    "title": "Plaza Апарт-отель Актау",
+    "city": "Актау",
+    "rating": 3.9,
+    "distance_to_center": "7.2 км",
+    "price_per_night": 45000,
+    "family_friendly": false
+  },
+  {
+    "id": "hotel_139",
+    "title": "Comfort Сюиты Семей",
+    "city": "Семей",
+    "rating": 3.6,
+    "distance_to_center": "5.3 км",
+    "price_per_night": 47500,
+    "family_friendly": false
+  },
+  {
+    "id": "hotel_140",
+    "title": "Nomad Апарт-отель Шымкент",
+    "city": "Шымкент",
+    "rating": 4.4,
+    "distance_to_center": "1.7 км",
+    "price_per_night": 28000,
+    "family_friendly": false
+  },
+  {
+    "id": "hotel_141",
+    "title": "Nomad Отель Караганда",
+    "city": "Караганда",
+    "rating": 4.9,
+    "distance_to_center": "1.0 км",
+    "price_per_night": 11500,
+    "family_friendly": false
+  },
+  {
+    "id": "hotel_142",
+    "title": "Silk Road Сюиты Атырау",
+    "city": "Атырау",
+    "rating": 3.5,
+    "distance_to_center": "5.4 км",
+    "price_per_night": 62500,
+    "family_friendly": false
+  },
+  {
+    "id": "hotel_143",
+    "title": "Premier Бутик-отель Семей",
+    "city": "Семей",
+    "rating": 4.7,
+    "distance_to_center": "4.3 км",
+    "price_per_night": 47500,
+    "family_friendly": false
+  },
+  {
+    "id": "hotel_144",
+    "title": "Premier Резорт Актобе",
+    "city": "Актобе",
+    "rating": 3.7,
+    "distance_to_center": "5.9 км",
+    "price_per_night": 17500,
+    "family_friendly": true
+  },
+  {
+    "id": "hotel_145",
+    "title": "Central Сюиты Павлодар",
+    "city": "Павлодар",
+    "rating": 4.0,
+    "distance_to_center": "5.3 км",
+    "price_per_night": 52500,
+    "family_friendly": false
+  },
+  {
+    "id": "hotel_146",
+    "title": "Khan Инн Караганда",
+    "city": "Караганда",
+    "rating": 4.1,
+    "distance_to_center": "1.4 км",
+    "price_per_night": 60000,
+    "family_friendly": false
+  },
+  {
+    "id": "hotel_147",
+    "title": "Grand Сюиты Астана",
+    "city": "Астана",
+    "rating": 4.2,
+    "distance_to_center": "1.3 км",
+    "price_per_night": 69000,
+    "family_friendly": true
+  },
+  {
+    "id": "hotel_148",
+    "title": "Hilton Инн Астана",
+    "city": "Астана",
+    "rating": 4.1,
+    "distance_to_center": "7.4 км",
+    "price_per_night": 58000,
+    "family_friendly": true
+  },
+  {
+    "id": "hotel_149",
+    "title": "Nomad Бутик-отель Караганда",
+    "city": "Караганда",
+    "rating": 3.7,
+    "distance_to_center": "1.9 км",
+    "price_per_night": 48500,
+    "family_friendly": false
+  },
+  {
+    "id": "hotel_150",
+    "title": "Royal Инн Павлодар",
+    "city": "Павлодар",
+    "rating": 4.9,
+    "distance_to_center": "0.5 км",
+    "price_per_night": 73000,
+    "family_friendly": false
   }
 ]

@@ -1,23 +1,1052 @@
 [
   {
     "id": "pharmacy_1",
-    "title": "Children fever reducer",
-    "trip_type": "family",
-    "price": 1800,
-    "required": true
+    "title": "Пастилки для горла",
+    "trip_type": "деловая",
+    "price": 514,
+    "required": false
   },
   {
     "id": "pharmacy_2",
-    "title": "Antiseptic spray",
-    "trip_type": "family",
-    "price": 1200,
+    "title": "Антисептический спрей",
+    "trip_type": "приключенческая",
+    "price": 1172,
     "required": true
   },
   {
     "id": "pharmacy_3",
-    "title": "Plasters",
-    "trip_type": "family",
-    "price": 700,
+    "title": "Бинт",
+    "trip_type": "соло",
+    "price": 422,
     "required": false
+  },
+  {
+    "id": "pharmacy_4",
+    "title": "Охлаждающий пакет",
+    "trip_type": "деловая",
+    "price": 1190,
+    "required": false
+  },
+  {
+    "id": "pharmacy_5",
+    "title": "Бинт",
+    "trip_type": "семейная",
+    "price": 697,
+    "required": false
+  },
+  {
+    "id": "pharmacy_6",
+    "title": "Цинк (пастилки)",
+    "trip_type": "деловая",
+    "price": 868,
+    "required": false
+  },
+  {
+    "id": "pharmacy_7",
+    "title": "Пластыри (набор)",
+    "trip_type": "семейная",
+    "price": 890,
+    "required": false
+  },
+  {
+    "id": "pharmacy_8",
+    "title": "Гель арника",
+    "trip_type": "соло",
+    "price": 1566,
+    "required": false
+  },
+  {
+    "id": "pharmacy_9",
+    "title": "Медицинская маска (10 шт.)",
+    "trip_type": "приключенческая",
+    "price": 833,
+    "required": true
+  },
+  {
+    "id": "pharmacy_10",
+    "title": "Эластичный бинт",
+    "trip_type": "приключенческая",
+    "price": 747,
+    "required": false
+  },
+  {
+    "id": "pharmacy_11",
+    "title": "Мелатонин (для сна)",
+    "trip_type": "соло",
+    "price": 1839,
+    "required": false
+  },
+  {
+    "id": "pharmacy_12",
+    "title": "Пластыри (набор)",
+    "trip_type": "соло",
+    "price": 703,
+    "required": false
+  },
+  {
+    "id": "pharmacy_13",
+    "title": "Активированный уголь",
+    "trip_type": "семейная",
+    "price": 279,
+    "required": true
+  },
+  {
+    "id": "pharmacy_14",
+    "title": "Репеллент от насекомых",
+    "trip_type": "деловая",
+    "price": 1630,
+    "required": false
+  },
+  {
+    "id": "pharmacy_15",
+    "title": "Жгут",
+    "trip_type": "семейная",
+    "price": 1308,
+    "required": false
+  },
+  {
+    "id": "pharmacy_16",
+    "title": "Медицинские перчатки (10 шт.)",
+    "trip_type": "деловая",
+    "price": 906,
+    "required": true
+  },
+  {
+    "id": "pharmacy_17",
+    "title": "Термометр",
+    "trip_type": "приключенческая",
+    "price": 2637,
+    "required": true
+  },
+  {
+    "id": "pharmacy_18",
+    "title": "Антигистаминные таблетки",
+    "trip_type": "соло",
+    "price": 846,
+    "required": false
+  },
+  {
+    "id": "pharmacy_19",
+    "title": "Термометр",
+    "trip_type": "соло",
+    "price": 2420,
+    "required": true
+  },
+  {
+    "id": "pharmacy_20",
+    "title": "Жгут",
+    "trip_type": "семейная",
+    "price": 1175,
+    "required": false
+  },
+  {
+    "id": "pharmacy_21",
+    "title": "Пастилки для горла",
+    "trip_type": "деловая",
+    "price": 482,
+    "required": false
+  },
+  {
+    "id": "pharmacy_22",
+    "title": "Цинк (пастилки)",
+    "trip_type": "приключенческая",
+    "price": 825,
+    "required": false
+  },
+  {
+    "id": "pharmacy_23",
+    "title": "Назальный спрей",
+    "trip_type": "семейная",
+    "price": 739,
+    "required": false
+  },
+  {
+    "id": "pharmacy_24",
+    "title": "Эластичный бинт",
+    "trip_type": "групповая",
+    "price": 811,
+    "required": false
+  },
+  {
+    "id": "pharmacy_25",
+    "title": "Пастилки для горла",
+    "trip_type": "деловая",
+    "price": 348,
+    "required": false
+  },
+  {
+    "id": "pharmacy_26",
+    "title": "Активированный уголь",
+    "trip_type": "семейная",
+    "price": 271,
+    "required": true
+  },
+  {
+    "id": "pharmacy_27",
+    "title": "Парацетамол 500мг",
+    "trip_type": "соло",
+    "price": 281,
+    "required": true
+  },
+  {
+    "id": "pharmacy_28",
+    "title": "Капли для глаз (сухой глаз)",
+    "trip_type": "деловая",
+    "price": 1101,
+    "required": false
+  },
+  {
+    "id": "pharmacy_29",
+    "title": "Пинцет",
+    "trip_type": "групповая",
+    "price": 343,
+    "required": false
+  },
+  {
+    "id": "pharmacy_30",
+    "title": "Назальный спрей",
+    "trip_type": "семейная",
+    "price": 688,
+    "required": false
+  },
+  {
+    "id": "pharmacy_31",
+    "title": "Пластыри (набор)",
+    "trip_type": "деловая",
+    "price": 701,
+    "required": false
+  },
+  {
+    "id": "pharmacy_32",
+    "title": "Капли для глаз (сухой глаз)",
+    "trip_type": "приключенческая",
+    "price": 1047,
+    "required": false
+  },
+  {
+    "id": "pharmacy_33",
+    "title": "Антигистаминные таблетки",
+    "trip_type": "деловая",
+    "price": 821,
+    "required": false
+  },
+  {
+    "id": "pharmacy_34",
+    "title": "Антисептический спрей",
+    "trip_type": "групповая",
+    "price": 1186,
+    "required": true
+  },
+  {
+    "id": "pharmacy_35",
+    "title": "Гель арника",
+    "trip_type": "деловая",
+    "price": 1702,
+    "required": false
+  },
+  {
+    "id": "pharmacy_36",
+    "title": "Ибупрофен 200мг",
+    "trip_type": "деловая",
+    "price": 515,
+    "required": true
+  },
+  {
+    "id": "pharmacy_37",
+    "title": "Соль для оральной регидратации",
+    "trip_type": "соло",
+    "price": 531,
+    "required": true
+  },
+  {
+    "id": "pharmacy_38",
+    "title": "Соль для оральной регидратации",
+    "trip_type": "приключенческая",
+    "price": 490,
+    "required": true
+  },
+  {
+    "id": "pharmacy_39",
+    "title": "Мелатонин (для сна)",
+    "trip_type": "семейная",
+    "price": 1776,
+    "required": false
+  },
+  {
+    "id": "pharmacy_40",
+    "title": "Пастилки для горла",
+    "trip_type": "деловая",
+    "price": 451,
+    "required": false
+  },
+  {
+    "id": "pharmacy_41",
+    "title": "Охлаждающий пакет",
+    "trip_type": "деловая",
+    "price": 1281,
+    "required": false
+  },
+  {
+    "id": "pharmacy_42",
+    "title": "Антисептический спрей",
+    "trip_type": "приключенческая",
+    "price": 1144,
+    "required": true
+  },
+  {
+    "id": "pharmacy_43",
+    "title": "Медицинские ножницы",
+    "trip_type": "деловая",
+    "price": 520,
+    "required": false
+  },
+  {
+    "id": "pharmacy_44",
+    "title": "Таблетки от диареи",
+    "trip_type": "соло",
+    "price": 969,
+    "required": true
+  },
+  {
+    "id": "pharmacy_45",
+    "title": "Ибупрофен 200мг",
+    "trip_type": "приключенческая",
+    "price": 515,
+    "required": true
+  },
+  {
+    "id": "pharmacy_46",
+    "title": "Кальций (таблетки)",
+    "trip_type": "деловая",
+    "price": 1578,
+    "required": false
+  },
+  {
+    "id": "pharmacy_47",
+    "title": "Медицинские перчатки (10 шт.)",
+    "trip_type": "групповая",
+    "price": 1089,
+    "required": true
+  },
+  {
+    "id": "pharmacy_48",
+    "title": "Жгут",
+    "trip_type": "приключенческая",
+    "price": 1298,
+    "required": false
+  },
+  {
+    "id": "pharmacy_49",
+    "title": "Соль для оральной регидратации",
+    "trip_type": "приключенческая",
+    "price": 363,
+    "required": true
+  },
+  {
+    "id": "pharmacy_50",
+    "title": "Витамин C 500мг",
+    "trip_type": "приключенческая",
+    "price": 615,
+    "required": false
+  },
+  {
+    "id": "pharmacy_51",
+    "title": "Антисептический спрей",
+    "trip_type": "групповая",
+    "price": 1341,
+    "required": true
+  },
+  {
+    "id": "pharmacy_52",
+    "title": "Медицинские перчатки (10 шт.)",
+    "trip_type": "соло",
+    "price": 1099,
+    "required": true
+  },
+  {
+    "id": "pharmacy_53",
+    "title": "Репеллент от насекомых",
+    "trip_type": "соло",
+    "price": 1451,
+    "required": false
+  },
+  {
+    "id": "pharmacy_54",
+    "title": "Пастилки для горла",
+    "trip_type": "групповая",
+    "price": 436,
+    "required": false
+  },
+  {
+    "id": "pharmacy_55",
+    "title": "Антисептический спрей",
+    "trip_type": "групповая",
+    "price": 1212,
+    "required": true
+  },
+  {
+    "id": "pharmacy_56",
+    "title": "Медицинские ножницы",
+    "trip_type": "соло",
+    "price": 631,
+    "required": false
+  },
+  {
+    "id": "pharmacy_57",
+    "title": "Соль для оральной регидратации",
+    "trip_type": "групповая",
+    "price": 471,
+    "required": true
+  },
+  {
+    "id": "pharmacy_58",
+    "title": "Жгут",
+    "trip_type": "групповая",
+    "price": 1283,
+    "required": false
+  },
+  {
+    "id": "pharmacy_59",
+    "title": "Ибупрофен 200мг",
+    "trip_type": "групповая",
+    "price": 500,
+    "required": true
+  },
+  {
+    "id": "pharmacy_60",
+    "title": "Солнцезащитный крем SPF50",
+    "trip_type": "соло",
+    "price": 2188,
+    "required": false
+  },
+  {
+    "id": "pharmacy_61",
+    "title": "Магний (добавка)",
+    "trip_type": "приключенческая",
+    "price": 1777,
+    "required": false
+  },
+  {
+    "id": "pharmacy_62",
+    "title": "Соль для оральной регидратации",
+    "trip_type": "семейная",
+    "price": 601,
+    "required": true
+  },
+  {
+    "id": "pharmacy_63",
+    "title": "Бинт",
+    "trip_type": "соло",
+    "price": 428,
+    "required": false
+  },
+  {
+    "id": "pharmacy_64",
+    "title": "Витамин C 500мг",
+    "trip_type": "групповая",
+    "price": 610,
+    "required": false
+  },
+  {
+    "id": "pharmacy_65",
+    "title": "Кальций (таблетки)",
+    "trip_type": "приключенческая",
+    "price": 1300,
+    "required": false
+  },
+  {
+    "id": "pharmacy_66",
+    "title": "Таблетки от диареи",
+    "trip_type": "приключенческая",
+    "price": 766,
+    "required": true
+  },
+  {
+    "id": "pharmacy_67",
+    "title": "Соль для оральной регидратации",
+    "trip_type": "семейная",
+    "price": 515,
+    "required": true
+  },
+  {
+    "id": "pharmacy_68",
+    "title": "Ибупрофен 200мг",
+    "trip_type": "групповая",
+    "price": 395,
+    "required": true
+  },
+  {
+    "id": "pharmacy_69",
+    "title": "Солнцезащитный крем SPF50",
+    "trip_type": "групповая",
+    "price": 1956,
+    "required": false
+  },
+  {
+    "id": "pharmacy_70",
+    "title": "Пинцет",
+    "trip_type": "приключенческая",
+    "price": 337,
+    "required": false
+  },
+  {
+    "id": "pharmacy_71",
+    "title": "Эластичный бинт",
+    "trip_type": "семейная",
+    "price": 880,
+    "required": false
+  },
+  {
+    "id": "pharmacy_72",
+    "title": "Стерильные марлевые салфетки",
+    "trip_type": "приключенческая",
+    "price": 654,
+    "required": true
+  },
+  {
+    "id": "pharmacy_73",
+    "title": "Капли для глаз (сухой глаз)",
+    "trip_type": "деловая",
+    "price": 1080,
+    "required": false
+  },
+  {
+    "id": "pharmacy_74",
+    "title": "Магний (добавка)",
+    "trip_type": "соло",
+    "price": 1662,
+    "required": false
+  },
+  {
+    "id": "pharmacy_75",
+    "title": "Медицинские перчатки (10 шт.)",
+    "trip_type": "групповая",
+    "price": 914,
+    "required": true
+  },
+  {
+    "id": "pharmacy_76",
+    "title": "Соль для оральной регидратации",
+    "trip_type": "приключенческая",
+    "price": 543,
+    "required": true
+  },
+  {
+    "id": "pharmacy_77",
+    "title": "Медицинская маска (10 шт.)",
+    "trip_type": "соло",
+    "price": 765,
+    "required": true
+  },
+  {
+    "id": "pharmacy_78",
+    "title": "Парацетамол 500мг",
+    "trip_type": "деловая",
+    "price": 543,
+    "required": true
+  },
+  {
+    "id": "pharmacy_79",
+    "title": "Детский жаропонижающий",
+    "trip_type": "групповая",
+    "price": 1793,
+    "required": true
+  },
+  {
+    "id": "pharmacy_80",
+    "title": "Жгут",
+    "trip_type": "групповая",
+    "price": 1213,
+    "required": false
+  },
+  {
+    "id": "pharmacy_81",
+    "title": "Активированный уголь",
+    "trip_type": "соло",
+    "price": 454,
+    "required": true
+  },
+  {
+    "id": "pharmacy_82",
+    "title": "Стерильные марлевые салфетки",
+    "trip_type": "соло",
+    "price": 539,
+    "required": true
+  },
+  {
+    "id": "pharmacy_83",
+    "title": "Медицинские перчатки (10 шт.)",
+    "trip_type": "соло",
+    "price": 963,
+    "required": true
+  },
+  {
+    "id": "pharmacy_84",
+    "title": "Бинт",
+    "trip_type": "деловая",
+    "price": 571,
+    "required": false
+  },
+  {
+    "id": "pharmacy_85",
+    "title": "Парацетамол 500мг",
+    "trip_type": "соло",
+    "price": 385,
+    "required": true
+  },
+  {
+    "id": "pharmacy_86",
+    "title": "Пастилки для горла",
+    "trip_type": "приключенческая",
+    "price": 334,
+    "required": false
+  },
+  {
+    "id": "pharmacy_87",
+    "title": "Назальный спрей",
+    "trip_type": "семейная",
+    "price": 705,
+    "required": false
+  },
+  {
+    "id": "pharmacy_88",
+    "title": "Антисептический спрей",
+    "trip_type": "деловая",
+    "price": 1297,
+    "required": true
+  },
+  {
+    "id": "pharmacy_89",
+    "title": "Охлаждающий пакет",
+    "trip_type": "деловая",
+    "price": 1085,
+    "required": false
+  },
+  {
+    "id": "pharmacy_90",
+    "title": "Магний (добавка)",
+    "trip_type": "приключенческая",
+    "price": 1693,
+    "required": false
+  },
+  {
+    "id": "pharmacy_91",
+    "title": "Медицинские ножницы",
+    "trip_type": "деловая",
+    "price": 501,
+    "required": false
+  },
+  {
+    "id": "pharmacy_92",
+    "title": "Витамин C 500мг",
+    "trip_type": "деловая",
+    "price": 683,
+    "required": false
+  },
+  {
+    "id": "pharmacy_93",
+    "title": "Пластыри (набор)",
+    "trip_type": "приключенческая",
+    "price": 617,
+    "required": false
+  },
+  {
+    "id": "pharmacy_94",
+    "title": "Ибупрофен 200мг",
+    "trip_type": "приключенческая",
+    "price": 483,
+    "required": true
+  },
+  {
+    "id": "pharmacy_95",
+    "title": "Активированный уголь",
+    "trip_type": "приключенческая",
+    "price": 237,
+    "required": true
+  },
+  {
+    "id": "pharmacy_96",
+    "title": "Репеллент от насекомых",
+    "trip_type": "соло",
+    "price": 1592,
+    "required": false
+  },
+  {
+    "id": "pharmacy_97",
+    "title": "Пластыри (набор)",
+    "trip_type": "семейная",
+    "price": 880,
+    "required": false
+  },
+  {
+    "id": "pharmacy_98",
+    "title": "Стерильные марлевые салфетки",
+    "trip_type": "семейная",
+    "price": 747,
+    "required": true
+  },
+  {
+    "id": "pharmacy_99",
+    "title": "Гель арника",
+    "trip_type": "групповая",
+    "price": 1584,
+    "required": false
+  },
+  {
+    "id": "pharmacy_100",
+    "title": "Гель арника",
+    "trip_type": "семейная",
+    "price": 1580,
+    "required": false
+  },
+  {
+    "id": "pharmacy_101",
+    "title": "Активированный уголь",
+    "trip_type": "соло",
+    "price": 369,
+    "required": true
+  },
+  {
+    "id": "pharmacy_102",
+    "title": "Таблетки от диареи",
+    "trip_type": "групповая",
+    "price": 909,
+    "required": true
+  },
+  {
+    "id": "pharmacy_103",
+    "title": "Назальный спрей",
+    "trip_type": "приключенческая",
+    "price": 794,
+    "required": false
+  },
+  {
+    "id": "pharmacy_104",
+    "title": "Пастилки для горла",
+    "trip_type": "семейная",
+    "price": 349,
+    "required": false
+  },
+  {
+    "id": "pharmacy_105",
+    "title": "Эластичный бинт",
+    "trip_type": "групповая",
+    "price": 872,
+    "required": false
+  },
+  {
+    "id": "pharmacy_106",
+    "title": "Магний (добавка)",
+    "trip_type": "семейная",
+    "price": 1578,
+    "required": false
+  },
+  {
+    "id": "pharmacy_107",
+    "title": "Пинцет",
+    "trip_type": "деловая",
+    "price": 301,
+    "required": false
+  },
+  {
+    "id": "pharmacy_108",
+    "title": "Бинт",
+    "trip_type": "групповая",
+    "price": 550,
+    "required": false
+  },
+  {
+    "id": "pharmacy_109",
+    "title": "Кальций (таблетки)",
+    "trip_type": "семейная",
+    "price": 1402,
+    "required": false
+  },
+  {
+    "id": "pharmacy_110",
+    "title": "Ибупрофен 200мг",
+    "trip_type": "соло",
+    "price": 425,
+    "required": true
+  },
+  {
+    "id": "pharmacy_111",
+    "title": "Медицинская маска (10 шт.)",
+    "trip_type": "деловая",
+    "price": 741,
+    "required": true
+  },
+  {
+    "id": "pharmacy_112",
+    "title": "Антигистаминные таблетки",
+    "trip_type": "деловая",
+    "price": 957,
+    "required": false
+  },
+  {
+    "id": "pharmacy_113",
+    "title": "Кальций (таблетки)",
+    "trip_type": "приключенческая",
+    "price": 1550,
+    "required": false
+  },
+  {
+    "id": "pharmacy_114",
+    "title": "Бинт",
+    "trip_type": "деловая",
+    "price": 678,
+    "required": false
+  },
+  {
+    "id": "pharmacy_115",
+    "title": "Соль для оральной регидратации",
+    "trip_type": "деловая",
+    "price": 539,
+    "required": true
+  },
+  {
+    "id": "pharmacy_116",
+    "title": "Пинцет",
+    "trip_type": "деловая",
+    "price": 395,
+    "required": false
+  },
+  {
+    "id": "pharmacy_117",
+    "title": "Детский жаропонижающий",
+    "trip_type": "деловая",
+    "price": 1834,
+    "required": true
+  },
+  {
+    "id": "pharmacy_118",
+    "title": "Пробиотики",
+    "trip_type": "соло",
+    "price": 2234,
+    "required": false
+  },
+  {
+    "id": "pharmacy_119",
+    "title": "Антисептик для рук 100мл",
+    "trip_type": "семейная",
+    "price": 838,
+    "required": true
+  },
+  {
+    "id": "pharmacy_120",
+    "title": "Солнцезащитный крем SPF50",
+    "trip_type": "семейная",
+    "price": 1949,
+    "required": false
+  },
+  {
+    "id": "pharmacy_121",
+    "title": "Медицинские перчатки (10 шт.)",
+    "trip_type": "деловая",
+    "price": 1077,
+    "required": true
+  },
+  {
+    "id": "pharmacy_122",
+    "title": "Витамин C 500мг",
+    "trip_type": "семейная",
+    "price": 883,
+    "required": false
+  },
+  {
+    "id": "pharmacy_123",
+    "title": "Медицинские ножницы",
+    "trip_type": "деловая",
+    "price": 717,
+    "required": false
+  },
+  {
+    "id": "pharmacy_124",
+    "title": "Кальций (таблетки)",
+    "trip_type": "соло",
+    "price": 1593,
+    "required": false
+  },
+  {
+    "id": "pharmacy_125",
+    "title": "Кальций (таблетки)",
+    "trip_type": "семейная",
+    "price": 1453,
+    "required": false
+  },
+  {
+    "id": "pharmacy_126",
+    "title": "Эластичный бинт",
+    "trip_type": "групповая",
+    "price": 597,
+    "required": false
+  },
+  {
+    "id": "pharmacy_127",
+    "title": "Солнцезащитный крем SPF50",
+    "trip_type": "деловая",
+    "price": 1961,
+    "required": false
+  },
+  {
+    "id": "pharmacy_128",
+    "title": "Соль для оральной регидратации",
+    "trip_type": "соло",
+    "price": 435,
+    "required": true
+  },
+  {
+    "id": "pharmacy_129",
+    "title": "Таблетки от диареи",
+    "trip_type": "семейная",
+    "price": 764,
+    "required": true
+  },
+  {
+    "id": "pharmacy_130",
+    "title": "Гель арника",
+    "trip_type": "деловая",
+    "price": 1540,
+    "required": false
+  },
+  {
+    "id": "pharmacy_131",
+    "title": "Таблетки от диареи",
+    "trip_type": "групповая",
+    "price": 775,
+    "required": true
+  },
+  {
+    "id": "pharmacy_132",
+    "title": "Назальный спрей",
+    "trip_type": "семейная",
+    "price": 813,
+    "required": false
+  },
+  {
+    "id": "pharmacy_133",
+    "title": "Бинт",
+    "trip_type": "групповая",
+    "price": 598,
+    "required": false
+  },
+  {
+    "id": "pharmacy_134",
+    "title": "Эластичный бинт",
+    "trip_type": "приключенческая",
+    "price": 862,
+    "required": false
+  },
+  {
+    "id": "pharmacy_135",
+    "title": "Антисептик для рук 100мл",
+    "trip_type": "деловая",
+    "price": 816,
+    "required": true
+  },
+  {
+    "id": "pharmacy_136",
+    "title": "Парацетамол 500мг",
+    "trip_type": "групповая",
+    "price": 550,
+    "required": true
+  },
+  {
+    "id": "pharmacy_137",
+    "title": "Охлаждающий пакет",
+    "trip_type": "деловая",
+    "price": 1057,
+    "required": false
+  },
+  {
+    "id": "pharmacy_138",
+    "title": "Солнцезащитный крем SPF50",
+    "trip_type": "групповая",
+    "price": 1975,
+    "required": false
+  },
+  {
+    "id": "pharmacy_139",
+    "title": "Активированный уголь",
+    "trip_type": "групповая",
+    "price": 254,
+    "required": true
+  },
+  {
+    "id": "pharmacy_140",
+    "title": "Активированный уголь",
+    "trip_type": "групповая",
+    "price": 346,
+    "required": true
+  },
+  {
+    "id": "pharmacy_141",
+    "title": "Медицинские перчатки (10 шт.)",
+    "trip_type": "приключенческая",
+    "price": 1010,
+    "required": true
+  },
+  {
+    "id": "pharmacy_142",
+    "title": "Медицинские ножницы",
+    "trip_type": "групповая",
+    "price": 698,
+    "required": false
+  },
+  {
+    "id": "pharmacy_143",
+    "title": "Кальций (таблетки)",
+    "trip_type": "соло",
+    "price": 1319,
+    "required": false
+  },
+  {
+    "id": "pharmacy_144",
+    "title": "Антисептик для рук 100мл",
+    "trip_type": "соло",
+    "price": 756,
+    "required": true
+  },
+  {
+    "id": "pharmacy_145",
+    "title": "Эластичный бинт",
+    "trip_type": "деловая",
+    "price": 599,
+    "required": false
+  },
+  {
+    "id": "pharmacy_146",
+    "title": "Стерильные марлевые салфетки",
+    "trip_type": "семейная",
+    "price": 621,
+    "required": true
+  },
+  {
+    "id": "pharmacy_147",
+    "title": "Кальций (таблетки)",
+    "trip_type": "приключенческая",
+    "price": 1437,
+    "required": false
+  },
+  {
+    "id": "pharmacy_148",
+    "title": "Ибупрофен 200мг",
+    "trip_type": "приключенческая",
+    "price": 492,
+    "required": true
+  },
+  {
+    "id": "pharmacy_149",
+    "title": "Термометр",
+    "trip_type": "деловая",
+    "price": 2543,
+    "required": true
+  },
+  {
+    "id": "pharmacy_150",
+    "title": "Активированный уголь",
+    "trip_type": "соло",
+    "price": 316,
+    "required": true
   }
 ]
