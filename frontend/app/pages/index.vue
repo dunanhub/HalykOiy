@@ -1,5 +1,12 @@
 <script setup lang="ts">
-import { mdiChevronRight, mdiQrcodeScan } from '@mdi/js'
+import { 
+  mdiChevronRight,
+  mdiQrcodeScan,
+  mdiHome,
+  mdiWalletBifold,
+  mdiCashFast,
+  mdiCheckbook,
+} from '@mdi/js'
 
 const router = useRouter()
 const { topServices, mainServices } = useServices()
@@ -71,8 +78,18 @@ const goToServices = () => {
       </section>
 
       <nav class="fixed bottom-0 left-1/2 grid w-full max-w-[430px] -translate-x-1/2 grid-cols-5 items-center bg-white px-4 pb-3 pt-2 shadow-[0_-8px_24px_rgba(0,0,0,0.06)]">
-        <span class="text-center text-[11px] text-[#00845f]">Главная</span>
-        <span class="text-center text-[11px] text-[#7b8190]">Мой банк</span>
+        <span class="flex flex-col items-center text-center text-[11px] text-[#00845f]">
+          <svg viewBox="0 0 24 24" class="h-6 w-6">
+            <path :d="mdiHome" fill="currentColor" />
+          </svg>
+          Главная
+        </span>
+        <span class="flex flex-col items-center text-center text-[11px] text-[#7b8190]">
+          <svg viewBox="0 0 24 24" class="h-6 w-6">
+            <path :d="mdiWalletBifold" fill="currentColor" />
+          </svg>
+          Мой банк
+        </span>
 
         <button class="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-[#009b63] text-white">
           <svg viewBox="0 0 24 24" class="h-7 w-7">
@@ -80,8 +97,18 @@ const goToServices = () => {
           </svg>
         </button>
 
-        <span class="text-center text-[11px] text-[#7b8190]">Переводы</span>
-        <span class="text-center text-[11px] text-[#7b8190]">Платежи</span>
+        <span class="flex flex-col items-center text-center text-[11px] text-[#7b8190]">
+          <svg viewBox="0 0 24 24" class="h-6 w-6">
+            <path :d="mdiCashFast" fill="currentColor" />
+          </svg>
+          Переводы
+        </span>
+        <span class="flex flex-col items-center text-center text-[11px] text-[#7b8190]">
+          <svg viewBox="0 0 24 24" class="h-6 w-6">
+            <path :d="mdiCheckbook" fill="currentColor" />
+          </svg>
+          Платежи
+        </span>
       </nav>
     </div>
   </main>

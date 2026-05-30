@@ -1,12 +1,20 @@
 <script setup lang="ts">
-import { mdiArrowLeft, mdiSend, mdiHistory } from '@mdi/js'
+import { mdiArrowLeft, mdiSend, mdiHistory, mdiLightbulbOnOutline, mdiViewDashboardOutline } from '@mdi/js'
 
 const router = useRouter()
-const { pendingMessage, pendingEditMessage, resetTravelDraft } = useTravel()
+const { pendingMessage, pendingEditMessage, resetTravelDraft, activeTrip, loadDashboardState } = useTravel()
 
 const message = ref('')
+const quickPrompts = [
+  'семьёй в Астану на выходные',
+  'добавь хороший отель',
+  'бюджет 150к',
+]
+const examplePrompt = 'хочу с семьёй в Астану на выходные, бюджет 150к'
 
 onMounted(() => {
+  loadDashboardState()
+
   const route = useRoute()
   const prompt = route.query.prompt
 
@@ -24,14 +32,24 @@ const submitRequest = () => {
 
   router.push('/travel/thinking')
 }
+
+const useQuickPrompt = (prompt: string) => {
+  message.value = message.value
+    ? `${message.value}, ${prompt}`
+    : `хочу ${prompt}`
+}
+
+const useExamplePrompt = () => {
+  message.value = examplePrompt
+}
 </script>
 
 <template>
-  <main class="min-h-screen bg-[#f4f6fb] text-[#202436]">
-    <div class="mx-auto flex min-h-screen max-w-[430px] flex-col bg-[#f4f6fb] px-4 pb-6 pt-4">
-      <header class="relative flex items-center justify-center py-3">
+  <main class="travel-screen">
+    <div class="travel-shell flex flex-col">
+      <header class="travel-topbar fade-slide">
         <button
-          class="absolute left-0 flex h-9 w-9 items-center justify-center"
+          class="pressable absolute left-0 flex h-9 w-9 items-center justify-center rounded-full bg-white/70 shadow-sm"
           @click="router.back()"
         >
           <svg viewBox="0 0 24 24" class="h-6 w-6">
@@ -43,20 +61,32 @@ const submitRequest = () => {
           Halyk Sapar
         </h1>
 
-        <button
-          class="absolute right-0 flex h-9 w-9 items-center justify-center"
-          @click="router.push('/travel/history')"
-        >
-          <svg viewBox="0 0 24 24" class="h-6 w-6">
-            <path :d="mdiHistory" fill="currentColor" />
-          </svg>
-        </button>
+        <div class="absolute right-0 flex items-center gap-2">
+          <button
+            v-if="activeTrip"
+            class="pressable flex h-9 w-9 items-center justify-center rounded-full bg-[#eaf8f1] text-[#00845f] shadow-sm"
+            aria-label="Открыть Dashboard"
+            @click="router.push('/travel/dashboard')"
+          >
+            <svg viewBox="0 0 24 24" class="h-6 w-6">
+              <path :d="mdiViewDashboardOutline" fill="currentColor" />
+            </svg>
+          </button>
+
+          <button
+            class="pressable flex h-9 w-9 items-center justify-center rounded-full bg-white/70 shadow-sm"
+            aria-label="История поездок"
+            @click="router.push('/travel/history')"
+          >
+            <svg viewBox="0 0 24 24" class="h-6 w-6">
+              <path :d="mdiHistory" fill="currentColor" />
+            </svg>
+          </button>
+        </div>
       </header>
 
-      <section class="mt-6 rounded-[28px] bg-white p-5 shadow-sm">
-        <p class="text-[13px] font-semibold text-[#009b63]">
-          AI Travel Companion
-        </p>
+      <section class="travel-card travel-hero travel-soft-gradient fade-slide mt-6 p-5">
+        <p class="text-[13px] font-semibold text-[#009b63]">AI Travel Companion</p>
 
         <h2 class="mt-3 text-[26px] font-bold leading-tight">
           Куда хотите поехать?
@@ -65,22 +95,52 @@ const submitRequest = () => {
         <p class="mt-3 text-[15px] leading-6 text-[#6b7280]">
           Напишите свободно: город, даты, количество людей и бюджет. Я соберу поездку целиком.
         </p>
+
+        <p class="mt-5 text-[12px] font-semibold uppercase tracking-[0.08em] text-[#9aa3b5]">
+          Быстрые подсказки
+        </p>
+
+        <div class="mt-2 flex flex-wrap gap-2">
+          <button
+            v-for="prompt in quickPrompts"
+            :key="prompt"
+            type="button"
+            class="travel-chip pressable px-3 py-2"
+            @click="useQuickPrompt(prompt)"
+          >
+            {{ prompt }}
+          </button>
+        </div>
       </section>
 
-      <section class="mt-5 flex-1 rounded-[28px] bg-white p-4 shadow-sm">
-        <div class="rounded-[22px] bg-[#f4f6fb] p-4">
-          <p class="text-[14px] text-[#7b8190]">
-            Например:
-          </p>
+      <section class="travel-card stagger mt-5 flex-1 p-4">
+        <div class="travel-soft-gradient rounded-[22px] border border-[#e7ebf3] p-4">
+          <div class="flex items-start gap-3">
+            <div class="travel-icon-bubble h-10 w-10 shrink-0">
+              <svg viewBox="0 0 24 24" class="h-6 w-6">
+                <path :d="mdiLightbulbOnOutline" fill="currentColor" />
+              </svg>
+            </div>
 
-          <p class="mt-2 text-[15px] font-medium leading-6">
-            хочу с семьёй в Астану на выходные, бюджет 150к
-          </p>
+            <div class="min-w-0 flex-1">
+              <p class="text-[13px] font-semibold text-[#00845f]">Пример запроса</p>
+              <p class="mt-1 text-[15px] font-medium leading-6">
+                {{ examplePrompt }}
+              </p>
+              <button
+                type="button"
+                class="travel-chip pressable mt-3 px-3 py-2"
+                @click="useExamplePrompt"
+              >
+                Использовать пример
+              </button>
+            </div>
+          </div>
         </div>
       </section>
 
       <form
-        class="mt-4 flex items-center gap-3 rounded-[24px] bg-white p-3 shadow-sm"
+        class="travel-input-bar mt-4 flex items-center gap-3 p-3"
         @submit.prevent="submitRequest"
       >
         <input
@@ -91,7 +151,8 @@ const submitRequest = () => {
 
         <button
           type="submit"
-          class="flex h-11 w-11 items-center justify-center rounded-full bg-[#009b63] text-white"
+          class="travel-primary-button flex h-11 w-11 items-center justify-center rounded-full"
+          :disabled="!message.trim()"
         >
           <svg viewBox="0 0 24 24" class="h-6 w-6">
             <path :d="mdiSend" fill="currentColor" />

@@ -13,6 +13,17 @@ from .selector import _item_score, _wants_cheaper, build_selection
 REMOVE_WORDS = ("убрать", "убери", "удалить", "удали", "исключить", "исключи", "без")
 ADD_WORDS = ("добав", "ещё", "еще", "плюс", "доп")
 ADDABLE_CATEGORIES = {"activity", "restaurant"}
+MAX_ADDED_ITEMS = 5
+COUNT_WORDS = {
+    "один": 1,
+    "одну": 1,
+    "одно": 1,
+    "два": 2,
+    "две": 2,
+    "три": 3,
+    "четыре": 4,
+    "пять": 5,
+}
 
 CATEGORY_TOKENS = {
     "activity": ("актив", "кино", "каяк", "экскурс", "музей"),
@@ -40,7 +51,8 @@ def update_plan(existing_plan: dict, message: str) -> dict:
 
     # Case 0: addition ("добавь активность", "добавь ресторан")
     if _is_add_intent(lower) and target in ADDABLE_CATEGORIES:
-        return _add_to_category(existing_plan, target, req, candidates, lower)
+        count = _requested_add_count(lower, target, req)
+        return _add_to_category(existing_plan, target, req, candidates, lower, count=count)
 
     # Case 1: removal ("убрать ресторан")
     if _is_category_removal(lower) and target:
@@ -62,7 +74,14 @@ def update_plan(existing_plan: dict, message: str) -> dict:
     return plan
 
 
-def _add_to_category(existing_plan: dict, category: str, req: dict, candidates: dict, preference_text: str) -> dict:
+def _add_to_category(
+    existing_plan: dict,
+    category: str,
+    req: dict,
+    candidates: dict,
+    preference_text: str,
+    count: int = 1,
+) -> dict:
     options_key = NEED_TO_OPTIONS_KEY.get(category)
     available = candidates.get(options_key, [])
     if not available:
@@ -78,23 +97,26 @@ def _add_to_category(existing_plan: dict, category: str, req: dict, candidates: 
     if not new_options:
         return existing_plan
 
-    best = _pick_best(category, new_options, req, preference_text)
-    if not best:
+    selected = _pick_many(category, new_options, req, preference_text, count)
+    if not selected:
         return existing_plan
 
-    new_item = {
-        "category": display_cat,
-        "id": str(best.get("id")),
-        "title": title_for(category, best),
-        "details": details_for(category, best, req),
-        "price": price_for(category, best, req),
-    }
-    if category in {"pharmacy", "activity", "transfer"}:
-        new_item["optional"] = True
-        if best.get("disclaimer"):
-            new_item["disclaimer"] = best["disclaimer"]
+    new_items = []
+    for best in selected:
+        new_item = {
+            "category": display_cat,
+            "id": str(best.get("id")),
+            "title": title_for(category, best),
+            "details": details_for(category, best, req),
+            "price": price_for(category, best, req),
+        }
+        if category in {"pharmacy", "activity", "transfer"}:
+            new_item["optional"] = True
+            if best.get("disclaimer"):
+                new_item["disclaimer"] = best["disclaimer"]
+        new_items.append(new_item)
 
-    all_items = list(existing_plan.get("items", [])) + [new_item]
+    all_items = list(existing_plan.get("items", [])) + new_items
     order_map = {cat: i for i, cat in enumerate(
         ["flight", "hotel", "insurance", "transfer", "travel_kit", "activity", "restaurant"]
     )}
@@ -154,7 +176,17 @@ def _swap_category(existing_plan: dict, category: str, req: dict, candidates: di
 def _pick_best(category: str, items: list[dict], req: dict, preference_text: str) -> dict | None:
     if not items:
         return None
+    return _ranked_options(category, items, req, preference_text)[0]
 
+
+def _pick_many(category: str, items: list[dict], req: dict, preference_text: str, count: int) -> list[dict]:
+    if not items:
+        return []
+    safe_count = max(1, min(MAX_ADDED_ITEMS, count, len(items)))
+    return _ranked_options(category, items, req, preference_text)[:safe_count]
+
+
+def _ranked_options(category: str, items: list[dict], req: dict, preference_text: str) -> list[dict]:
     price_field = {
         "restaurant": "avg_check",
         "hotel": "price_per_night",
@@ -169,7 +201,7 @@ def _pick_best(category: str, items: list[dict], req: dict, preference_text: str
             base -= int(item.get(price_field, 0)) / 400
         return base
 
-    return max(items, key=score)
+    return sorted(items, key=score, reverse=True)
 
 
 def _rebuild_totals(existing_plan: dict, items: list[dict], req: dict | None = None) -> dict:
@@ -245,3 +277,22 @@ def _target_category(lower: str) -> str | None:
         if any(token in lower for token in tokens):
             return category
     return None
+
+
+def _requested_add_count(lower: str, category: str, req: dict) -> int:
+    digit_matches = re.findall(r"\d+", lower)
+    for raw in digit_matches:
+        value = int(raw)
+        if 1 <= value <= 20:
+            return min(value, MAX_ADDED_ITEMS)
+
+    for word, value in COUNT_WORDS.items():
+        if re.search(rf"\b{word}\b", lower):
+            return min(value, MAX_ADDED_ITEMS)
+
+    if category == "restaurant" and any(token in lower for token in ("разные даты", "разные дни", "по датам", "по дням")):
+        nights = int(req.get("nights") or 1)
+        days_count = int(req.get("days") or (nights + 1))
+        return min(MAX_ADDED_ITEMS, max(2, days_count))
+
+    return 1

@@ -98,6 +98,8 @@ export type ContactInfo = {
 }
 
 const HISTORY_KEY = 'halyk:plan-history'
+const ACTIVE_TRIP_KEY = 'halyk:active-dashboard-trip'
+const COMPLETED_TRIPS_KEY = 'halyk:completed-dashboard-trips'
 
 const _readHistory = (): HistoryEntry[] => {
   if (typeof window === 'undefined') return []
@@ -115,6 +117,43 @@ const _writeHistory = (entries: HistoryEntry[]) => {
   } catch {}
 }
 
+const _readCompletedTripIds = (): string[] => {
+  if (typeof window === 'undefined') return []
+  try {
+    const parsed = JSON.parse(localStorage.getItem(COMPLETED_TRIPS_KEY) || '[]')
+    return Array.isArray(parsed) ? parsed.filter(Boolean) : []
+  } catch {
+    return []
+  }
+}
+
+const _writeCompletedTripIds = (ids: string[]) => {
+  if (typeof window === 'undefined') return
+  try {
+    localStorage.setItem(COMPLETED_TRIPS_KEY, JSON.stringify(Array.from(new Set(ids))))
+  } catch {}
+}
+
+const _readActiveTripId = (): string | null => {
+  if (typeof window === 'undefined') return null
+  try {
+    return localStorage.getItem(ACTIVE_TRIP_KEY)
+  } catch {
+    return null
+  }
+}
+
+const _writeActiveTripId = (planId: string | null) => {
+  if (typeof window === 'undefined') return
+  try {
+    if (planId) {
+      localStorage.setItem(ACTIVE_TRIP_KEY, planId)
+    } else {
+      localStorage.removeItem(ACTIVE_TRIP_KEY)
+    }
+  } catch {}
+}
+
 export const useTravel = () => {
   const config = useRuntimeConfig()
   const apiBase = config.public.apiBase
@@ -126,9 +165,16 @@ export const useTravel = () => {
   const contactInfo = useState<ContactInfo | null>('travel:contact', () => null)
   const pendingPartialRequest = useState<Record<string, unknown> | null>('travel:partial-request', () => null)
   const planHistory = useState<HistoryEntry[]>('travel:history', () => [])
+  const activeTrip = useState<string | null>('travel:active-dashboard-trip', () => null)
+  const completedTripIds = useState<string[]>('travel:completed-dashboard-trips', () => [])
 
   const loadHistory = () => {
     planHistory.value = _readHistory()
+  }
+
+  const loadDashboardState = () => {
+    activeTrip.value = _readActiveTripId()
+    completedTripIds.value = _readCompletedTripIds()
   }
 
   const pushToHistory = (plan: TravelPlan) => {
@@ -159,6 +205,37 @@ export const useTravel = () => {
     paymentResult.value = null
     contactInfo.value = null
     pendingPartialRequest.value = null
+  }
+
+  const activateDashboardTrip = (plan: TravelPlan) => {
+    activeTrip.value = plan.plan_id
+    _writeActiveTripId(plan.plan_id)
+    completedTripIds.value = completedTripIds.value.filter(id => id !== plan.plan_id)
+    _writeCompletedTripIds(completedTripIds.value)
+    pushToHistory(plan)
+  }
+
+  const completeDashboardTrip = (planId: string) => {
+    completedTripIds.value = Array.from(new Set([...completedTripIds.value, planId]))
+    _writeCompletedTripIds(completedTripIds.value)
+    if (activeTrip.value === planId) {
+      activeTrip.value = null
+      _writeActiveTripId(null)
+    }
+  }
+
+  const isTripExpired = (plan: TravelPlan | null) => {
+    if (!plan) return false
+    const date =
+      plan.end_date ||
+      [...(plan.itinerary || [])].reverse().find(day => Boolean(day.date))?.date ||
+      null
+    if (!date) return false
+
+    const end = new Date(date + 'T00:00:00')
+    const today = new Date()
+    today.setHours(0, 0, 0, 0)
+    return end.getTime() < today.getTime()
   }
 
   const createPlanStream = async (
@@ -277,6 +354,7 @@ export const useTravel = () => {
     })
 
     paymentResult.value = result
+    activateDashboardTrip(currentPlan.value)
 
     return result
   }
@@ -289,10 +367,16 @@ export const useTravel = () => {
     contactInfo,
     pendingPartialRequest,
     planHistory,
+    activeTrip,
+    completedTripIds,
     formatPrice,
     getThinkingSteps,
     resetTravelDraft,
     loadHistory,
+    loadDashboardState,
+    activateDashboardTrip,
+    completeDashboardTrip,
+    isTripExpired,
     createPlanStream,
     createPlan,
     editPlan,

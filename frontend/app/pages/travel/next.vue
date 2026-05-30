@@ -52,10 +52,10 @@ const startNextTrip = (prompt: string) => {
 </script>
 
 <template>
-  <main class="min-h-screen bg-[#f4f6fb] text-[#202436]">
-    <div class="mx-auto min-h-screen max-w-[430px] bg-[#f4f6fb] px-4 pb-8 pt-8">
-      <section class="rounded-[32px] bg-white p-6 text-center shadow-sm">
-        <div class="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-[#eaf8f1] text-[#009b63]">
+  <main class="travel-screen">
+    <div class="travel-shell pt-8">
+      <section class="travel-card travel-hero pop-in p-6 text-center">
+        <div class="travel-icon-bubble mx-auto h-20 w-20">
           <svg viewBox="0 0 24 24" class="h-11 w-11">
             <path :d="mdiHomeHeart" fill="currentColor" />
           </svg>
@@ -70,9 +70,9 @@ const startNextTrip = (prompt: string) => {
         </p>
       </section>
 
-      <section class="mt-5 rounded-[28px] bg-white p-5 shadow-sm">
+      <section class="travel-card mt-5 p-5">
         <div class="flex items-center gap-3">
-          <div class="flex h-11 w-11 items-center justify-center rounded-2xl bg-[#edf3f2]">
+            <div class="travel-icon-bubble h-11 w-11">
             <svg viewBox="0 0 24 24" class="h-7 w-7 text-[#00845f]">
               <path :d="mdiMapMarkerPath" fill="currentColor" />
             </svg>
@@ -90,15 +90,15 @@ const startNextTrip = (prompt: string) => {
         </div>
       </section>
 
-      <section class="mt-5 space-y-3">
+      <section class="stagger mt-5 space-y-3">
         <button
           v-for="item in suggestions"
           :key="item.title"
-          class="w-full rounded-[28px] bg-white p-5 text-left shadow-sm"
+          class="travel-card pressable w-full p-5 text-left"
           @click="startNextTrip(item.prompt)"
         >
           <div class="flex gap-4">
-            <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-[#edf3f2]">
+            <div class="travel-icon-bubble h-12 w-12 shrink-0">
               <svg viewBox="0 0 24 24" class="h-7 w-7 text-[#00845f]">
                 <path :d="item.icon" fill="currentColor" />
               </svg>
@@ -128,7 +128,7 @@ const startNextTrip = (prompt: string) => {
       </section>
 
       <button
-        class="mt-6 w-full rounded-2xl bg-white py-4 text-[15px] font-semibold text-[#202436] shadow-sm"
+        class="travel-secondary-button mt-6 w-full py-4 text-[15px]"
         @click="router.push('/travel')"
       >
         Посмотреть другие направления

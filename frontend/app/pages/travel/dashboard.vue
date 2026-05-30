@@ -10,6 +10,18 @@ import {
   mdiCreditCardOutline,
   mdiMedicalBag,
   mdiTshirtCrew,
+  mdiAirplane,
+  mdiBed,
+  mdiHomeOutline,
+  mdiInformationOutline,
+  mdiMapMarkerPath,
+  mdiAlertCircleOutline,
+  mdiCheckBold,
+  mdiGestureSwipeHorizontal,
+  mdiHistory,
+  mdiLockCheckOutline,
+  mdiPlus,
+  mdiChevronDoubleRight,
 } from '@mdi/js'
 import type { ItineraryDay } from '~/composables/useTravel'
 
@@ -31,7 +43,19 @@ type Weather = {
 
 const router = useRouter()
 const config = useRuntimeConfig()
-const { currentPlan, contactInfo, formatPrice, editPlan } = useTravel()
+const {
+  currentPlan,
+  contactInfo,
+  formatPrice,
+  editPlan,
+  activeTrip,
+  completedTripIds,
+  loadHistory,
+  loadDashboardState,
+  completeDashboardTrip,
+  isTripExpired,
+  planHistory,
+} = useTravel()
 
 const weather = ref<Weather>({
   temp: null,
@@ -42,6 +66,13 @@ const weather = ref<Weather>({
 const selectedDay = ref(1)
 const pickedDate = ref('')
 const applyingDate = ref(false)
+const slideTrack = ref<HTMLElement | null>(null)
+const slideProgress = ref(0)
+const slideOffset = ref(0)
+const slideDragging = ref(false)
+const slideCompleted = ref(false)
+const slideStartX = ref(0)
+const slideMoved = ref(false)
 
 const tripTitle = computed(() => {
   if (!currentPlan.value) return 'Алматы → Астана'
@@ -125,8 +156,17 @@ const applyDate = async () => {
   }
 }
 
-// --- What to prepare ---
 type PrepareCategory = { icon: string; title: string; items: string[] }
+const iconByItineraryType: Record<string, string> = {
+  flight: mdiAirplane,
+  hotel: mdiBed,
+  transfer: mdiAirplaneClock,
+  activity: mdiMapMarkerPath,
+  pharmacy: mdiMedicalBag,
+  restaurant: mdiTextBoxCheckOutline,
+  return: mdiHomeOutline,
+}
+
 const prepareCategories = computed<PrepareCategory[]>(() => {
   const plan = currentPlan.value
   const hasKids = (plan?.checklist || []).some(
@@ -134,12 +174,12 @@ const prepareCategories = computed<PrepareCategory[]>(() => {
   )
   return [
     {
-      icon: '📄',
+      icon: mdiTextBoxCheckOutline,
       title: 'Документы',
       items: ['Удостоверение личности или паспорт', 'Распечатанные / скаченные билеты', 'Страховой полис'],
     },
     {
-      icon: '💳',
+      icon: mdiCreditCardOutline,
       title: 'Деньги',
       items: [
         'Карта Halyk',
@@ -148,7 +188,7 @@ const prepareCategories = computed<PrepareCategory[]>(() => {
       ],
     },
     {
-      icon: '👕',
+      icon: mdiTshirtCrew,
       title: 'Вещи',
       items: [
         'Одежда по прогнозу погоды',
@@ -157,7 +197,7 @@ const prepareCategories = computed<PrepareCategory[]>(() => {
       ],
     },
     {
-      icon: '💊',
+      icon: mdiMedicalBag,
       title: 'Здоровье',
       items: hasKids
         ? ['Аптечка для детей (включена в план)', 'Жаропонижающее', 'Антисептик и пластыри']
@@ -167,8 +207,38 @@ const prepareCategories = computed<PrepareCategory[]>(() => {
 })
 
 const checklist = ref<ChecklistGroup[]>([])
+const checklistHydrated = ref(false)
+
+const checklistStorageKey = computed(() => {
+  const planId = currentPlan.value?.plan_id
+  return planId ? `halyk:dashboard-checklist:${planId}` : ''
+})
+
+const checklistItemKey = (groupIndex: number, itemTitle: string) => `${groupIndex}:${itemTitle}`
+
+const loadSavedChecklist = (): Record<string, boolean> => {
+  if (!process.client || !checklistStorageKey.value) return {}
+  try {
+    return JSON.parse(localStorage.getItem(checklistStorageKey.value) || '{}')
+  } catch {
+    return {}
+  }
+}
+
+const saveChecklist = () => {
+  if (!process.client || !checklistStorageKey.value || !checklistHydrated.value) return
+  const saved = checklist.value.reduce<Record<string, boolean>>((acc, group, groupIndex) => {
+    group.items.forEach((item) => {
+      acc[checklistItemKey(groupIndex, item.title)] = item.checked
+    })
+    return acc
+  }, {})
+  localStorage.setItem(checklistStorageKey.value, JSON.stringify(saved))
+}
 
 const hydrateChecklist = () => {
+  checklistHydrated.value = false
+  const saved = loadSavedChecklist()
   const groups = (currentPlan.value?.checklist || []) as Array<{
     member?: string
     role?: string
@@ -184,12 +254,17 @@ const hydrateChecklist = () => {
     }
     return {
       person,
-      items: (group.items || []).map(item => ({
-        title: item.title || item.item || 'Пункт чеклиста',
-        checked: Boolean(item.checked),
-      })),
+      items: (group.items || []).map((item) => {
+        const title = item.title || item.item || 'Пункт чеклиста'
+        const savedKey = checklistItemKey(idx, title)
+        return {
+          title,
+          checked: savedKey in saved ? saved[savedKey] : Boolean(item.checked),
+        }
+      }),
     }
   })
+  checklistHydrated.value = true
 }
 
 const loadWeather = async () => {
@@ -207,12 +282,79 @@ const loadWeather = async () => {
 const totalItems = computed(() => checklist.value.reduce((s, g) => s + g.items.length, 0))
 const checkedItems = computed(() => checklist.value.reduce((s, g) => s + g.items.filter(i => i.checked).length, 0))
 const progress = computed(() => totalItems.value ? Math.round((checkedItems.value / totalItems.value) * 100) : 0)
+const isCompleted = computed(() => Boolean(currentPlan.value?.plan_id && completedTripIds.value.includes(currentPlan.value.plan_id)))
+const expired = computed(() => isTripExpired(currentPlan.value))
+const dashboardBlocked = computed(() => isCompleted.value || expired.value)
+const blockedTitle = computed(() => {
+  if (isCompleted.value) return 'Поездка уже завершена'
+  return 'Поездка уже завершилась или дата прошла'
+})
+const blockedText = computed(() => {
+  if (isCompleted.value) return 'Вы завершили этот dashboard. План можно посмотреть в истории или начать новую поездку.'
+  return 'Активный режим dashboard недоступен, потому что дата поездки уже прошла.'
+})
+
+const updateSlideProgress = (clientX: number) => {
+  const rect = slideTrack.value?.getBoundingClientRect()
+  if (!rect) return
+  const knob = 56
+  const max = Math.max(1, rect.width - knob)
+  const nextOffset = Math.max(0, Math.min(max, clientX - rect.left - knob / 2))
+  slideOffset.value = nextOffset
+  slideProgress.value = (nextOffset / max) * 100
+}
+
+const startSlide = (event: PointerEvent) => {
+  if (dashboardBlocked.value || slideCompleted.value) return
+  slideDragging.value = true
+  slideStartX.value = event.clientX
+  slideMoved.value = false
+  ;(event.currentTarget as HTMLElement).setPointerCapture(event.pointerId)
+}
+
+const moveSlide = (event: PointerEvent) => {
+  if (!slideDragging.value) return
+  if (Math.abs(event.clientX - slideStartX.value) > 4) slideMoved.value = true
+  updateSlideProgress(event.clientX)
+}
+
+const endSlide = () => {
+  if (!slideDragging.value) return
+  slideDragging.value = false
+
+  if (slideMoved.value && slideProgress.value >= 85 && currentPlan.value) {
+    const rect = slideTrack.value?.getBoundingClientRect()
+    if (rect) slideOffset.value = Math.max(0, rect.width - 56)
+    slideProgress.value = 100
+    slideCompleted.value = true
+    completeDashboardTrip(currentPlan.value.plan_id)
+    window.setTimeout(() => router.push('/travel/next'), 420)
+    return
+  }
+
+  slideProgress.value = 0
+  slideOffset.value = 0
+}
 
 onMounted(async () => {
+  loadDashboardState()
+  loadHistory()
+
+  if (!currentPlan.value && activeTrip.value) {
+    const activeEntry = planHistory.value.find(entry => entry.plan_id === activeTrip.value)
+    currentPlan.value = activeEntry?.plan || null
+  }
+
   if (!currentPlan.value) {
     router.push('/travel')
     return
   }
+
+  if (activeTrip.value !== currentPlan.value.plan_id && !completedTripIds.value.includes(currentPlan.value.plan_id)) {
+    router.push('/travel/payment')
+    return
+  }
+
   hydrateChecklist()
   await loadWeather()
 
@@ -221,14 +363,16 @@ onMounted(async () => {
   const todayDay = itinerary.value.find(d => d.date === today)
   selectedDay.value = todayDay?.day ?? 1
 })
+
+watch(checklist, saveChecklist, { deep: true })
 </script>
 
 <template>
-  <main class="min-h-screen bg-[#f4f6fb] text-[#202436]">
-    <div class="mx-auto min-h-screen max-w-[430px] bg-[#f4f6fb] px-4 pb-8 pt-4">
-      <header class="relative flex items-center justify-center py-3">
+  <main class="travel-screen">
+    <div class="travel-shell">
+      <header class="travel-topbar fade-slide">
         <button
-          class="absolute left-0 flex h-9 w-9 items-center justify-center"
+          class="pressable absolute left-0 flex h-9 w-9 items-center justify-center rounded-full bg-white/70 shadow-sm"
           @click="router.back()"
         >
           <svg viewBox="0 0 24 24" class="h-6 w-6">
@@ -239,16 +383,42 @@ onMounted(async () => {
       </header>
 
       <!-- Trip header -->
-      <section class="mt-5 rounded-[28px] bg-white p-5 shadow-sm">
+      <section class="travel-card travel-hero mt-5 p-5">
         <p class="text-[13px] font-semibold text-[#009b63]">{{ todayLabel }}</p>
         <h2 class="mt-2 text-[25px] font-bold leading-tight">{{ tripTitle }}</h2>
         <p class="mt-2 text-[14px] text-[#6b7280]">{{ tripDateLine }}</p>
       </section>
 
+      <section v-if="dashboardBlocked" class="travel-card mt-5 p-5 text-center">
+        <div class="travel-icon-bubble mx-auto h-14 w-14">
+          <svg viewBox="0 0 24 24" class="h-8 w-8">
+            <path :d="isCompleted ? mdiLockCheckOutline : mdiAlertCircleOutline" fill="currentColor" />
+          </svg>
+        </div>
+        <h2 class="mt-4 text-[22px] font-bold">{{ blockedTitle }}</h2>
+        <p class="mt-2 text-[14px] leading-6 text-[#6b7280]">{{ blockedText }}</p>
+        <div class="mt-5 grid grid-cols-2 gap-3">
+          <button class="travel-secondary-button flex items-center justify-center gap-2 py-3 text-[14px]" @click="router.push('/travel/history')">
+            <svg viewBox="0 0 24 24" class="h-5 w-5">
+              <path :d="mdiHistory" fill="currentColor" />
+            </svg>
+            История
+          </button>
+          <button class="travel-primary-button flex items-center justify-center gap-2 py-3 text-[14px]" @click="router.push('/travel')">
+            <svg viewBox="0 0 24 24" class="h-5 w-5">
+              <path :d="mdiPlus" fill="currentColor" />
+            </svg>
+            Новая
+          </button>
+        </div>
+      </section>
+
+      <template v-else>
+
       <!-- Weather + Flight status -->
       <section class="mt-5 grid grid-cols-2 gap-3">
-        <div class="rounded-[24px] bg-white p-4 shadow-sm">
-          <div class="flex h-11 w-11 items-center justify-center rounded-2xl bg-[#edf3f2]">
+        <div class="travel-card p-4">
+          <div class="travel-icon-bubble h-11 w-11">
             <svg viewBox="0 0 24 24" class="h-7 w-7 text-[#00845f]">
               <path :d="mdiWeatherPartlyCloudy" fill="currentColor" />
             </svg>
@@ -258,8 +428,8 @@ onMounted(async () => {
           <p class="mt-1 text-[12px] text-[#9aa3b5]">{{ weather.description }}</p>
         </div>
 
-        <div class="rounded-[24px] bg-white p-4 shadow-sm">
-          <div class="flex h-11 w-11 items-center justify-center rounded-2xl bg-[#edf3f2]">
+        <div class="travel-card p-4">
+          <div class="travel-icon-bubble h-11 w-11">
             <svg viewBox="0 0 24 24" class="h-7 w-7 text-[#00845f]">
               <path :d="mdiAirplaneClock" fill="currentColor" />
             </svg>
@@ -273,7 +443,7 @@ onMounted(async () => {
       <!-- Date picker (shown only when start_date is missing) -->
       <section
         v-if="!currentPlan?.start_date"
-        class="mt-5 rounded-[28px] bg-white p-5 shadow-sm"
+          class="mt-5 travel-card p-5"
       >
         <h2 class="text-[17px] font-bold">Когда едем?</h2>
         <p class="mt-1 text-[13px] text-[#9aa3b5]">Укажите дату для расписания по дням</p>
@@ -283,7 +453,7 @@ onMounted(async () => {
           class="mt-3 w-full rounded-xl bg-[#f4f6fb] px-4 py-3 text-[15px] outline-none"
         >
         <button
-          class="mt-3 w-full rounded-2xl bg-[#009b63] py-3 text-[15px] font-semibold text-white disabled:opacity-50"
+          class="travel-primary-button mt-3 w-full py-3 text-[15px]"
           :disabled="!pickedDate || applyingDate"
           @click="applyDate"
         >
@@ -294,7 +464,7 @@ onMounted(async () => {
       <!-- Calendar view (when itinerary exists) -->
       <section
         v-if="itinerary.length"
-        class="mt-5 rounded-[28px] bg-white p-5 shadow-sm"
+          class="mt-5 travel-card p-5"
       >
         <div class="mb-3 flex items-center justify-between">
           <div class="flex items-center gap-2">
@@ -316,9 +486,9 @@ onMounted(async () => {
         <div class="-mx-5 overflow-x-auto px-5">
           <div class="flex gap-2 pb-1">
             <button
-              v-for="day in itinerary"
-              :key="day.day"
-              class="relative flex min-w-[64px] shrink-0 flex-col items-center gap-0.5 rounded-2xl px-3 py-3 transition-colors"
+            v-for="day in itinerary"
+            :key="day.day"
+              class="pressable relative flex min-w-[64px] shrink-0 flex-col items-center gap-0.5 rounded-2xl px-3 py-3 transition-colors"
               :class="day.day === selectedDay
                 ? 'bg-[#009b63] text-white shadow-md'
                 : 'bg-[#f4f6fb] text-[#202436] hover:bg-[#e9edf5]'"
@@ -367,9 +537,13 @@ onMounted(async () => {
             <div
               v-for="(item, idx) in selectedDayObj.items"
               :key="idx"
-              class="flex items-start gap-3 rounded-xl bg-white px-3 py-3"
+              class="pressable flex items-start gap-3 rounded-xl bg-white px-3 py-3"
             >
-              <span class="mt-0.5 text-[20px] leading-none">{{ item.icon }}</span>
+              <span class="travel-icon-bubble mt-0.5 h-9 w-9 shrink-0">
+                <svg viewBox="0 0 24 24" class="h-5 w-5">
+                  <path :d="iconByItineraryType[item.type] || mdiInformationOutline" fill="currentColor" />
+                </svg>
+              </span>
               <div class="min-w-0 flex-1">
                 <p class="text-[14px] font-semibold text-[#202436]">{{ item.title }}</p>
                 <p v-if="item.details" class="mt-0.5 text-[12px] text-[#6b7280]">{{ item.details }}</p>
@@ -388,7 +562,7 @@ onMounted(async () => {
       <!-- Simple timeline fallback (when no itinerary) -->
       <section
         v-else
-        class="mt-5 rounded-[28px] bg-white p-5 shadow-sm"
+        class="mt-5 travel-card p-5"
       >
         <div class="mb-4 flex items-center gap-2">
           <svg viewBox="0 0 24 24" class="h-5 w-5 text-[#009b63]">
@@ -398,7 +572,11 @@ onMounted(async () => {
         </div>
         <div class="space-y-3">
           <div class="flex items-center gap-3 rounded-2xl bg-[#f4f6fb] px-4 py-3">
-            <span class="text-[20px]">✈️</span>
+            <span class="travel-icon-bubble h-9 w-9 shrink-0">
+              <svg viewBox="0 0 24 24" class="h-5 w-5">
+                <path :d="mdiAirplane" fill="currentColor" />
+              </svg>
+            </span>
             <div>
               <p class="text-[14px] font-semibold">День 1 — Вылет из {{ currentPlan?.trip.from }}</p>
               <p class="text-[12px] text-[#9aa3b5]">{{ currentPlan?.trip.dates }}</p>
@@ -409,11 +587,19 @@ onMounted(async () => {
             :key="n"
             class="flex items-center gap-3 rounded-2xl bg-[#f4f6fb] px-4 py-3"
           >
-            <span class="text-[20px]">🏨</span>
+            <span class="travel-icon-bubble h-9 w-9 shrink-0">
+              <svg viewBox="0 0 24 24" class="h-5 w-5">
+                <path :d="mdiBed" fill="currentColor" />
+              </svg>
+            </span>
             <p class="text-[14px] font-semibold">День {{ n + 1 }} — в {{ currentPlan?.trip.to }}</p>
           </div>
           <div class="flex items-center gap-3 rounded-2xl bg-[#f4f6fb] px-4 py-3">
-            <span class="text-[20px]">🏠</span>
+            <span class="travel-icon-bubble h-9 w-9 shrink-0">
+              <svg viewBox="0 0 24 24" class="h-5 w-5">
+                <path :d="mdiHomeOutline" fill="currentColor" />
+              </svg>
+            </span>
             <p class="text-[14px] font-semibold">
               День {{ (currentPlan?.trip.nights || 1) + 1 }} — Возвращение
             </p>
@@ -422,16 +608,20 @@ onMounted(async () => {
       </section>
 
       <!-- What to prepare -->
-      <section class="mt-5 rounded-[28px] bg-white p-5 shadow-sm">
+      <section class="mt-5 travel-card p-5">
         <h2 class="mb-4 text-[18px] font-bold">Что взять с собой</h2>
         <div class="space-y-3">
           <div
             v-for="cat in prepareCategories"
             :key="cat.title"
-            class="rounded-2xl bg-[#f4f6fb] p-4"
+            class="pressable rounded-2xl bg-[#f4f6fb] p-4"
           >
             <div class="mb-2 flex items-center gap-2">
-              <span class="text-[18px]">{{ cat.icon }}</span>
+              <span class="travel-icon-bubble h-9 w-9 shrink-0">
+                <svg viewBox="0 0 24 24" class="h-5 w-5">
+                  <path :d="cat.icon" fill="currentColor" />
+                </svg>
+              </span>
               <p class="text-[15px] font-bold text-[#202436]">{{ cat.title }}</p>
             </div>
             <ul class="space-y-1">
@@ -450,7 +640,7 @@ onMounted(async () => {
 
       <!-- Checklist (only when populated) -->
       <template v-if="checklist.length">
-        <section class="mt-5 rounded-[28px] bg-white p-5 shadow-sm">
+        <section class="mt-5 travel-card p-5">
           <div class="flex items-center justify-between">
             <h2 class="text-[18px] font-bold">Чеклист</h2>
             <span class="text-[13px] font-semibold text-[#009b63]">{{ checkedItems }} из {{ totalItems }}</span>
@@ -468,10 +658,10 @@ onMounted(async () => {
           <div
             v-for="group in checklist"
             :key="group.person"
-            class="rounded-[28px] bg-white p-5 shadow-sm"
+            class="travel-card p-5"
           >
             <div class="mb-4 flex items-center gap-3">
-              <div class="flex h-10 w-10 items-center justify-center rounded-full bg-[#edf3f2]">
+              <div class="travel-icon-bubble h-10 w-10">
                 <svg viewBox="0 0 24 24" class="h-6 w-6 text-[#00845f]">
                   <path :d="mdiAccount" fill="currentColor" />
                 </svg>
@@ -498,12 +688,39 @@ onMounted(async () => {
         </section>
       </template>
 
-      <button
-        class="mt-6 w-full rounded-2xl bg-[#009b63] py-4 text-[15px] font-semibold text-white shadow-sm"
-        @click="router.push('/travel/next')"
-      >
-        Завершить поездку
-      </button>
+      <div class="travel-sticky-action mt-6">
+        <div
+          ref="slideTrack"
+          class="relative h-[68px] touch-none overflow-hidden rounded-[26px] border border-[#cfe9de] bg-white p-1 shadow-[inset_0_1px_0_rgba(255,255,255,0.9),0_14px_32px_rgba(0,155,99,0.12)]"
+          :class="slideDragging ? 'select-none' : ''"
+          @pointerdown="startSlide"
+          @pointermove="moveSlide"
+          @pointerup="endSlide"
+          @pointercancel="endSlide"
+        >
+          <div
+            class="absolute inset-y-1 left-1 rounded-[22px] bg-gradient-to-r from-[#dff6eb] to-[#b9ecd7] transition-[width]"
+            :style="{ width: `${slideProgress}%` }"
+          />
+          <div
+            class="pointer-events-none absolute inset-y-2 left-20 w-16 rounded-full bg-white/45 blur-sm"
+            :class="slideDragging ? 'opacity-0' : 'animate-pulse'"
+          />
+          <div class="pointer-events-none absolute inset-0 flex items-center justify-center px-[72px] text-center text-[13px] font-bold leading-5 text-[#00845f]">
+            {{ slideCompleted ? 'Поездка завершается...' : 'Сдвиньте вправо, чтобы завершить' }}
+          </div>
+          <div
+            class="absolute left-1 top-1 flex h-[60px] w-[60px] items-center justify-center rounded-[23px] bg-gradient-to-br from-[#00a86b] to-[#007a51] text-white shadow-[0_12px_24px_rgba(0,155,99,0.32)]"
+            :class="slideDragging ? '' : 'transition-transform duration-300'"
+            :style="{ transform: `translateX(${slideOffset}px)` }"
+          >
+            <svg viewBox="0 0 24 24" class="h-6 w-6">
+              <path :d="slideCompleted ? mdiCheckBold : mdiChevronDoubleRight" fill="currentColor" />
+            </svg>
+          </div>
+        </div>
+      </div>
+      </template>
     </div>
   </main>
 </template>

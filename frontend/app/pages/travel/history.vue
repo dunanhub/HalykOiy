@@ -33,11 +33,11 @@ const typeLabel = (entry: HistoryEntry): string => {
 </script>
 
 <template>
-  <main class="min-h-screen bg-[#f4f6fb] text-[#202436]">
-    <div class="mx-auto min-h-screen max-w-[430px] bg-[#f4f6fb] px-4 pb-8 pt-4">
-      <header class="relative flex items-center justify-center py-3">
+  <main class="travel-screen">
+    <div class="travel-shell flex flex-col">
+      <header class="travel-topbar fade-slide">
         <button
-          class="absolute left-0 flex h-9 w-9 items-center justify-center"
+          class="pressable absolute left-0 flex h-9 w-9 items-center justify-center rounded-full bg-white/70 shadow-sm"
           @click="router.back()"
         >
           <svg viewBox="0 0 24 24" class="h-6 w-6">
@@ -47,26 +47,10 @@ const typeLabel = (entry: HistoryEntry): string => {
         <h1 class="text-[18px] font-semibold">История поездок</h1>
       </header>
 
-      <!-- New trip button -->
-      <button
-        class="mt-5 flex w-full items-center gap-3 rounded-[24px] bg-[#009b63] p-4 text-left text-white shadow-sm"
-        @click="router.push('/travel')"
-      >
-        <span class="flex h-10 w-10 items-center justify-center rounded-full bg-white/20">
-          <svg viewBox="0 0 24 24" class="h-6 w-6">
-            <path :d="mdiPlus" fill="currentColor" />
-          </svg>
-        </span>
-        <span>
-          <span class="block text-[16px] font-bold">Новая поездка</span>
-          <span class="block text-[13px] text-white/80">Начать новый запрос</span>
-        </span>
-      </button>
-
       <!-- Empty state -->
       <div
         v-if="!planHistory.length"
-        class="mt-12 flex flex-col items-center gap-3 text-center"
+        class="fade-slide mt-12 flex flex-1 flex-col items-center gap-3 text-center"
       >
         <div class="flex h-16 w-16 items-center justify-center rounded-full bg-white shadow-sm">
           <svg viewBox="0 0 24 24" class="h-8 w-8 text-[#9aa3b5]">
@@ -78,11 +62,11 @@ const typeLabel = (entry: HistoryEntry): string => {
       </div>
 
       <!-- History list -->
-      <section v-else class="mt-5 space-y-3">
+      <section v-else class="stagger mt-5 space-y-3">
         <button
           v-for="entry in planHistory"
           :key="entry.plan_id"
-          class="w-full rounded-[24px] bg-white p-4 text-left shadow-sm"
+          class="travel-card pressable w-full p-4 text-left"
           @click="openPlan(entry)"
         >
           <div class="flex items-start justify-between gap-3">
@@ -110,6 +94,23 @@ const typeLabel = (entry: HistoryEntry): string => {
           </div>
         </button>
       </section>
+
+      <div class="travel-sticky-action mt-auto">
+        <button
+          class="travel-primary-button flex w-full items-center gap-3 p-4 text-left"
+          @click="router.push('/travel')"
+        >
+          <span class="flex h-10 w-10 items-center justify-center rounded-full bg-white/20">
+            <svg viewBox="0 0 24 24" class="h-6 w-6">
+              <path :d="mdiPlus" fill="currentColor" />
+            </svg>
+          </span>
+          <span>
+            <span class="block text-[16px] font-bold">Новая поездка</span>
+            <span class="block text-[13px] text-white/80">Начать новый запрос</span>
+          </span>
+        </button>
+      </div>
     </div>
   </main>
 </template>

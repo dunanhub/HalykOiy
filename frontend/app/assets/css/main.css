@@ -1,1 +1,278 @@
 @import "tailwindcss";
+
+:root {
+  --travel-green: #009b63;
+  --travel-green-dark: #007a51;
+  --travel-bg: #f4f6fb;
+  --travel-text: #202436;
+  --travel-muted: #6b7280;
+  --travel-line: #e7ebf3;
+}
+
+@layer components {
+  .travel-screen {
+    min-height: 100vh;
+    background: linear-gradient(180deg, #fbfdfc 0%, var(--travel-bg) 54%, #f1f5f4 100%);
+    color: var(--travel-text);
+  }
+
+  .travel-shell {
+    position: relative;
+    width: 100%;
+    max-width: 430px;
+    min-height: 100vh;
+    margin-inline: auto;
+    padding: 16px 16px 32px;
+    overflow: hidden;
+  }
+
+  .travel-topbar {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-block: 12px;
+  }
+
+  .travel-card {
+    position: relative;
+    border: 1px solid var(--travel-line);
+    border-radius: 24px;
+    background: #fff;
+    box-shadow: 0 10px 28px rgba(32, 36, 54, 0.06);
+    transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
+  }
+
+  .travel-card:hover {
+    border-color: rgba(0, 155, 99, 0.14);
+    box-shadow: 0 12px 32px rgba(32, 36, 54, 0.08);
+  }
+
+  .travel-hero {
+    background: linear-gradient(180deg, #fff 0%, #f8fbfa 100%);
+  }
+
+  .travel-soft-gradient {
+    background:
+      linear-gradient(135deg, rgba(0, 155, 99, 0.1), rgba(255, 255, 255, 0.92) 42%),
+      #fff;
+  }
+
+  .travel-icon-bubble {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    background: linear-gradient(145deg, #eaf8f1, #f6fbf8);
+    color: var(--travel-green);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), 0 10px 22px rgba(0, 155, 99, 0.12);
+  }
+
+  .travel-primary-button,
+  .travel-secondary-button {
+    border-radius: 18px;
+    font-weight: 700;
+    transition: transform 160ms ease, box-shadow 160ms ease, opacity 160ms ease, background-color 160ms ease;
+  }
+
+  .travel-primary-button {
+    background: linear-gradient(135deg, var(--travel-green), var(--travel-green-dark));
+    color: #fff;
+    box-shadow: 0 16px 30px rgba(0, 155, 99, 0.24);
+  }
+
+  .travel-secondary-button {
+    background: rgba(255, 255, 255, 0.92);
+    color: var(--travel-text);
+    box-shadow: 0 12px 26px rgba(32, 36, 54, 0.07);
+  }
+
+  .pressable {
+    transition: transform 160ms ease, box-shadow 160ms ease, opacity 160ms ease;
+  }
+
+  .pressable:hover {
+    transform: translateY(-1px);
+  }
+
+  .pressable:active,
+  .travel-primary-button:active,
+  .travel-secondary-button:active {
+    transform: scale(0.98);
+  }
+
+  .travel-primary-button:disabled,
+  .travel-secondary-button:disabled,
+  .pressable:disabled {
+    cursor: not-allowed;
+    opacity: 0.52;
+    transform: none;
+    box-shadow: none;
+  }
+
+  .travel-chip {
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.82);
+    border: 1px solid rgba(0, 155, 99, 0.1);
+    color: var(--travel-green-dark);
+    font-size: 12px;
+    font-weight: 700;
+    transition: transform 160ms ease, background-color 160ms ease;
+  }
+
+  .travel-input-bar {
+    border: 1px solid rgba(255, 255, 255, 0.82);
+    border-radius: 28px;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 18px 42px rgba(32, 36, 54, 0.1);
+    backdrop-filter: blur(18px);
+  }
+
+  .travel-field {
+    border: 1px solid transparent;
+    background: #f4f6fb;
+    transition: border-color 160ms ease, box-shadow 160ms ease, background-color 160ms ease;
+  }
+
+  .travel-field:focus-within,
+  .travel-field:focus {
+    border-color: rgba(0, 155, 99, 0.32);
+    background: #fff;
+    box-shadow: 0 0 0 4px rgba(0, 155, 99, 0.08);
+  }
+
+  .travel-sticky-action {
+    position: sticky;
+    bottom: 0;
+    z-index: 3;
+    margin-inline: -16px;
+    padding: 14px 16px 18px;
+    background: linear-gradient(180deg, rgba(244, 246, 251, 0), rgba(244, 246, 251, 0.94) 30%, rgba(244, 246, 251, 0.98));
+    backdrop-filter: blur(12px);
+  }
+
+  .travel-timeline {
+    position: relative;
+  }
+
+  .travel-timeline::before {
+    content: "";
+    position: absolute;
+    left: 19px;
+    top: 10px;
+    bottom: 10px;
+    width: 2px;
+    border-radius: 999px;
+    background: linear-gradient(180deg, rgba(0, 155, 99, 0.28), rgba(0, 155, 99, 0.04));
+  }
+
+  .travel-timeline-item {
+    position: relative;
+    display: flex;
+    gap: 12px;
+    animation: fade-slide-up 360ms ease both;
+  }
+
+  .travel-step-dot {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    border-radius: 16px;
+    background: #eaf8f1;
+    box-shadow: 0 8px 18px rgba(0, 155, 99, 0.12);
+  }
+
+  .travel-pulse {
+    animation: pulse-soft 1.4s ease-in-out infinite;
+  }
+
+  .fade-slide {
+    animation: fade-slide-up 420ms ease both;
+  }
+
+  .pop-in {
+    animation: pop-in 360ms cubic-bezier(.2, .9, .22, 1.2) both;
+  }
+
+  .stagger > * {
+    animation: fade-slide-up 420ms ease both;
+  }
+
+  .stagger > *:nth-child(2) { animation-delay: 60ms; }
+  .stagger > *:nth-child(3) { animation-delay: 120ms; }
+  .stagger > *:nth-child(4) { animation-delay: 180ms; }
+  .stagger > *:nth-child(5) { animation-delay: 240ms; }
+  .stagger > *:nth-child(6) { animation-delay: 300ms; }
+
+  .shimmer {
+    overflow: hidden;
+    background: linear-gradient(90deg, #edf1f7 0%, #f8fafc 46%, #edf1f7 100%);
+    background-size: 220% 100%;
+    animation: shimmer 1.35s ease-in-out infinite;
+  }
+
+  .travel-step-enter-active,
+  .travel-step-leave-active {
+    transition: opacity 260ms ease, transform 260ms ease;
+  }
+
+  .travel-step-enter-from,
+  .travel-step-leave-to {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+}
+
+@keyframes fade-slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pop-in {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes pulse-soft {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(0, 155, 99, 0.18);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(0, 155, 99, 0);
+  }
+}
+
+@keyframes shimmer {
+  to {
+    background-position: -220% 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}

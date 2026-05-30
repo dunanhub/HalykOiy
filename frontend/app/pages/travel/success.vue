@@ -4,7 +4,8 @@ import {
   mdiTicketConfirmation,
   mdiBed,
   mdiShieldCheck,
-  mdiGiftOutline
+  mdiGiftOutline,
+  mdiArrowLeft,
 } from '@mdi/js'
 
 const router = useRouter()
@@ -18,10 +19,10 @@ onMounted(() => {
 </script>
 
 <template>
-  <main class="min-h-screen bg-[#f4f6fb] text-[#202436]">
-    <div class="mx-auto flex min-h-screen max-w-[430px] flex-col bg-[#f4f6fb] px-4 pb-8 pt-8">
-      <section class="rounded-[32px] bg-white p-6 text-center shadow-sm">
-        <div class="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-[#eaf8f1] text-[#009b63]">
+  <main class="travel-screen">
+    <div class="travel-shell flex flex-col pt-8">
+      <section class="travel-card travel-hero pop-in p-6 text-center">
+        <div class="travel-icon-bubble mx-auto h-20 w-20 travel-pulse">
           <svg viewBox="0 0 24 24" class="h-12 w-12">
             <path :d="mdiCheckCircle" fill="currentColor" />
           </svg>
@@ -30,35 +31,31 @@ onMounted(() => {
         <h1 class="mt-5 text-[28px] font-bold leading-tight">
           Всё забронировано!
         </h1>
-
-        <p class="mt-3 text-[14px] text-[#6b7280]">
-          transaction_id: {{ paymentResult?.transaction_id }}
-        </p>
       </section>
 
-      <section class="mt-5 space-y-3">
-        <div class="flex items-center gap-3 rounded-[24px] bg-white p-4 shadow-sm">
+      <section class="stagger mt-5 space-y-3">
+        <div class="travel-card flex items-center gap-3 p-4">
           <svg viewBox="0 0 24 24" class="h-7 w-7 text-[#009b63]">
             <path :d="mdiTicketConfirmation" fill="currentColor" />
           </svg>
           <p class="text-[15px] font-semibold">Билеты отправлены на почту</p>
         </div>
 
-        <div class="flex items-center gap-3 rounded-[24px] bg-white p-4 shadow-sm">
+        <div class="travel-card flex items-center gap-3 p-4">
           <svg viewBox="0 0 24 24" class="h-7 w-7 text-[#009b63]">
             <path :d="mdiBed" fill="currentColor" />
           </svg>
           <p class="text-[15px] font-semibold">Отель подтверждён</p>
         </div>
 
-        <div class="flex items-center gap-3 rounded-[24px] bg-white p-4 shadow-sm">
+        <div class="travel-card flex items-center gap-3 p-4">
           <svg viewBox="0 0 24 24" class="h-7 w-7 text-[#009b63]">
             <path :d="mdiShieldCheck" fill="currentColor" />
           </svg>
           <p class="text-[15px] font-semibold">Страховка оформлена</p>
         </div>
 
-        <div class="flex items-center gap-3 rounded-[24px] bg-white p-4 shadow-sm">
+        <div class="travel-card flex items-center gap-3 p-4">
           <svg viewBox="0 0 24 24" class="h-7 w-7 text-[#009b63]">
             <path :d="mdiGiftOutline" fill="currentColor" />
           </svg>
@@ -68,12 +65,24 @@ onMounted(() => {
 
       <div class="flex-1" />
 
-      <button
-        class="mt-6 w-full rounded-2xl bg-[#009b63] py-4 text-[15px] font-semibold text-white shadow-sm"
-        @click="router.push('/travel/dashboard')"
-      >
-        Открыть Travel Dashboard
-      </button>
+      <div class="travel-sticky-action mt-6 grid gap-3">
+        <button
+          class="travel-primary-button w-full py-4 text-[15px]"
+          @click="router.push('/travel/dashboard')"
+        >
+          Открыть Travel Dashboard
+        </button>
+
+        <button
+          class="travel-secondary-button flex w-full items-center justify-center gap-2 py-4 text-[15px]"
+          @click="router.push('/travel')"
+        >
+          <svg viewBox="0 0 24 24" class="h-5 w-5">
+            <path :d="mdiArrowLeft" fill="currentColor" />
+          </svg>
+          Назад в Halyk Sapar
+        </button>
+      </div>
     </div>
   </main>
 </template>

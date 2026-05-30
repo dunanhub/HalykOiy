@@ -1,5 +1,18 @@
 <script setup lang="ts">
-import { mdiArrowLeft, mdiCheckCircle, mdiCreditCard, mdiCalendarMonth } from '@mdi/js'
+import {
+  mdiArrowLeft,
+  mdiCreditCard,
+  mdiCalendarMonth,
+  mdiReceiptTextCheckOutline,
+  mdiAirplane,
+  mdiBed,
+  mdiCar,
+  mdiTicketConfirmation,
+  mdiSilverwareForkKnife,
+  mdiShieldCheck,
+  mdiMedicalBag,
+} from '@mdi/js'
+import type { TravelItem } from '~/composables/useTravel'
 
 const router = useRouter()
 const { currentPlan, formatPrice, payForPlan, contactInfo } = useTravel()
@@ -7,6 +20,52 @@ const { currentPlan, formatPrice, payForPlan, contactInfo } = useTravel()
 const loading = ref(false)
 const errorMessage = ref('')
 const payMode = ref<'full' | 3 | 6 | 12>('full')
+
+const iconByCategory: Record<string, string> = {
+  flight: mdiAirplane,
+  hotel: mdiBed,
+  transfer: mdiCar,
+  activity: mdiTicketConfirmation,
+  restaurant: mdiSilverwareForkKnife,
+  insurance: mdiShieldCheck,
+  pharmacy: mdiMedicalBag,
+  travel_kit: mdiMedicalBag,
+}
+
+const labelByCategory: Record<string, string> = {
+  flight: 'Перелёт',
+  hotel: 'Проживание',
+  transfer: 'Трансфер',
+  activity: 'Активности',
+  restaurant: 'Ресторан',
+  insurance: 'Страховка',
+  pharmacy: 'Аптечка',
+  travel_kit: 'Аптечка',
+}
+
+const paymentGroups = computed(() => {
+  const groups = new Map<string, { category: string; label: string; icon: string; items: TravelItem[]; total: number }>()
+
+  for (const item of currentPlan.value?.items || []) {
+    const category = item.category
+    const existing = groups.get(category)
+    if (existing) {
+      existing.items.push(item)
+      existing.total += item.price || 0
+      continue
+    }
+
+    groups.set(category, {
+      category,
+      label: labelByCategory[category] || item.title,
+      icon: iconByCategory[category] || mdiTicketConfirmation,
+      items: [item],
+      total: item.price || 0,
+    })
+  }
+
+  return Array.from(groups.values())
+})
 
 const monthlyPayment = computed(() => {
   const total = currentPlan.value?.total || 0
@@ -35,10 +94,10 @@ const pay = async () => {
 </script>
 
 <template>
-  <main class="min-h-screen bg-[#f4f6fb] text-[#202436]">
-    <div class="mx-auto min-h-screen max-w-[430px] bg-[#f4f6fb] px-4 pb-8 pt-4">
-      <header class="relative flex items-center justify-center py-3">
-        <button class="absolute left-0 flex h-9 w-9 items-center justify-center" @click="router.back()">
+  <main class="travel-screen">
+    <div class="travel-shell">
+      <header class="travel-topbar fade-slide">
+        <button class="pressable absolute left-0 flex h-9 w-9 items-center justify-center rounded-full bg-white/70 shadow-sm" @click="router.back()">
           <svg viewBox="0 0 24 24" class="h-6 w-6">
             <path :d="mdiArrowLeft" fill="currentColor" />
           </svg>
@@ -47,27 +106,58 @@ const pay = async () => {
       </header>
 
       <!-- Trip summary -->
-      <section class="mt-5 rounded-[28px] bg-white p-5 shadow-sm">
-        <div class="flex h-14 w-14 items-center justify-center rounded-full bg-[#eaf8f1] text-[#009b63]">
+      <section class="travel-card travel-hero travel-soft-gradient fade-slide mt-5 p-5">
+        <div class="travel-icon-bubble h-14 w-14">
           <svg viewBox="0 0 24 24" class="h-8 w-8">
-            <path :d="mdiCheckCircle" fill="currentColor" />
+            <path :d="mdiReceiptTextCheckOutline" fill="currentColor" />
           </svg>
         </div>
-        <h2 class="mt-4 text-[24px] font-bold">Подтвердите бронирование</h2>
+        <h2 class="mt-4 text-[24px] font-bold">Проверка и оплата</h2>
         <p class="mt-2 text-[14px] text-[#6b7280]">
           {{ currentPlan?.trip.from }} → {{ currentPlan?.trip.to }} · {{ currentPlan?.trip.nights }} ноч · {{ currentPlan?.trip.pax }} чел
         </p>
-        <div v-if="contactInfo" class="mt-3 rounded-2xl bg-[#f4f6fb] px-3 py-2 text-[13px] text-[#6b7280]">
+        <div v-if="contactInfo" class="mt-3 rounded-2xl bg-white/80 px-3 py-2 text-[13px] text-[#6b7280]">
           {{ contactInfo.name }} {{ contactInfo.surname }} · {{ contactInfo.email }}
         </div>
       </section>
 
       <!-- Items -->
-      <section class="mt-5 rounded-[28px] bg-white p-5 shadow-sm">
-        <div class="space-y-4">
-          <div v-for="item in currentPlan?.items || []" :key="item.title" class="flex items-center justify-between gap-4">
-            <p class="text-[15px] text-[#374151]">{{ item.title }}</p>
-            <p class="shrink-0 text-[15px] font-semibold">{{ formatPrice(item.price) }}</p>
+      <section class="travel-card mt-5 p-5">
+        <div class="mb-4 flex items-center justify-between">
+          <h2 class="text-[17px] font-bold">Ваш заказ</h2>
+          <span class="text-[12px] font-semibold text-[#9aa3b5]">{{ currentPlan?.items.length || 0 }} позиций</span>
+        </div>
+
+        <div class="space-y-3">
+          <div
+            v-for="group in paymentGroups"
+            :key="group.category"
+            class="rounded-[22px] bg-[#f8fafc] px-3 py-3"
+          >
+            <div class="flex items-start gap-3">
+              <div class="travel-icon-bubble h-10 w-10 shrink-0">
+                <svg viewBox="0 0 24 24" class="h-6 w-6 text-[#00845f]">
+                  <path :d="group.icon" fill="currentColor" />
+                </svg>
+              </div>
+
+              <div class="min-w-0 flex-1">
+                <div class="flex items-center justify-between gap-3">
+                  <p class="text-[14px] font-bold text-[#202436]">{{ group.label }}</p>
+                  <p class="shrink-0 text-[14px] font-bold">{{ formatPrice(group.total) }}</p>
+                </div>
+                <div class="mt-2 space-y-2">
+                  <div
+                    v-for="item in group.items"
+                    :key="`${item.category}:${item.title}`"
+                    class="flex items-start justify-between gap-3"
+                  >
+                    <p class="min-w-0 text-[13px] leading-5 text-[#6b7280]">{{ item.title }}</p>
+                    <p class="shrink-0 text-[13px] font-semibold text-[#202436]">{{ formatPrice(item.price) }}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -85,12 +175,12 @@ const pay = async () => {
       </section>
 
       <!-- Payment method -->
-      <section class="mt-5 rounded-[28px] bg-white p-5 shadow-sm">
+      <section class="travel-card mt-5 p-5">
         <p class="mb-3 text-[16px] font-bold">Способ оплаты</p>
 
         <!-- Full payment -->
         <button
-          class="mb-2 flex w-full items-center gap-3 rounded-2xl border-2 px-4 py-3 text-left transition-colors"
+          class="pressable mb-2 flex w-full items-center gap-3 rounded-2xl border-2 px-4 py-3 text-left transition-colors"
           :class="payMode === 'full' ? 'border-[#009b63] bg-[#eaf8f1]' : 'border-[#edf0f5] bg-white'"
           @click="payMode = 'full'"
         >
@@ -114,7 +204,7 @@ const pay = async () => {
           <button
             v-for="months in [3, 6, 12]"
             :key="months"
-            class="flex flex-col items-center rounded-2xl border-2 px-2 py-3 transition-colors"
+            class="pressable flex flex-col items-center rounded-2xl border-2 px-2 py-3 transition-colors"
             :class="payMode === months ? 'border-[#009b63] bg-[#eaf8f1]' : 'border-[#edf0f5] bg-white'"
             @click="payMode = months"
           >
@@ -136,21 +226,20 @@ const pay = async () => {
         </div>
       </section>
 
-      <p v-if="errorMessage" class="mt-4 rounded-2xl bg-[#fff1f2] px-4 py-3 text-[14px] text-[#be123c]">
+      <p v-if="errorMessage" class="fade-slide mt-4 rounded-2xl bg-[#fff1f2] px-4 py-3 text-[14px] text-[#be123c]">
         {{ errorMessage }}
       </p>
 
-      <div class="mt-5 grid grid-cols-2 gap-3">
+      <div class="travel-sticky-action mt-5 grid grid-cols-2 gap-3">
         <button
-          class="rounded-2xl bg-white py-4 text-[15px] font-semibold text-[#202436] shadow-sm"
+          class="travel-secondary-button py-4 text-[15px]"
           @click="router.push('/travel/plan')"
         >
           Назад
         </button>
 
         <button
-          class="rounded-2xl bg-[#009b63] py-4 text-[15px] font-semibold text-white shadow-sm"
-          :class="loading ? 'opacity-50' : ''"
+          class="travel-primary-button py-4 text-[15px]"
           :disabled="loading"
           @click="pay"
         >

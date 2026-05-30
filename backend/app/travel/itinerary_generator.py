@@ -106,21 +106,22 @@ def generate_itinerary(
                 middle[day_idx]["items"].append(_act_item(act))
 
     # --- Distribute restaurants ---
-    # Day 1 evening (after check-in) gets first restaurant.
-    # Subsequent restaurants spread across middle days.
-    # Last day (departure) does NOT get a restaurant — no time before flight.
+    # Keep every selected restaurant visible. On short trips, extra meals can
+    # happen before departure so "different dates" edits do not disappear.
     if restaurants:
         if days_count == 1:
             for rest in restaurants:
                 itinerary[0]["items"].append(_rest_item(rest))
         elif days_count == 2:
-            # Only one realistic dinner — Day 1 evening
-            itinerary[0]["items"].append(_rest_item(restaurants[0]))
-        else:
-            # Spread across days 1..(last-1)
-            rest_days = itinerary[:-1]
             for r_idx, rest in enumerate(restaurants):
-                target_idx = min(r_idx, len(rest_days) - 1)
+                target_day = itinerary[min(r_idx, 1)]
+                target_day["items"].append(_rest_item(rest))
+        else:
+            # Spread across days 1..last, then cycle if there are more restaurants
+            # than days. Departure items are appended after this block.
+            rest_days = itinerary
+            for r_idx, rest in enumerate(restaurants):
+                target_idx = r_idx % len(rest_days)
                 rest_days[target_idx]["items"].append(_rest_item(rest))
 
     # --- Attach departure items to last day AFTER activities and restaurants ---
