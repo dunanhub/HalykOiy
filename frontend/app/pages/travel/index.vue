@@ -2,7 +2,7 @@
 import { mdiArrowLeft, mdiSend, mdiHistory } from '@mdi/js'
 
 const router = useRouter()
-const { pendingMessage, pendingEditMessage } = useTravel()
+const { pendingMessage, pendingEditMessage, resetTravelDraft } = useTravel()
 
 const message = ref('')
 
@@ -20,6 +20,7 @@ const submitRequest = () => {
 
   pendingMessage.value = message.value.trim()
   pendingEditMessage.value = ''
+  resetTravelDraft()
 
   router.push('/travel/thinking')
 }

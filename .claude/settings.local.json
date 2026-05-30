@@ -2,7 +2,9 @@
   "permissions": {
     "allow": [
       "Bash(python3 -c 'import json; d=json.load\\(open\\('\\\\''__TRACKED_VAR__'\\\\''\\)\\); print\\(len\\(d\\) if isinstance\\(d, list\\) else '\\\\''object'\\\\''\\)')",
-      "Bash(python3 *)"
+      "Bash(python3 *)",
+      "Bash(python -c ' *)",
+      "Bash(python *)"
     ]
   }
 }

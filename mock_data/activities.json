@@ -1348,5 +1348,68 @@
     "duration": "Целый день",
     "price": 2000,
     "rating": 4.8
+  },
+  {
+    "id": "cinema_astana_1",
+    "title": "Кино · Kino.kz Астана",
+    "city": "Астана",
+    "type": "cinema",
+    "provider": "kino.kz",
+    "audience": "все",
+    "duration": "2 часа",
+    "price": 1800,
+    "rating": 4.6,
+    "link": "https://kino.kz"
+  },
+  {
+    "id": "cinema_almaty_1",
+    "title": "Кино · Kino.kz Алматы",
+    "city": "Алматы",
+    "type": "cinema",
+    "provider": "kino.kz",
+    "audience": "все",
+    "duration": "2 часа",
+    "price": 2000,
+    "rating": 4.7,
+    "link": "https://kino.kz"
+  },
+  {
+    "id": "cinema_aktobe_1",
+    "title": "Кино · Kino.kz Актобе",
+    "city": "Актобе",
+    "type": "cinema",
+    "provider": "kino.kz",
+    "audience": "все",
+    "duration": "2 часа",
+    "price": 1500,
+    "rating": 4.4,
+    "link": "https://kino.kz"
+  },
+  {
+    "id": "baiterek_astana",
+    "title": "Байтерек — смотровая башня",
+    "city": "Астана",
+    "audience": "семья с детьми",
+    "duration": "1.5 часа",
+    "price": 500,
+    "rating": 4.8
+  },
+  {
+    "id": "khan_shatyr_astana",
+    "title": "Хан Шатыр — торгово-развлекательный центр",
+    "city": "Астана",
+    "audience": "семья с детьми",
+    "duration": "3 часа",
+    "price": 0,
+    "rating": 4.5
+  },
+  {
+    "id": "koktobe_almaty",
+    "title": "Кок-Тобе — горный парк",
+    "city": "Алматы",
+    "audience": "семья с детьми",
+    "duration": "3 часа",
+    "price": 1500,
+    "rating": 4.7
   }
 ]

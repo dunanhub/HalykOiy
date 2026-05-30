@@ -1,8 +1,17 @@
 export type TravelItem = {
   category: string
+  id?: string
   title: string
   details: string
   price: number
+  disclaimer?: string
+  optional?: boolean
+}
+
+export type FamilyMember = {
+  role: string
+  name?: string | null
+  age?: number | null
 }
 
 export type TravelPlan = {
@@ -15,18 +24,31 @@ export type TravelPlan = {
     pax: number
     type: string
   }
+  family_members?: FamilyMember[] | null
   items: TravelItem[]
   total: number
   budget: number
   within_budget: boolean
   bonus: number
+  can_book?: boolean
+  checklist?: unknown[]
+  next_trip?: unknown
 }
 
 export type ThinkingStep = {
+  type?: 'thinking'
   step: string
   icon: string
   text: string
   status: string
+}
+
+export type ClarificationResult = {
+  status: 'need_clarification'
+  question: string
+  quick_replies: string[]
+  missing_fields: string[]
+  partial_request: Record<string, unknown>
 }
 
 export type PaymentResult = {
@@ -40,6 +62,13 @@ export type PaymentResult = {
   message: string
 }
 
+export type ContactInfo = {
+  name: string
+  surname: string
+  email: string
+  phone: string
+}
+
 export const useTravel = () => {
   const config = useRuntimeConfig()
   const apiBase = config.public.apiBase
@@ -48,6 +77,8 @@ export const useTravel = () => {
   const pendingEditMessage = useState<string>('travel:pending-edit-message', () => '')
   const currentPlan = useState<TravelPlan | null>('travel:current-plan', () => null)
   const paymentResult = useState<PaymentResult | null>('travel:payment-result', () => null)
+  const contactInfo = useState<ContactInfo | null>('travel:contact', () => null)
+  const pendingPartialRequest = useState<Record<string, unknown> | null>('travel:partial-request', () => null)
 
   const formatPrice = (value: number) => {
     return new Intl.NumberFormat('ru-RU').format(value) + ' ₸'
@@ -57,13 +88,87 @@ export const useTravel = () => {
     return await $fetch<ThinkingStep[]>(`${apiBase}/api/travel/thinking`)
   }
 
-  const createPlan = async (message: string) => {
-    const plan = await $fetch<TravelPlan>(`${apiBase}/api/travel/plan`, {
-      method: 'POST',
-      body: { message },
+  const resetTravelDraft = () => {
+    currentPlan.value = null
+    paymentResult.value = null
+    contactInfo.value = null
+    pendingPartialRequest.value = null
+  }
+
+  const createPlanStream = async (
+    message: string,
+    onThinking: (step: ThinkingStep) => void,
+    partialRequest?: Record<string, unknown> | null,
+  ) => {
+    const wsBase = apiBase.replace(/^http/, 'ws')
+
+    const result = await new Promise<TravelPlan | ClarificationResult>((resolve, reject) => {
+      const socket = new WebSocket(`${wsBase}/ws/travel`)
+
+      socket.onopen = () => {
+        socket.send(JSON.stringify({ text: message, partial_request: partialRequest || undefined }))
+      }
+
+      socket.onmessage = (event) => {
+        const payload = JSON.parse(event.data)
+
+        if (payload.type === 'thinking') {
+          onThinking(payload)
+          return
+        }
+
+        if (payload.type === 'plan_ready') {
+          resolve(payload.plan)
+          socket.close()
+          return
+        }
+
+        if (payload.type === 'need_clarification') {
+          resolve(payload)
+          socket.close()
+          return
+        }
+
+        if (payload.type === 'error') {
+          const reason = payload.reason ? ` ${payload.reason}` : ''
+          reject(new Error(`${payload.text || 'Travel planning failed'}${reason}`))
+          socket.close()
+        }
+      }
+
+      socket.onerror = () => {
+        reject(new Error('WebSocket connection failed'))
+      }
     })
 
+    if ('status' in result && result.status === 'need_clarification') {
+      pendingPartialRequest.value = result.partial_request
+      return result
+    }
+
+    currentPlan.value = result
+    pendingPartialRequest.value = null
+    paymentResult.value = null
+
+    return result
+  }
+
+  const createPlan = async (message: string) => {
+    const plan = await $fetch<TravelPlan | ClarificationResult>(`${apiBase}/api/travel/plan`, {
+      method: 'POST',
+      body: {
+        text: message,
+        partial_request: pendingPartialRequest.value || undefined,
+      },
+    })
+
+    if ('status' in plan && plan.status === 'need_clarification') {
+      pendingPartialRequest.value = plan.partial_request
+      return plan
+    }
+
     currentPlan.value = plan
+    pendingPartialRequest.value = null
     paymentResult.value = null
 
     return plan
@@ -112,8 +217,12 @@ export const useTravel = () => {
     pendingEditMessage,
     currentPlan,
     paymentResult,
+    contactInfo,
+    pendingPartialRequest,
     formatPrice,
     getThinkingSteps,
+    resetTravelDraft,
+    createPlanStream,
     createPlan,
     editPlan,
     payForPlan,

@@ -2,23 +2,27 @@
 import { mdiArrowLeft, mdiSend } from '@mdi/js'
 
 const router = useRouter()
-const { pendingEditMessage, currentPlan } = useTravel()
+const { currentPlan, editPlan } = useTravel()
 
 const editMessage = ref('')
-
-const submitEdit = () => {
-  if (!editMessage.value.trim()) return
-
-  pendingEditMessage.value = editMessage.value.trim()
-
-  router.push('/travel/thinking')
-}
+const saving = ref(false)
 
 onMounted(() => {
   if (!currentPlan.value) {
     router.push('/travel')
   }
 })
+
+const submitEdit = async () => {
+  if (!editMessage.value.trim() || !currentPlan.value) return
+  saving.value = true
+  try {
+    await editPlan(editMessage.value.trim())
+    router.push('/travel/plan')
+  } finally {
+    saving.value = false
+  }
+}
 </script>
 
 <template>
@@ -33,23 +37,21 @@ onMounted(() => {
             <path :d="mdiArrowLeft" fill="currentColor" />
           </svg>
         </button>
-
-        <h1 class="text-[18px] font-semibold">
-          Изменить план
-        </h1>
+        <h1 class="text-[18px] font-semibold">Изменить план</h1>
       </header>
 
       <section class="mt-6 rounded-[28px] bg-white p-5 shadow-sm">
-        <h2 class="text-[24px] font-bold leading-tight">
-          Что изменить?
-        </h2>
-
+        <h2 class="text-[24px] font-bold leading-tight">Что изменить?</h2>
         <p class="mt-3 text-[15px] leading-6 text-[#6b7280]">
-          Напишите правку обычным текстом. Например: убрать ресторан, добавить багаж или уменьшить бюджет.
+          Напишите что изменить — и мы подберём другой вариант.
         </p>
 
-        <div class="mt-5 rounded-[22px] bg-[#f4f6fb] p-4 text-[15px]">
-          убери ресторан, бюджет хочу оставить запас
+        <div v-if="currentPlan" class="mt-4 rounded-[20px] bg-[#eaf8f1] px-4 py-3 text-[13px] text-[#00845f]">
+          {{ currentPlan.trip.from }} → {{ currentPlan.trip.to }} · {{ currentPlan.trip.pax }} чел · {{ currentPlan.trip.nights }} ноч
+        </div>
+
+        <div class="mt-4 rounded-[22px] bg-[#f4f6fb] p-4 text-[14px] text-[#9aa3b5]">
+          Например: хочу самый дорогой отель · убрать ресторан · добавить активности
         </div>
       </section>
 
@@ -64,10 +66,10 @@ onMounted(() => {
           class="min-w-0 flex-1 bg-transparent px-2 text-[15px] outline-none placeholder:text-[#9aa3b5]"
           placeholder="Напишите изменение..."
         >
-
         <button
           type="submit"
           class="flex h-11 w-11 items-center justify-center rounded-full bg-[#009b63] text-white"
+          :disabled="!editMessage.trim() || saving"
         >
           <svg viewBox="0 0 24 24" class="h-6 w-6">
             <path :d="mdiSend" fill="currentColor" />

@@ -1,44 +1,137 @@
 <script setup lang="ts">
-import { mdiArrowLeft } from '@mdi/js'
+import { mdiArrowLeft, mdiPlus, mdiMinus } from '@mdi/js'
+import type { ClarificationResult, TravelPlan } from '~/composables/useTravel'
 
 const router = useRouter()
 const {
   pendingMessage,
   pendingEditMessage,
+  pendingPartialRequest,
   currentPlan,
-  getThinkingSteps,
-  createPlan,
+  createPlanStream,
   editPlan,
 } = useTravel()
 
 const steps = ref<string[]>([])
 const loading = ref(true)
 const errorMessage = ref('')
-const planReady = computed(() => Boolean(currentPlan.value) && !loading.value && !errorMessage.value)
+const clarification = ref<ClarificationResult | null>(null)
+const planReady = computed(() => Boolean(currentPlan.value) && !loading.value && !errorMessage.value && !clarification.value && !showCustomGroup.value)
 
-const wait = (ms: number) => new Promise(resolve => setTimeout(resolve, ms))
+// --- Custom group form ---
+const showCustomGroup = ref(false)
+const customPax = ref(2)
 
-onMounted(async () => {
-  try {
-    const backendSteps = await getThinkingSteps()
+type Member = { role: string; name: string; age: string }
+const customMembers = ref<Member[]>([{ role: 'жена', name: '', age: '' }])
 
-    for (const step of backendSteps) {
+const ROLES = ['жена', 'муж', 'девушка', 'парень', 'друг', 'подруга', 'мама', 'папа', 'ребёнок']
+
+watch(customPax, (newPax) => {
+  const needed = Math.max(0, newPax - 1)
+  while (customMembers.value.length < needed) {
+    customMembers.value.push({ role: '', name: '', age: '' })
+  }
+  customMembers.value = customMembers.value.slice(0, needed)
+})
+
+const setPax = (delta: number) => {
+  customPax.value = Math.max(1, Math.min(10, customPax.value + delta))
+}
+
+const submitCustomGroup = () => {
+  const parts: string[] = []
+  for (const m of customMembers.value) {
+    if (!m.role) continue
+    let desc = m.role
+    if (m.name.trim()) desc += ` ${m.name.trim()}`
+    if (m.role === 'ребёнок' && m.age) desc += ` ${m.age} лет`
+    parts.push(desc)
+  }
+
+  let message = `нас ${customPax.value} ${paxLabel(customPax.value)}`
+  if (parts.length > 0) {
+    message += ': ' + parts.join(', ')
+  }
+
+  showCustomGroup.value = false
+  runPlanning(message)
+}
+
+const paxLabel = (n: number) => {
+  if (n === 1) return 'человек'
+  if (n >= 2 && n <= 4) return 'человека'
+  return 'человек'
+}
+// --- end custom group form ---
+
+const createPlan = (message: string) => createPlanStream(
+  message,
+  step => {
+    if (step.status !== 'done') {
       steps.value.push(`${step.icon} ${step.text}`)
-      await wait(350)
     }
+  },
+  pendingPartialRequest.value,
+)
 
-    if (pendingEditMessage.value) {
-      await editPlan(pendingEditMessage.value)
-      pendingEditMessage.value = ''
-    } else {
-      await createPlan(pendingMessage.value || 'хочу с семьёй в Астану на выходные, бюджет 150к')
-      pendingMessage.value = ''
+const handleResult = (result: TravelPlan | ClarificationResult) => {
+  if ('status' in result && result.status === 'need_clarification') {
+    clarification.value = result
+    // When asking about companions — skip quick replies, show group form directly
+    const fields = result.missing_fields || []
+    if (fields.includes('pax') || fields.includes('family_members')) {
+      showCustomGroup.value = true
     }
+    return
+  }
 
-    steps.value.push('✅ План готов!')
+  clarification.value = null
+  steps.value.push('✅ План готов!')
+}
+
+const handleReply = (reply: string) => {
+  runPlanning(reply)
+}
+
+const runPlanning = async (message: string) => {
+  loading.value = true
+  errorMessage.value = ''
+  clarification.value = null
+  showCustomGroup.value = false
+  steps.value = []
+
+  try {
+    const result = await createPlan(message)
+    handleResult(result)
   } catch (error) {
     console.error(error)
     errorMessage.value = 'Не удалось собрать план. Проверьте, что backend запущен.'
+    if (error instanceof Error) {
+      errorMessage.value = error.message
+    }
+  } finally {
+    loading.value = false
+  }
+}
+
+onMounted(async () => {
+  try {
+    if (pendingEditMessage.value) {
+      await editPlan(pendingEditMessage.value)
+      pendingEditMessage.value = ''
+      steps.value.push('✅ План готов!')
+    } else {
+      const result = await createPlan(pendingMessage.value || 'хочу с семьёй в Астану на выходные, бюджет 150к')
+      pendingMessage.value = ''
+      handleResult(result)
+    }
+  } catch (error) {
+    console.error(error)
+    errorMessage.value = 'Не удалось собрать план. Проверьте, что backend запущен.'
+    if (error instanceof Error) {
+      errorMessage.value = error.message
+    }
   } finally {
     loading.value = false
   }
@@ -77,6 +170,122 @@ onMounted(async () => {
             {{ step }}
           </div>
 
+          <!-- Standard clarification (quick replies) -->
+          <div
+            v-if="clarification && !showCustomGroup"
+            class="rounded-2xl bg-[#eaf8f1] px-4 py-4 text-[15px]"
+          >
+            <p class="font-semibold text-[#202436]">
+              {{ clarification.question }}
+            </p>
+
+            <div class="mt-3 grid gap-2">
+              <button
+                v-for="reply in clarification.quick_replies"
+                :key="reply"
+                class="rounded-2xl bg-white px-4 py-3 text-left text-[14px] font-semibold text-[#00845f]"
+                :disabled="loading"
+                @click="handleReply(reply)"
+              >
+                {{ reply }}
+              </button>
+            </div>
+          </div>
+
+          <!-- Group form — shown directly for companion clarification -->
+          <div
+            v-if="showCustomGroup"
+            class="rounded-2xl bg-[#eaf8f1] px-4 py-4"
+          >
+            <div class="mb-4">
+              <p class="text-[16px] font-bold text-[#202436]">
+                Ваша группа
+              </p>
+            </div>
+
+            <!-- Pax counter -->
+            <div class="mb-5">
+              <p class="mb-2 text-[13px] text-[#6b7280]">
+                Сколько человек едет?
+              </p>
+              <div class="flex items-center gap-4">
+                <button
+                  class="flex h-9 w-9 items-center justify-center rounded-full bg-white shadow-sm"
+                  @click="setPax(-1)"
+                >
+                  <svg viewBox="0 0 24 24" class="h-5 w-5 text-[#009b63]">
+                    <path :d="mdiMinus" fill="currentColor" />
+                  </svg>
+                </button>
+                <span class="min-w-[2ch] text-center text-[22px] font-bold text-[#202436]">{{ customPax }}</span>
+                <button
+                  class="flex h-9 w-9 items-center justify-center rounded-full bg-white shadow-sm"
+                  @click="setPax(1)"
+                >
+                  <svg viewBox="0 0 24 24" class="h-5 w-5 text-[#009b63]">
+                    <path :d="mdiPlus" fill="currentColor" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            <!-- Member slots -->
+            <div
+              v-if="customMembers.length > 0"
+              class="mb-4 space-y-4"
+            >
+              <div
+                v-for="(member, i) in customMembers"
+                :key="i"
+                class="rounded-2xl bg-white p-3"
+              >
+                <p class="mb-2 text-[13px] font-semibold text-[#6b7280]">
+                  Участник {{ i + 1 }}
+                </p>
+
+                <!-- Role chips -->
+                <div class="mb-3 flex flex-wrap gap-1.5">
+                  <button
+                    v-for="role in ROLES"
+                    :key="role"
+                    class="rounded-full px-3 py-1 text-[12px] font-semibold transition-colors"
+                    :class="member.role === role
+                      ? 'bg-[#009b63] text-white'
+                      : 'bg-[#f4f6fb] text-[#202436]'"
+                    @click="member.role = role"
+                  >
+                    {{ role }}
+                  </button>
+                </div>
+
+                <!-- Name input -->
+                <input
+                  v-model="member.name"
+                  class="mb-2 w-full rounded-xl bg-[#f4f6fb] px-3 py-2 text-[14px] outline-none placeholder:text-[#9aa3b5]"
+                  placeholder="Имя (необязательно)"
+                >
+
+                <!-- Age input for children -->
+                <input
+                  v-if="member.role === 'ребёнок'"
+                  v-model="member.age"
+                  type="number"
+                  min="0"
+                  max="17"
+                  class="w-full rounded-xl bg-[#f4f6fb] px-3 py-2 text-[14px] outline-none placeholder:text-[#9aa3b5]"
+                  placeholder="Возраст ребёнка"
+                >
+              </div>
+            </div>
+
+            <button
+              class="w-full rounded-2xl bg-[#009b63] py-3.5 text-[15px] font-semibold text-white"
+              @click="submitCustomGroup"
+            >
+              Продолжить
+            </button>
+          </div>
+
           <div
             v-if="errorMessage"
             class="rounded-2xl bg-[#fff1f2] px-4 py-3 text-[15px] text-[#be123c]"
@@ -91,7 +300,7 @@ onMounted(async () => {
           :disabled="!planReady"
           @click="router.push('/travel/plan')"
         >
-          {{ loading ? 'Собираю план...' : 'Посмотреть план' }}
+          {{ loading ? 'Собираю план...' : (clarification || showCustomGroup) ? 'Ответьте на вопрос выше' : 'Посмотреть план' }}
         </button>
       </section>
     </div>

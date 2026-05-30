@@ -1,4 +1,4 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, WebSocket
 from fastapi.middleware.cors import CORSMiddleware
 
 from app.routers.flights import router as flights_router
@@ -10,6 +10,7 @@ from app.routers.pay import router as pay_router
 from app.routers.restaurants import router as restaurants_router
 from app.routers.insurance import router as insurance_router
 from app.routers.travel import router as travel_router
+from workflow import run_workflow
 
 app = FastAPI(title="Halyk Travel AI")
 
@@ -34,3 +35,25 @@ app.include_router(travel_router)
 @app.get("/")
 async def root():
     return {"status": "ok"}
+
+
+@app.websocket("/ws/travel")
+async def travel_websocket(websocket: WebSocket):
+    await websocket.accept()
+    try:
+        data = await websocket.receive_json()
+        user_text = data.get("text", "")
+        if not user_text.strip():
+            await websocket.send_json({"type": "error", "text": "Укажи куда хочешь поехать"})
+            return
+        await run_workflow(user_text, stream=websocket, partial_request=data.get("partial_request"))
+    except Exception as e:
+        try:
+            await websocket.send_json({"type": "error", "text": str(e)})
+        except Exception:
+            pass
+    finally:
+        try:
+            await websocket.close()
+        except Exception:
+            pass
