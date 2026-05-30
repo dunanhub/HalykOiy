@@ -1,15 +1,24 @@
 import asyncio
+from datetime import date, timedelta
 
 from .assembler import assemble_plan
 from .clarifier import apply_quick_reply, build_clarification, merge_requests
 from .constants import DEFAULTS, VALID_NEEDS
+from .date_utils import normalize_trip_dates
 from .evaluator import evaluate_plan
 from .llm import extract_trip_request
 from .mock_repo import fetch_options
+from .plan_modifier import (
+    add_activity_to_plan,
+    add_restaurant_to_plan,
+    detect_modification_intent,
+    remove_category_from_plan,
+)
 from .plan_store import save_plan
 from .prefilter import prefilter_options
 from .security import mask_pii, sanitize_user_input
 from .selector import build_selection
+from .weather import get_weather_for_dates
 
 
 def validate_and_fill_defaults(req: dict) -> tuple[dict, str | None]:
@@ -48,8 +57,8 @@ def validate_and_fill_defaults(req: dict) -> tuple[dict, str | None]:
     if "insurance" not in filled["needs"]:
         filled["needs"].append("insurance")
 
-    # activity and transfer are always included (LLM doesn't know about them)
-    for auto_need in ("activity", "transfer"):
+    # activity, transfer, restaurant always included
+    for auto_need in ("activity", "transfer", "restaurant"):
         if auto_need not in filled["needs"]:
             filled["needs"].append(auto_need)
 
@@ -159,7 +168,7 @@ async def wait_with_keepalive(awaitable, stream):
     return await task
 
 
-async def run_workflow(user_text: str, stream=None, partial_request=None) -> dict:
+async def run_workflow(user_text: str, stream=None, partial_request=None, current_plan: dict | None = None) -> dict:
     await emit(stream, "extract", "🔍", "Анализирую запрос...")
 
     clean_text, is_suspicious = sanitize_user_input(user_text)
@@ -184,6 +193,44 @@ async def run_workflow(user_text: str, stream=None, partial_request=None) -> dic
 
     if error:
         return await send_error(stream, error)
+
+    # Normalize trip dates (fills start_date/end_date/nights/days from text)
+    req = normalize_trip_dates(req)
+
+    # Handle modification intents when a current plan exists
+    if current_plan:
+        intent = detect_modification_intent(clean_text)
+        if intent == "add_activity":
+            options = fetch_options(req)
+            candidates = prefilter_options(req, options)
+            plan = add_activity_to_plan(current_plan, req, candidates)
+            save_plan(plan)
+            if stream:
+                try:
+                    await stream.send_json({"type": "plan_ready", "plan": plan})
+                except Exception:
+                    pass
+            return plan
+        elif intent == "add_restaurant":
+            options = fetch_options(req)
+            candidates = prefilter_options(req, options)
+            plan = add_restaurant_to_plan(current_plan, req, candidates)
+            save_plan(plan)
+            if stream:
+                try:
+                    await stream.send_json({"type": "plan_ready", "plan": plan})
+                except Exception:
+                    pass
+            return plan
+        elif intent == "remove_pharmacy":
+            plan = remove_category_from_plan(current_plan, "travel_kit")
+            save_plan(plan)
+            if stream:
+                try:
+                    await stream.send_json({"type": "plan_ready", "plan": plan})
+                except Exception:
+                    pass
+            return plan
 
     clarification = build_clarification(req)
     if clarification:
@@ -242,6 +289,23 @@ async def run_workflow(user_text: str, stream=None, partial_request=None) -> dic
         return await send_error(stream, "Не удалось собрать план в рамках бюджета", hint)
 
     plan = assemble_plan(req, selection, candidates)
+
+    # Enrich itinerary days with per-date weather forecasts (non-blocking)
+    if plan.get("start_date") and plan.get("end_date"):
+        try:
+            sd = date.fromisoformat(plan["start_date"])
+            ed = date.fromisoformat(plan["end_date"])
+            dates_list = []
+            d = sd
+            while d <= ed:
+                dates_list.append(d.isoformat())
+                d += timedelta(days=1)
+            weather_by_date = await get_weather_for_dates(req["to_city"], dates_list)
+            for day in plan.get("itinerary", []):
+                if day.get("date") and day["date"] in weather_by_date:
+                    day["weather"] = weather_by_date[day["date"]]
+        except Exception as exc:
+            print(f"[WARN] weather for dates failed: {exc}")
 
     save_plan(plan)
 

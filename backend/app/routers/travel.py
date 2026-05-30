@@ -13,6 +13,7 @@ router = APIRouter(prefix="/api/travel", tags=["Travel"])
 class PlanRequest(BaseModel):
     text: str = Field(..., min_length=2)
     partial_request: dict | None = None
+    current_plan: dict | None = None
 
 
 class EditRequest(BaseModel):
@@ -51,7 +52,7 @@ async def travel_weather(city: str):
 
 @router.post("/plan")
 async def create_plan(data: PlanRequest):
-    return await run_workflow(data.text, partial_request=data.partial_request)
+    return await run_workflow(data.text, partial_request=data.partial_request, current_plan=data.current_plan)
 
 
 @router.post("/edit")

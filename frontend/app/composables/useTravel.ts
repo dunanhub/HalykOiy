@@ -14,6 +14,21 @@ export type FamilyMember = {
   age?: number | null
 }
 
+export type ItineraryItem = {
+  type: string
+  icon: string
+  title: string
+  details?: string
+}
+
+export type ItineraryDay = {
+  day: number
+  date: string | null
+  title: string
+  items: ItineraryItem[]
+  weather: { temp: number | null; description: string } | null
+}
+
 export type TravelPlan = {
   plan_id: string
   trip: {
@@ -33,6 +48,10 @@ export type TravelPlan = {
   can_book?: boolean
   checklist?: unknown[]
   next_trip?: unknown
+  itinerary?: ItineraryDay[] | null
+  start_date?: string | null
+  end_date?: string | null
+  days?: number | null
 }
 
 export type ThinkingStep = {
@@ -49,6 +68,15 @@ export type ClarificationResult = {
   quick_replies: string[]
   missing_fields: string[]
   partial_request: Record<string, unknown>
+}
+
+export type HistoryEntry = {
+  plan_id: string
+  title: string
+  description: string
+  total: number
+  saved_at: string
+  plan: TravelPlan
 }
 
 export type PaymentResult = {
@@ -69,6 +97,24 @@ export type ContactInfo = {
   phone: string
 }
 
+const HISTORY_KEY = 'halyk:plan-history'
+
+const _readHistory = (): HistoryEntry[] => {
+  if (typeof window === 'undefined') return []
+  try {
+    return JSON.parse(localStorage.getItem(HISTORY_KEY) || '[]')
+  } catch {
+    return []
+  }
+}
+
+const _writeHistory = (entries: HistoryEntry[]) => {
+  if (typeof window === 'undefined') return
+  try {
+    localStorage.setItem(HISTORY_KEY, JSON.stringify(entries.slice(0, 15)))
+  } catch {}
+}
+
 export const useTravel = () => {
   const config = useRuntimeConfig()
   const apiBase = config.public.apiBase
@@ -79,6 +125,26 @@ export const useTravel = () => {
   const paymentResult = useState<PaymentResult | null>('travel:payment-result', () => null)
   const contactInfo = useState<ContactInfo | null>('travel:contact', () => null)
   const pendingPartialRequest = useState<Record<string, unknown> | null>('travel:partial-request', () => null)
+  const planHistory = useState<HistoryEntry[]>('travel:history', () => [])
+
+  const loadHistory = () => {
+    planHistory.value = _readHistory()
+  }
+
+  const pushToHistory = (plan: TravelPlan) => {
+    const entry: HistoryEntry = {
+      plan_id: plan.plan_id,
+      title: `${plan.trip.from} → ${plan.trip.to}`,
+      description: [plan.trip.dates, `${plan.trip.pax} чел`].filter(Boolean).join(' · '),
+      total: plan.total,
+      saved_at: new Date().toISOString(),
+      plan,
+    }
+    const existing = _readHistory()
+    const updated = [entry, ...existing.filter(e => e.plan_id !== plan.plan_id)].slice(0, 15)
+    _writeHistory(updated)
+    planHistory.value = updated
+  }
 
   const formatPrice = (value: number) => {
     return new Intl.NumberFormat('ru-RU').format(value) + ' ₸'
@@ -149,6 +215,7 @@ export const useTravel = () => {
     currentPlan.value = result
     pendingPartialRequest.value = null
     paymentResult.value = null
+    pushToHistory(result)
 
     return result
   }
@@ -170,6 +237,7 @@ export const useTravel = () => {
     currentPlan.value = plan
     pendingPartialRequest.value = null
     paymentResult.value = null
+    pushToHistory(plan)
 
     return plan
   }
@@ -189,6 +257,7 @@ export const useTravel = () => {
 
     currentPlan.value = plan
     paymentResult.value = null
+    pushToHistory(plan)
 
     return plan
   }
@@ -219,9 +288,11 @@ export const useTravel = () => {
     paymentResult,
     contactInfo,
     pendingPartialRequest,
+    planHistory,
     formatPrice,
     getThinkingSteps,
     resetTravelDraft,
+    loadHistory,
     createPlanStream,
     createPlan,
     editPlan,

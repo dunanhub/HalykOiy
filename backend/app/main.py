@@ -46,7 +46,7 @@ async def travel_websocket(websocket: WebSocket):
         if not user_text.strip():
             await websocket.send_json({"type": "error", "text": "Укажи куда хочешь поехать"})
             return
-        await run_workflow(user_text, stream=websocket, partial_request=data.get("partial_request"))
+        await run_workflow(user_text, stream=websocket, partial_request=data.get("partial_request"), current_plan=data.get("current_plan"))
     except Exception as e:
         try:
             await websocket.send_json({"type": "error", "text": str(e)})

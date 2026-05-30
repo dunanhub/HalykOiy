@@ -16,7 +16,12 @@ const steps = ref<string[]>([])
 const loading = ref(true)
 const errorMessage = ref('')
 const clarification = ref<ClarificationResult | null>(null)
-const planReady = computed(() => Boolean(currentPlan.value) && !loading.value && !errorMessage.value && !clarification.value && !showCustomGroup.value)
+const showDatePicker = ref(false)
+const datePickerValue = ref('')
+const planReady = computed(() =>
+  Boolean(currentPlan.value) && !loading.value && !errorMessage.value &&
+  !clarification.value && !showCustomGroup.value && !showDatePicker.value
+)
 
 // --- Custom group form ---
 const showCustomGroup = ref(false)
@@ -91,7 +96,22 @@ const handleResult = (result: TravelPlan | ClarificationResult) => {
 }
 
 const handleReply = (reply: string) => {
+  if (reply === 'Выбрать дату') {
+    showDatePicker.value = true
+    return
+  }
+  showDatePicker.value = false
   runPlanning(reply)
+}
+
+const submitDate = () => {
+  if (!datePickerValue.value) return
+  const d = new Date(datePickerValue.value + 'T00:00:00')
+  const months = ['января','февраля','марта','апреля','мая','июня','июля','августа','сентября','октября','ноября','декабря']
+  const msg = `${d.getDate()} ${months[d.getMonth()]} ${d.getFullYear()}`
+  showDatePicker.value = false
+  datePickerValue.value = ''
+  runPlanning(msg)
 }
 
 const runPlanning = async (message: string) => {
@@ -190,6 +210,28 @@ onMounted(async () => {
                 {{ reply }}
               </button>
             </div>
+          </div>
+
+          <!-- Date picker — shown when user clicks "Выбрать дату" -->
+          <div
+            v-if="showDatePicker"
+            class="rounded-2xl bg-[#eaf8f1] px-4 py-4"
+          >
+            <p class="mb-3 text-[15px] font-semibold text-[#202436]">
+              Выберите дату поездки
+            </p>
+            <input
+              v-model="datePickerValue"
+              type="date"
+              class="w-full rounded-xl bg-white px-3 py-2.5 text-[14px] outline-none"
+            >
+            <button
+              class="mt-3 w-full rounded-2xl bg-[#009b63] py-3 text-[14px] font-semibold text-white disabled:opacity-50"
+              :disabled="!datePickerValue"
+              @click="submitDate"
+            >
+              Подтвердить
+            </button>
           </div>
 
           <!-- Group form — shown directly for companion clarification -->
@@ -300,7 +342,7 @@ onMounted(async () => {
           :disabled="!planReady"
           @click="router.push('/travel/plan')"
         >
-          {{ loading ? 'Собираю план...' : (clarification || showCustomGroup) ? 'Ответьте на вопрос выше' : 'Посмотреть план' }}
+          {{ loading ? 'Собираю план...' : (clarification || showCustomGroup || showDatePicker) ? 'Ответьте на вопрос выше' : 'Посмотреть план' }}
         </button>
       </section>
     </div>

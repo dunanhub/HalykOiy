@@ -1,3 +1,6 @@
+from .date_utils import needs_start_date_clarification
+
+
 def get_missing_fields(req: dict) -> list:
     missing = []
     if not req.get("to_city"):
@@ -7,6 +10,8 @@ def get_missing_fields(req: dict) -> list:
     pax = req.get("pax") or 0
     if req.get("trip_type") == "family_weekend" and pax >= 3 and not req.get("family_members"):
         missing.append("family_members")
+    if needs_start_date_clarification(req):
+        missing.append("start_date")
     if req.get("budget") is None:
         missing.append("budget")
     return missing
@@ -27,6 +32,14 @@ def build_clarification(req: dict) -> dict | None:
             "Кто едет с вами?",
             ["Один", "Вдвоём", "Семья: 2 взрослых + 2 ребёнка", "Другое"],
         )
+
+    if "start_date" in missing:
+        return _q(req, missing, "На какую дату планируете поездку?", [
+            "На ближайшие выходные",
+            "Завтра",
+            "Через неделю",
+            "Выбрать дату",
+        ])
 
     if "budget" in missing:
         return _q(

@@ -96,11 +96,17 @@ def _budget_fit_score(total: int, budget: int | None, preference_text: str) -> f
     if remaining < 0:
         return -remaining * 5
 
-    if _wants_premium(preference_text):
-        return -(remaining / 300)
-
     if _wants_cheaper(preference_text):
         return -(total / 800)
+
+    utilization = total / budget if budget > 0 else 1.0
+
+    if _wants_premium(preference_text) or utilization < 0.25:
+        # Strong push to spend more when using <25% of budget
+        return -(remaining / 80)
+
+    if utilization < 0.5:
+        return -(remaining / 200)
 
     return -(remaining / 600)
 

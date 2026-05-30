@@ -14,12 +14,24 @@ EXTRACT_SYSTEM = """Ты — парсер запросов на планиров
 - Если написал "с семьёй" без деталей — family_members=null, система подставит дефолт.
 - Если написал "я, жена и дети 8 и 5 лет" — распарсить в массив.
 
+Правила для дат:
+- "с 1 июня на 14 дней" → start_date="2026-06-01", days=14
+- "на 2 недели" → days=14 (start_date=null если не указана явно)
+- "завтра на 3 дня" → dates="завтра", days=3
+- "с 1 по 14 июня" → start_date="2026-06-01", end_date="2026-06-14"
+- Если дата указана явно — записать в start_date в формате YYYY-MM-DD.
+- Если указан только диапазон ночей/дней без даты — только nights/days, start_date=null.
+- "выходные" → dates="выходные", start_date=null (система вычислит сама).
+
 Формат ответа:
 {
   "from_city": string | null,
   "to_city": string | null,
   "dates": string | null,
+  "start_date": "YYYY-MM-DD" | null,
+  "end_date": "YYYY-MM-DD" | null,
   "nights": number | null,
+  "days": number | null,
   "pax": number | null,
   "family_members": [
     {"role": string, "age": number | null, "name": string | null}

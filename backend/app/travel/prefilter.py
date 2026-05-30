@@ -34,16 +34,25 @@ CITY_ALIASES = {
     "aktobe": {"aktobe", "akx", "актобе", "ақтөбе"},
 }
 
-def _flight_score(flight: dict, trip_type: str) -> int:
+def _flight_score(flight: dict, trip_type: str, budget_per_pax: int = 0) -> float:
     price = int(flight.get("price_per_person", 999999))
     departure = str(flight.get("departure", "23:59"))
     morning_bonus = -3000 if trip_type == "family_weekend" and departure < "12:00" else 0
+    if budget_per_pax >= 150_000:
+        # High budget: prefer premium (higher price) flights
+        return -(price + morning_bonus)
     return price + morning_bonus
 
 
-def _hotel_score(hotel: dict) -> float:
+def _hotel_score(hotel: dict, budget: int = 0) -> float:
     rating = float(hotel.get("rating", 0))
     price = int(hotel.get("price_per_night", 999999))
+    if budget >= 300_000:
+        # Very high budget: pure rating + small price bonus to favor premium
+        return -(rating * 10000 + price / 100)
+    if budget >= 150_000:
+        # Moderate-high budget: rating-weighted, minimal price penalty
+        return -(rating * 4000 - price / 400)
     return -(rating * 1000 - price / 10)
 
 
@@ -79,6 +88,9 @@ def prefilter_options(req: dict, options: dict, preference_text: str = "") -> di
     from_code = AIRPORT_MAP.get(from_city_ru, "ALA")
     to_code = AIRPORT_MAP.get(to_city_ru, "NQZ")
     trip_type = req.get("trip_type", "leisure")
+    budget = int(req.get("budget") or 0)
+    pax = int(req.get("pax") or 1)
+    budget_per_pax = budget // max(pax, 1)
 
     flights = [
         flight
@@ -94,7 +106,7 @@ def prefilter_options(req: dict, options: dict, preference_text: str = "") -> di
         ]
     if not flights:
         flights = list(options.get("flights", []))
-    flights.sort(key=lambda flight: _flight_score(flight, trip_type))
+    flights.sort(key=lambda flight: _flight_score(flight, trip_type, budget_per_pax))
     result["flights"] = flights[:5]
 
     hotels = [
@@ -105,7 +117,10 @@ def prefilter_options(req: dict, options: dict, preference_text: str = "") -> di
     if trip_type == "family_weekend":
         family_hotels = [hotel for hotel in hotels if hotel.get("family_friendly")]
         hotels = family_hotels or hotels
-    hotels.sort(key=lambda hotel: (_preference_boost(preference_text, hotel, ("title", "city")), -_hotel_score(hotel)), reverse=True)
+    hotels.sort(
+        key=lambda hotel: (_preference_boost(preference_text, hotel, ("title", "city")), -_hotel_score(hotel, budget)),
+        reverse=True,
+    )
     result["hotels"] = hotels[:5]
 
     result["insurance"] = sorted(options.get("insurance", []), key=_insurance_score)[:3]
@@ -166,7 +181,9 @@ def prefilter_options(req: dict, options: dict, preference_text: str = "") -> di
         ),
         reverse=True,
     )
-    result["activities"] = activities[:3]
+    from .date_utils import activity_target_count
+    target = activity_target_count(req)
+    result["activities"] = activities[:max(target + 3, 6)]
 
     # Transfer: prefer InDrive and Halyk Taxi
     all_transfers = options.get("transfers", [])

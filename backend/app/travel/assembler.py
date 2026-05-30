@@ -2,7 +2,9 @@ import uuid
 
 from .checklist_generator import generate_checklist
 from .constants import CATEGORY_ORDER
+from .date_utils import activity_target_count
 from .evaluator import find_item, price_for
+from .itinerary_generator import generate_itinerary
 from .utils import choice_ids, selection_body
 
 
@@ -71,10 +73,25 @@ def assemble_plan(req: dict, selection: dict, options: dict) -> dict:
                 if item.get("id")
             ]
 
-        if category == "activity" and choice is None:
+        if category == "activity":
             activities = [act for act in options.get("activities", []) if act.get("id")]
-            if activities:
-                choice = [{"id": activities[0]["id"]}]
+            target = activity_target_count(req)
+            if activities and target:
+                # Selector's pick goes first, then fill up to target with top candidates
+                already_picked = set()
+                if choice:
+                    for aid in choice_ids(choice):
+                        already_picked.add(str(aid))
+
+                ordered_ids: list[str] = [str(aid) for aid in already_picked]
+                for act in activities:
+                    if len(ordered_ids) >= target:
+                        break
+                    aid = str(act["id"])
+                    if aid not in already_picked:
+                        ordered_ids.append(aid)
+                        already_picked.add(aid)
+                choice = [{"id": aid} for aid in ordered_ids]
 
         if category == "transfer" and choice is None:
             transfers = options.get("transfers", [])
@@ -109,6 +126,8 @@ def assemble_plan(req: dict, selection: dict, options: dict) -> dict:
     budget = req.get("budget")
     within_budget = True if budget is None else total <= budget
 
+    itinerary = generate_itinerary(req, items)
+
     return {
         "plan_id": str(uuid.uuid4()),
         "trip": {
@@ -127,6 +146,10 @@ def assemble_plan(req: dict, selection: dict, options: dict) -> dict:
         "can_book": within_budget,
         "bonus": round(total * 0.02),
         "checklist": _build_checklist(req),
+        "start_date": req.get("start_date"),
+        "end_date": req.get("end_date"),
+        "days": req.get("days"),
+        "itinerary": itinerary,
     }
 
 
@@ -135,6 +158,8 @@ def _build_checklist(req: dict) -> list[dict]:
     if members:
         return generate_checklist(members)
     pax = int(req.get("pax") or 1)
+    if pax == 1:
+        return generate_checklist([{"role": "взрослый", "age": None, "name": "Я"}])
     generic = [{"role": "взрослый", "age": None, "name": None} for _ in range(pax)]
     return generate_checklist(generic)
 

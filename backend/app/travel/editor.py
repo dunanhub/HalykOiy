@@ -1,16 +1,18 @@
 import re
 
-from .assembler import details_for, title_for
+from .assembler import assemble_plan, details_for, title_for
 from .clarifier import apply_quick_reply
 from .constants import CATEGORY_ORDER, DEFAULTS, NEED_TO_OPTIONS_KEY
 from .evaluator import price_for
+from .itinerary_generator import generate_itinerary
 from .mock_repo import fetch_options
 from .prefilter import prefilter_options
 from .selector import _item_score, _wants_cheaper, build_selection
-from .assembler import assemble_plan
 
 
 REMOVE_WORDS = ("убрать", "убери", "удалить", "удали", "исключить", "исключи", "без")
+ADD_WORDS = ("добав", "ещё", "еще", "плюс", "доп")
+ADDABLE_CATEGORIES = {"activity", "restaurant"}
 
 CATEGORY_TOKENS = {
     "activity": ("актив", "кино", "каяк", "экскурс", "музей"),
@@ -36,6 +38,10 @@ def update_plan(existing_plan: dict, message: str) -> dict:
 
     target = _target_category(lower)
 
+    # Case 0: addition ("добавь активность", "добавь ресторан")
+    if _is_add_intent(lower) and target in ADDABLE_CATEGORIES:
+        return _add_to_category(existing_plan, target, req, candidates, lower)
+
     # Case 1: removal ("убрать ресторан")
     if _is_category_removal(lower) and target:
         display_cat = "travel_kit" if target == "travel_kit" else target
@@ -43,7 +49,7 @@ def update_plan(existing_plan: dict, message: str) -> dict:
             item for item in existing_plan.get("items", [])
             if item.get("category") != display_cat
         ]
-        return _rebuild_totals(existing_plan, updated_items)
+        return _rebuild_totals(existing_plan, updated_items, req)
 
     # Case 2: swap specific category ("поменяй ресторан на дешевле")
     if target:
@@ -54,6 +60,47 @@ def update_plan(existing_plan: dict, message: str) -> dict:
     plan = assemble_plan(req, selection, candidates)
     plan["plan_id"] = existing_plan.get("plan_id", plan["plan_id"])
     return plan
+
+
+def _add_to_category(existing_plan: dict, category: str, req: dict, candidates: dict, preference_text: str) -> dict:
+    options_key = NEED_TO_OPTIONS_KEY.get(category)
+    available = candidates.get(options_key, [])
+    if not available:
+        return existing_plan
+
+    display_cat = category
+    existing_ids = {
+        str(item.get("id"))
+        for item in existing_plan.get("items", [])
+        if item.get("category") == display_cat
+    }
+    new_options = [item for item in available if str(item.get("id")) not in existing_ids]
+    if not new_options:
+        return existing_plan
+
+    best = _pick_best(category, new_options, req, preference_text)
+    if not best:
+        return existing_plan
+
+    new_item = {
+        "category": display_cat,
+        "id": str(best.get("id")),
+        "title": title_for(category, best),
+        "details": details_for(category, best, req),
+        "price": price_for(category, best, req),
+    }
+    if category in {"pharmacy", "activity", "transfer"}:
+        new_item["optional"] = True
+        if best.get("disclaimer"):
+            new_item["disclaimer"] = best["disclaimer"]
+
+    all_items = list(existing_plan.get("items", [])) + [new_item]
+    order_map = {cat: i for i, cat in enumerate(
+        ["flight", "hotel", "insurance", "transfer", "travel_kit", "activity", "restaurant"]
+    )}
+    all_items.sort(key=lambda x: order_map.get(x.get("category", ""), 99))
+
+    return _rebuild_totals(existing_plan, all_items, req)
 
 
 def _swap_category(existing_plan: dict, category: str, req: dict, candidates: dict, preference_text: str) -> dict:
@@ -101,7 +148,7 @@ def _swap_category(existing_plan: dict, category: str, req: dict, candidates: di
     )}
     all_items.sort(key=lambda x: order_map.get(x.get("category", ""), 99))
 
-    return _rebuild_totals(existing_plan, all_items)
+    return _rebuild_totals(existing_plan, all_items, req)
 
 
 def _pick_best(category: str, items: list[dict], req: dict, preference_text: str) -> dict | None:
@@ -125,7 +172,7 @@ def _pick_best(category: str, items: list[dict], req: dict, preference_text: str
     return max(items, key=score)
 
 
-def _rebuild_totals(existing_plan: dict, items: list[dict]) -> dict:
+def _rebuild_totals(existing_plan: dict, items: list[dict], req: dict | None = None) -> dict:
     total = sum(int(item.get("price", 0)) for item in items)
     updated = dict(existing_plan)
     updated["items"] = items
@@ -134,6 +181,8 @@ def _rebuild_totals(existing_plan: dict, items: list[dict]) -> dict:
     budget = int(updated.get("budget") or 0)
     updated["within_budget"] = budget == 0 or total <= budget
     updated["can_book"] = updated["within_budget"]
+    if req is not None:
+        updated["itinerary"] = generate_itinerary(req, items)
     return updated
 
 
@@ -185,6 +234,10 @@ def _apply_city_override(req: dict, lower: str) -> None:
 
 def _is_category_removal(lower: str) -> bool:
     return any(word in lower for word in REMOVE_WORDS)
+
+
+def _is_add_intent(lower: str) -> bool:
+    return any(word in lower for word in ADD_WORDS)
 
 
 def _target_category(lower: str) -> str | None:
