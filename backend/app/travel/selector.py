@@ -101,14 +101,16 @@ def _budget_fit_score(total: int, budget: int | None, preference_text: str) -> f
 
     utilization = total / budget if budget > 0 else 1.0
 
-    if _wants_premium(preference_text) or utilization < 0.25:
-        # Strong push to spend more when using <25% of budget
-        return -(remaining / 80)
+    if _wants_premium(preference_text):
+        return -(remaining / 120)
 
-    if utilization < 0.5:
+    if utilization < 0.20:
         return -(remaining / 200)
-
-    return -(remaining / 600)
+    if utilization < 0.50:
+        return -(remaining / 400)
+    if utilization < 0.85:
+        return -(remaining / 800)
+    return -(remaining / 1500)
 
 
 def _item_score(category: str, item: dict, req: dict, preference_text: str) -> float:

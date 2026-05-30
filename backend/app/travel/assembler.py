@@ -122,8 +122,10 @@ def assemble_plan(req: dict, selection: dict, options: dict) -> dict:
             )
 
     items = dedupe_items(items)
-    total = sum(item["price"] for item in items)
     budget = req.get("budget")
+    if budget:
+        items = _trim_to_budget(items, int(budget))
+    total = sum(item["price"] for item in items)
     within_budget = True if budget is None else total <= budget
 
     itinerary = generate_itinerary(req, items)
@@ -173,3 +175,41 @@ def dedupe_items(items: list) -> list:
             seen.add(key)
             result.append(item)
     return result
+
+
+def _trim_to_budget(items: list, budget: int) -> list:
+    """
+    Remove optional items in priority order until total is within budget.
+    Order: extra activities (keep ≥1) → pharmacy → transfer.
+    Never removes required items (flight/hotel/insurance/restaurant) or the
+    last remaining activity.
+    """
+    total = sum(int(item.get("price", 0)) for item in items)
+    if total <= budget:
+        return items
+
+    items = list(items)
+    while total > budget:
+        activities = [i for i in items if i.get("category") == "activity"]
+        if len(activities) > 1:
+            victim = max(activities, key=lambda x: int(x.get("price", 0)))
+            items.remove(victim)
+            total -= int(victim.get("price", 0))
+            continue
+
+        pharmacy = [i for i in items if i.get("category") == "travel_kit"]
+        if pharmacy:
+            victim = pharmacy[0]
+            items.remove(victim)
+            total -= int(victim.get("price", 0))
+            continue
+
+        transfer = [i for i in items if i.get("category") == "transfer"]
+        if transfer:
+            victim = transfer[0]
+            items.remove(victim)
+            total -= int(victim.get("price", 0))
+            continue
+
+        break
+    return items
