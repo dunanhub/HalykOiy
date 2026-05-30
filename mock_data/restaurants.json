@@ -1,18 +1,1202 @@
 [
   {
     "id": "rest_1",
-    "name": "Navat",
-    "city": "Astana",
-    "rating": 4.8,
-    "avg_check": 6000,
-    "cuisine": "Kazakh"
+    "name": "Trattoria Roma",
+    "city": "Атырау",
+    "rating": 4.1,
+    "avg_check": 12500,
+    "cuisine": "Вегетарианская"
   },
   {
     "id": "rest_2",
+    "name": "Sprout",
+    "city": "Актобе",
+    "rating": 4.0,
+    "avg_check": 4500,
+    "cuisine": "Мексиканская"
+  },
+  {
+    "id": "rest_3",
+    "name": "Chez Pierre",
+    "city": "Актау",
+    "rating": 4.7,
+    "avg_check": 17500,
+    "cuisine": "Средиземноморская"
+  },
+  {
+    "id": "rest_4",
+    "name": "Kulmukhan",
+    "city": "Караганда",
+    "rating": 3.9,
+    "avg_check": 7000,
+    "cuisine": "Грузинская"
+  },
+  {
+    "id": "rest_5",
+    "name": "Meat & Fire",
+    "city": "Орал",
+    "rating": 4.7,
+    "avg_check": 6000,
+    "cuisine": "Американская"
+  },
+  {
+    "id": "rest_6",
+    "name": "Green Kitchen",
+    "city": "Семей",
+    "rating": 4.0,
+    "avg_check": 7500,
+    "cuisine": "Казахская"
+  },
+  {
+    "id": "rest_7",
+    "name": "Kulmukhan",
+    "city": "Актау",
+    "rating": 4.3,
+    "avg_check": 3000,
+    "cuisine": "Японская"
+  },
+  {
+    "id": "rest_8",
+    "name": "Tengri",
+    "city": "Караганда",
+    "rating": 4.8,
+    "avg_check": 14000,
+    "cuisine": "Китайская"
+  },
+  {
+    "id": "rest_9",
+    "name": "La Bouchée",
+    "city": "Семей",
+    "rating": 4.6,
+    "avg_check": 6000,
+    "cuisine": "Мексиканская"
+  },
+  {
+    "id": "rest_10",
+    "name": "Oriental Spice",
+    "city": "Актау",
+    "rating": 4.0,
+    "avg_check": 16500,
+    "cuisine": "Французская"
+  },
+  {
+    "id": "rest_11",
+    "name": "Nature Cafe",
+    "city": "Павлодар",
+    "rating": 4.2,
+    "avg_check": 13000,
+    "cuisine": "Грузинская"
+  },
+  {
+    "id": "rest_12",
+    "name": "Nomad Grill",
+    "city": "Атырау",
+    "rating": 4.3,
+    "avg_check": 2500,
+    "cuisine": "Китайская"
+  },
+  {
+    "id": "rest_13",
+    "name": "Green Kitchen",
+    "city": "Шымкент",
+    "rating": 4.8,
+    "avg_check": 9000,
+    "cuisine": "Вегетарианская"
+  },
+  {
+    "id": "rest_14",
     "name": "Line Brew",
-    "city": "Astana",
+    "city": "Тараз",
+    "rating": 4.1,
+    "avg_check": 8500,
+    "cuisine": "Мексиканская"
+  },
+  {
+    "id": "rest_15",
+    "name": "Meat & Fire",
+    "city": "Актобе",
+    "rating": 4.4,
+    "avg_check": 2000,
+    "cuisine": "Казахская"
+  },
+  {
+    "id": "rest_16",
+    "name": "Altyn",
+    "city": "Шымкент",
+    "rating": 4.1,
+    "avg_check": 2000,
+    "cuisine": "Узбекская"
+  },
+  {
+    "id": "rest_17",
+    "name": "Bonfitto",
+    "city": "Костанай",
+    "rating": 4.3,
+    "avg_check": 11000,
+    "cuisine": "Средиземноморская"
+  },
+  {
+    "id": "rest_18",
+    "name": "China Town",
+    "city": "Актобе",
+    "rating": 4.1,
+    "avg_check": 10000,
+    "cuisine": "Французская"
+  },
+  {
+    "id": "rest_19",
+    "name": "Smoke House",
+    "city": "Атырау",
+    "rating": 4.5,
+    "avg_check": 15000,
+    "cuisine": "Корейская"
+  },
+  {
+    "id": "rest_20",
+    "name": "Meat & Fire",
+    "city": "Алматы",
+    "rating": 4.5,
+    "avg_check": 14000,
+    "cuisine": "Мексиканская"
+  },
+  {
+    "id": "rest_21",
+    "name": "Sprout",
+    "city": "Костанай",
+    "rating": 4.6,
+    "avg_check": 11500,
+    "cuisine": "Китайская"
+  },
+  {
+    "id": "rest_22",
+    "name": "Besh Qoshaq",
+    "city": "Павлодар",
+    "rating": 4.6,
+    "avg_check": 11000,
+    "cuisine": "Индийская"
+  },
+  {
+    "id": "rest_23",
+    "name": "Sky Bar",
+    "city": "Атырау",
+    "rating": 4.0,
+    "avg_check": 11500,
+    "cuisine": "Мексиканская"
+  },
+  {
+    "id": "rest_24",
+    "name": "Aria",
+    "city": "Семей",
+    "rating": 4.8,
+    "avg_check": 3500,
+    "cuisine": "Тайская"
+  },
+  {
+    "id": "rest_25",
+    "name": "La Bouchée",
+    "city": "Костанай",
+    "rating": 4.6,
+    "avg_check": 12000,
+    "cuisine": "Мексиканская"
+  },
+  {
+    "id": "rest_26",
+    "name": "Alasha",
+    "city": "Орал",
+    "rating": 5.0,
+    "avg_check": 18000,
+    "cuisine": "Мексиканская"
+  },
+  {
+    "id": "rest_27",
+    "name": "Chez Pierre",
+    "city": "Атырау",
+    "rating": 4.7,
+    "avg_check": 14500,
+    "cuisine": "Американская"
+  },
+  {
+    "id": "rest_28",
+    "name": "Green Kitchen",
+    "city": "Костанай",
+    "rating": 4.2,
+    "avg_check": 8000,
+    "cuisine": "Корейская"
+  },
+  {
+    "id": "rest_29",
+    "name": "Line Brew",
+    "city": "Орал",
+    "rating": 4.6,
+    "avg_check": 19500,
+    "cuisine": "Мексиканская"
+  },
+  {
+    "id": "rest_30",
+    "name": "China Town",
+    "city": "Павлодар",
+    "rating": 4.8,
+    "avg_check": 11500,
+    "cuisine": "Грузинская"
+  },
+  {
+    "id": "rest_31",
+    "name": "Vegano",
+    "city": "Тараз",
+    "rating": 3.9,
+    "avg_check": 11500,
+    "cuisine": "Итальянская"
+  },
+  {
+    "id": "rest_32",
+    "name": "Sky Bar",
+    "city": "Шымкент",
+    "rating": 4.9,
+    "avg_check": 7500,
+    "cuisine": "Средиземноморская"
+  },
+  {
+    "id": "rest_33",
+    "name": "Nomad Grill",
+    "city": "Караганда",
+    "rating": 4.1,
+    "avg_check": 13500,
+    "cuisine": "Японская"
+  },
+  {
+    "id": "rest_34",
+    "name": "Chez Pierre",
+    "city": "Атырау",
+    "rating": 4.2,
+    "avg_check": 12500,
+    "cuisine": "Вегетарианская"
+  },
+  {
+    "id": "rest_35",
+    "name": "Craft Brothers",
+    "city": "Костанай",
+    "rating": 4.4,
+    "avg_check": 5500,
+    "cuisine": "Французская"
+  },
+  {
+    "id": "rest_36",
+    "name": "Nature Cafe",
+    "city": "Тараз",
+    "rating": 4.4,
+    "avg_check": 4000,
+    "cuisine": "Узбекская"
+  },
+  {
+    "id": "rest_37",
+    "name": "Meat & Fire",
+    "city": "Актау",
+    "rating": 4.4,
+    "avg_check": 14500,
+    "cuisine": "Европейская"
+  },
+  {
+    "id": "rest_38",
+    "name": "Kulmukhan",
+    "city": "Актобе",
+    "rating": 4.0,
+    "avg_check": 6500,
+    "cuisine": "Корейская"
+  },
+  {
+    "id": "rest_39",
+    "name": "Osaka House",
+    "city": "Актау",
+    "rating": 4.0,
+    "avg_check": 16500,
+    "cuisine": "Американская"
+  },
+  {
+    "id": "rest_40",
+    "name": "Altyn",
+    "city": "Орал",
+    "rating": 4.4,
+    "avg_check": 4500,
+    "cuisine": "Вегетарианская"
+  },
+  {
+    "id": "rest_41",
+    "name": "Altyn",
+    "city": "Тараз",
+    "rating": 3.8,
+    "avg_check": 3500,
+    "cuisine": "Индийская"
+  },
+  {
+    "id": "rest_42",
+    "name": "Shanyrak",
+    "city": "Атырау",
+    "rating": 4.5,
+    "avg_check": 7500,
+    "cuisine": "Вегетарианская"
+  },
+  {
+    "id": "rest_43",
+    "name": "Burger Brothers",
+    "city": "Шымкент",
+    "rating": 4.0,
+    "avg_check": 4500,
+    "cuisine": "Вегетарианская"
+  },
+  {
+    "id": "rest_44",
+    "name": "Italia Mia",
+    "city": "Актобе",
+    "rating": 5.0,
+    "avg_check": 16000,
+    "cuisine": "Американская"
+  },
+  {
+    "id": "rest_45",
+    "name": "Navat",
+    "city": "Актобе",
+    "rating": 4.0,
+    "avg_check": 19000,
+    "cuisine": "Казахская"
+  },
+  {
+    "id": "rest_46",
+    "name": "Navat",
+    "city": "Караганда",
+    "rating": 4.7,
+    "avg_check": 12500,
+    "cuisine": "Тайская"
+  },
+  {
+    "id": "rest_47",
+    "name": "Tengri",
+    "city": "Семей",
+    "rating": 4.6,
+    "avg_check": 2000,
+    "cuisine": "Казахская"
+  },
+  {
+    "id": "rest_48",
+    "name": "Line Brew",
+    "city": "Актау",
+    "rating": 4.2,
+    "avg_check": 13000,
+    "cuisine": "Средиземноморская"
+  },
+  {
+    "id": "rest_49",
+    "name": "Taj Mahal",
+    "city": "Астана",
+    "rating": 4.0,
+    "avg_check": 12000,
+    "cuisine": "Грузинская"
+  },
+  {
+    "id": "rest_50",
+    "name": "Bonfitto",
+    "city": "Алматы",
+    "rating": 4.7,
+    "avg_check": 16500,
+    "cuisine": "Китайская"
+  },
+  {
+    "id": "rest_51",
+    "name": "Smoke House",
+    "city": "Костанай",
+    "rating": 4.9,
+    "avg_check": 16000,
+    "cuisine": "Индийская"
+  },
+  {
+    "id": "rest_52",
+    "name": "Osaka House",
+    "city": "Шымкент",
+    "rating": 4.2,
+    "avg_check": 18000,
+    "cuisine": "Тайская"
+  },
+  {
+    "id": "rest_53",
+    "name": "Keremet",
+    "city": "Актау",
+    "rating": 3.8,
+    "avg_check": 15000,
+    "cuisine": "Тайская"
+  },
+  {
+    "id": "rest_54",
+    "name": "Caravan",
+    "city": "Актау",
+    "rating": 4.5,
+    "avg_check": 2500,
+    "cuisine": "Японская"
+  },
+  {
+    "id": "rest_55",
+    "name": "Silk Road Bistro",
+    "city": "Шымкент",
+    "rating": 4.3,
+    "avg_check": 3000,
+    "cuisine": "Индийская"
+  },
+  {
+    "id": "rest_56",
+    "name": "Sky Bar",
+    "city": "Тараз",
+    "rating": 4.5,
+    "avg_check": 19500,
+    "cuisine": "Вегетарианская"
+  },
+  {
+    "id": "rest_57",
+    "name": "Kulmukhan",
+    "city": "Костанай",
+    "rating": 4.6,
+    "avg_check": 5500,
+    "cuisine": "Мексиканская"
+  },
+  {
+    "id": "rest_58",
+    "name": "Kulmukhan",
+    "city": "Алматы",
+    "rating": 4.3,
+    "avg_check": 5500,
+    "cuisine": "Средиземноморская"
+  },
+  {
+    "id": "rest_59",
+    "name": "Silk Road Bistro",
+    "city": "Актобе",
+    "rating": 4.4,
+    "avg_check": 10000,
+    "cuisine": "Грузинская"
+  },
+  {
+    "id": "rest_60",
+    "name": "Shanyrak",
+    "city": "Шымкент",
+    "rating": 4.2,
+    "avg_check": 2000,
+    "cuisine": "Средиземноморская"
+  },
+  {
+    "id": "rest_61",
+    "name": "Khan Tengri",
+    "city": "Тараз",
+    "rating": 4.1,
+    "avg_check": 19000,
+    "cuisine": "Мексиканская"
+  },
+  {
+    "id": "rest_62",
+    "name": "Caravan",
+    "city": "Костанай",
+    "rating": 4.4,
+    "avg_check": 5000,
+    "cuisine": "Американская"
+  },
+  {
+    "id": "rest_63",
+    "name": "Silk Road Bistro",
+    "city": "Костанай",
+    "rating": 4.7,
+    "avg_check": 5500,
+    "cuisine": "Китайская"
+  },
+  {
+    "id": "rest_64",
+    "name": "Tengri",
+    "city": "Павлодар",
+    "rating": 4.7,
+    "avg_check": 8500,
+    "cuisine": "Узбекская"
+  },
+  {
+    "id": "rest_65",
+    "name": "Tengri",
+    "city": "Семей",
+    "rating": 4.2,
+    "avg_check": 15000,
+    "cuisine": "Индийская"
+  },
+  {
+    "id": "rest_66",
+    "name": "Vegano",
+    "city": "Алматы",
+    "rating": 4.6,
+    "avg_check": 8500,
+    "cuisine": "Французская"
+  },
+  {
+    "id": "rest_67",
+    "name": "Osaka House",
+    "city": "Павлодар",
+    "rating": 3.8,
+    "avg_check": 2000,
+    "cuisine": "Японская"
+  },
+  {
+    "id": "rest_68",
+    "name": "Silk Road Bistro",
+    "city": "Астана",
+    "rating": 4.0,
+    "avg_check": 18000,
+    "cuisine": "Корейская"
+  },
+  {
+    "id": "rest_69",
+    "name": "Meat & Fire",
+    "city": "Астана",
+    "rating": 4.9,
+    "avg_check": 5000,
+    "cuisine": "Европейская"
+  },
+  {
+    "id": "rest_70",
+    "name": "Line Brew",
+    "city": "Тараз",
+    "rating": 4.1,
+    "avg_check": 11500,
+    "cuisine": "Французская"
+  },
+  {
+    "id": "rest_71",
+    "name": "Khan Tengri",
+    "city": "Алматы",
+    "rating": 4.8,
+    "avg_check": 7500,
+    "cuisine": "Корейская"
+  },
+  {
+    "id": "rest_72",
+    "name": "Oriental Spice",
+    "city": "Атырау",
+    "rating": 4.3,
+    "avg_check": 12000,
+    "cuisine": "Вегетарианская"
+  },
+  {
+    "id": "rest_73",
+    "name": "Khan Tengri",
+    "city": "Астана",
+    "rating": 3.8,
+    "avg_check": 3500,
+    "cuisine": "Корейская"
+  },
+  {
+    "id": "rest_74",
+    "name": "Keremet",
+    "city": "Шымкент",
+    "rating": 4.9,
+    "avg_check": 13500,
+    "cuisine": "Индийская"
+  },
+  {
+    "id": "rest_75",
+    "name": "Hard Rock Cafe",
+    "city": "Костанай",
+    "rating": 4.2,
+    "avg_check": 5000,
+    "cuisine": "Тайская"
+  },
+  {
+    "id": "rest_76",
+    "name": "Altyn",
+    "city": "Караганда",
+    "rating": 4.3,
+    "avg_check": 15000,
+    "cuisine": "Европейская"
+  },
+  {
+    "id": "rest_77",
+    "name": "Hard Rock Cafe",
+    "city": "Павлодар",
+    "rating": 4.6,
+    "avg_check": 14500,
+    "cuisine": "Корейская"
+  },
+  {
+    "id": "rest_78",
+    "name": "Chez Pierre",
+    "city": "Павлодар",
+    "rating": 3.9,
+    "avg_check": 7000,
+    "cuisine": "Мексиканская"
+  },
+  {
+    "id": "rest_79",
+    "name": "Kulmukhan",
+    "city": "Орал",
+    "rating": 3.9,
+    "avg_check": 7000,
+    "cuisine": "Корейская"
+  },
+  {
+    "id": "rest_80",
+    "name": "Texas BBQ",
+    "city": "Костанай",
+    "rating": 4.0,
+    "avg_check": 16000,
+    "cuisine": "Вегетарианская"
+  },
+  {
+    "id": "rest_81",
+    "name": "China Town",
+    "city": "Актобе",
+    "rating": 4.8,
+    "avg_check": 2500,
+    "cuisine": "Узбекская"
+  },
+  {
+    "id": "rest_82",
+    "name": "Caravan",
+    "city": "Орал",
+    "rating": 3.9,
+    "avg_check": 17500,
+    "cuisine": "Французская"
+  },
+  {
+    "id": "rest_83",
+    "name": "Trattoria Roma",
+    "city": "Актобе",
+    "rating": 4.1,
+    "avg_check": 4000,
+    "cuisine": "Казахская"
+  },
+  {
+    "id": "rest_84",
+    "name": "Navat",
+    "city": "Караганда",
+    "rating": 4.7,
+    "avg_check": 19000,
+    "cuisine": "Средиземноморская"
+  },
+  {
+    "id": "rest_85",
+    "name": "Green Kitchen",
+    "city": "Костанай",
+    "rating": 4.4,
+    "avg_check": 13000,
+    "cuisine": "Японская"
+  },
+  {
+    "id": "rest_86",
+    "name": "Avocado House",
+    "city": "Орал",
+    "rating": 4.6,
+    "avg_check": 16000,
+    "cuisine": "Европейская"
+  },
+  {
+    "id": "rest_87",
+    "name": "Texas BBQ",
+    "city": "Актау",
+    "rating": 4.0,
+    "avg_check": 14500,
+    "cuisine": "Индийская"
+  },
+  {
+    "id": "rest_88",
+    "name": "Avocado House",
+    "city": "Семей",
+    "rating": 4.6,
+    "avg_check": 2000,
+    "cuisine": "Казахская"
+  },
+  {
+    "id": "rest_89",
+    "name": "Meat & Fire",
+    "city": "Шымкент",
+    "rating": 4.8,
+    "avg_check": 17000,
+    "cuisine": "Корейская"
+  },
+  {
+    "id": "rest_90",
+    "name": "Besh Qoshaq",
+    "city": "Шымкент",
+    "rating": 4.2,
+    "avg_check": 18000,
+    "cuisine": "Вегетарианская"
+  },
+  {
+    "id": "rest_91",
+    "name": "Hard Rock Cafe",
+    "city": "Караганда",
+    "rating": 4.1,
+    "avg_check": 18500,
+    "cuisine": "Казахская"
+  },
+  {
+    "id": "rest_92",
+    "name": "Taj Mahal",
+    "city": "Тараз",
+    "rating": 3.9,
+    "avg_check": 9500,
+    "cuisine": "Американская"
+  },
+  {
+    "id": "rest_93",
+    "name": "Green Kitchen",
+    "city": "Павлодар",
+    "rating": 4.8,
+    "avg_check": 4500,
+    "cuisine": "Французская"
+  },
+  {
+    "id": "rest_94",
+    "name": "Tokyo Garden",
+    "city": "Павлодар",
+    "rating": 4.7,
+    "avg_check": 18000,
+    "cuisine": "Европейская"
+  },
+  {
+    "id": "rest_95",
+    "name": "Khan Tengri",
+    "city": "Алматы",
+    "rating": 3.8,
+    "avg_check": 15500,
+    "cuisine": "Американская"
+  },
+  {
+    "id": "rest_96",
+    "name": "Navat",
+    "city": "Семей",
+    "rating": 4.8,
+    "avg_check": 4500,
+    "cuisine": "Корейская"
+  },
+  {
+    "id": "rest_97",
+    "name": "Bonfitto",
+    "city": "Костанай",
+    "rating": 4.5,
+    "avg_check": 18500,
+    "cuisine": "Тайская"
+  },
+  {
+    "id": "rest_98",
+    "name": "Greek Taverna",
+    "city": "Тараз",
+    "rating": 4.8,
+    "avg_check": 13500,
+    "cuisine": "Индийская"
+  },
+  {
+    "id": "rest_99",
+    "name": "Greek Taverna",
+    "city": "Актау",
+    "rating": 4.7,
+    "avg_check": 17500,
+    "cuisine": "Индийская"
+  },
+  {
+    "id": "rest_100",
+    "name": "Trattoria Roma",
+    "city": "Караганда",
+    "rating": 4.7,
+    "avg_check": 5000,
+    "cuisine": "Европейская"
+  },
+  {
+    "id": "rest_101",
+    "name": "Navat",
+    "city": "Актау",
+    "rating": 4.8,
+    "avg_check": 13500,
+    "cuisine": "Индийская"
+  },
+  {
+    "id": "rest_102",
+    "name": "Vegano",
+    "city": "Атырау",
+    "rating": 4.6,
+    "avg_check": 14000,
+    "cuisine": "Грузинская"
+  },
+  {
+    "id": "rest_103",
+    "name": "Keremet",
+    "city": "Алматы",
+    "rating": 4.8,
+    "avg_check": 6500,
+    "cuisine": "Французская"
+  },
+  {
+    "id": "rest_104",
+    "name": "Chez Pierre",
+    "city": "Орал",
+    "rating": 4.5,
+    "avg_check": 10000,
+    "cuisine": "Европейская"
+  },
+  {
+    "id": "rest_105",
+    "name": "Silk Road Bistro",
+    "city": "Актау",
+    "rating": 4.1,
+    "avg_check": 14500,
+    "cuisine": "Тайская"
+  },
+  {
+    "id": "rest_106",
+    "name": "Osaka House",
+    "city": "Актау",
+    "rating": 3.9,
+    "avg_check": 15500,
+    "cuisine": "Европейская"
+  },
+  {
+    "id": "rest_107",
+    "name": "Nature Cafe",
+    "city": "Тараз",
+    "rating": 4.3,
+    "avg_check": 16500,
+    "cuisine": "Европейская"
+  },
+  {
+    "id": "rest_108",
+    "name": "Meat & Fire",
+    "city": "Костанай",
+    "rating": 3.8,
+    "avg_check": 18000,
+    "cuisine": "Итальянская"
+  },
+  {
+    "id": "rest_109",
+    "name": "Kulmukhan",
+    "city": "Орал",
+    "rating": 4.8,
+    "avg_check": 16000,
+    "cuisine": "Грузинская"
+  },
+  {
+    "id": "rest_110",
+    "name": "Meat & Fire",
+    "city": "Павлодар",
+    "rating": 4.6,
+    "avg_check": 7500,
+    "cuisine": "Вегетарианская"
+  },
+  {
+    "id": "rest_111",
+    "name": "Caravan",
+    "city": "Шымкент",
+    "rating": 4.6,
+    "avg_check": 14500,
+    "cuisine": "Европейская"
+  },
+  {
+    "id": "rest_112",
+    "name": "Tokyo Garden",
+    "city": "Костанай",
+    "rating": 4.3,
+    "avg_check": 14500,
+    "cuisine": "Грузинская"
+  },
+  {
+    "id": "rest_113",
+    "name": "Aria",
+    "city": "Костанай",
+    "rating": 5.0,
+    "avg_check": 15000,
+    "cuisine": "Китайская"
+  },
+  {
+    "id": "rest_114",
+    "name": "Trattoria Roma",
+    "city": "Атырау",
+    "rating": 4.0,
+    "avg_check": 6000,
+    "cuisine": "Вегетарианская"
+  },
+  {
+    "id": "rest_115",
+    "name": "Meat & Fire",
+    "city": "Костанай",
+    "rating": 4.8,
+    "avg_check": 19500,
+    "cuisine": "Китайская"
+  },
+  {
+    "id": "rest_116",
+    "name": "Vegano",
+    "city": "Орал",
+    "rating": 4.0,
+    "avg_check": 9000,
+    "cuisine": "Мексиканская"
+  },
+  {
+    "id": "rest_117",
+    "name": "Craft Brothers",
+    "city": "Костанай",
+    "rating": 4.9,
+    "avg_check": 13000,
+    "cuisine": "Мексиканская"
+  },
+  {
+    "id": "rest_118",
+    "name": "Altyn",
+    "city": "Шымкент",
+    "rating": 4.6,
+    "avg_check": 19500,
+    "cuisine": "Грузинская"
+  },
+  {
+    "id": "rest_119",
+    "name": "Silk Road Bistro",
+    "city": "Караганда",
+    "rating": 4.5,
+    "avg_check": 13500,
+    "cuisine": "Вегетарианская"
+  },
+  {
+    "id": "rest_120",
+    "name": "Green Kitchen",
+    "city": "Костанай",
+    "rating": 4.6,
+    "avg_check": 15500,
+    "cuisine": "Мексиканская"
+  },
+  {
+    "id": "rest_121",
+    "name": "Craft Brothers",
+    "city": "Семей",
+    "rating": 4.8,
+    "avg_check": 15500,
+    "cuisine": "Тайская"
+  },
+  {
+    "id": "rest_122",
+    "name": "Khan Tengri",
+    "city": "Семей",
+    "rating": 4.0,
+    "avg_check": 14000,
+    "cuisine": "Казахская"
+  },
+  {
+    "id": "rest_123",
+    "name": "Kulmukhan",
+    "city": "Тараз",
+    "rating": 4.7,
+    "avg_check": 10500,
+    "cuisine": "Японская"
+  },
+  {
+    "id": "rest_124",
+    "name": "Craft Brothers",
+    "city": "Шымкент",
+    "rating": 4.0,
+    "avg_check": 10000,
+    "cuisine": "Мексиканская"
+  },
+  {
+    "id": "rest_125",
+    "name": "Craft Brothers",
+    "city": "Алматы",
+    "rating": 3.8,
+    "avg_check": 19500,
+    "cuisine": "Японская"
+  },
+  {
+    "id": "rest_126",
+    "name": "Khan Tengri",
+    "city": "Павлодар",
     "rating": 4.7,
     "avg_check": 9000,
-    "cuisine": "European"
+    "cuisine": "Узбекская"
+  },
+  {
+    "id": "rest_127",
+    "name": "Taj Mahal",
+    "city": "Семей",
+    "rating": 4.7,
+    "avg_check": 18500,
+    "cuisine": "Японская"
+  },
+  {
+    "id": "rest_128",
+    "name": "Craft Brothers",
+    "city": "Орал",
+    "rating": 4.9,
+    "avg_check": 3500,
+    "cuisine": "Средиземноморская"
+  },
+  {
+    "id": "rest_129",
+    "name": "Chez Pierre",
+    "city": "Актобе",
+    "rating": 5.0,
+    "avg_check": 12000,
+    "cuisine": "Вегетарианская"
+  },
+  {
+    "id": "rest_130",
+    "name": "Navat",
+    "city": "Алматы",
+    "rating": 4.0,
+    "avg_check": 10000,
+    "cuisine": "Средиземноморская"
+  },
+  {
+    "id": "rest_131",
+    "name": "Line Brew",
+    "city": "Павлодар",
+    "rating": 4.7,
+    "avg_check": 14000,
+    "cuisine": "Тайская"
+  },
+  {
+    "id": "rest_132",
+    "name": "Sprout",
+    "city": "Семей",
+    "rating": 4.2,
+    "avg_check": 8000,
+    "cuisine": "Японская"
+  },
+  {
+    "id": "rest_133",
+    "name": "Besh Qoshaq",
+    "city": "Шымкент",
+    "rating": 4.7,
+    "avg_check": 7500,
+    "cuisine": "Итальянская"
+  },
+  {
+    "id": "rest_134",
+    "name": "Taj Mahal",
+    "city": "Астана",
+    "rating": 4.1,
+    "avg_check": 16000,
+    "cuisine": "Казахская"
+  },
+  {
+    "id": "rest_135",
+    "name": "Caravan",
+    "city": "Атырау",
+    "rating": 3.8,
+    "avg_check": 10000,
+    "cuisine": "Итальянская"
+  },
+  {
+    "id": "rest_136",
+    "name": "Stepnoy",
+    "city": "Павлодар",
+    "rating": 4.9,
+    "avg_check": 7000,
+    "cuisine": "Казахская"
+  },
+  {
+    "id": "rest_137",
+    "name": "Kulmukhan",
+    "city": "Костанай",
+    "rating": 4.4,
+    "avg_check": 11500,
+    "cuisine": "Вегетарианская"
+  },
+  {
+    "id": "rest_138",
+    "name": "Vegano",
+    "city": "Костанай",
+    "rating": 4.7,
+    "avg_check": 4000,
+    "cuisine": "Индийская"
+  },
+  {
+    "id": "rest_139",
+    "name": "Smoke House",
+    "city": "Караганда",
+    "rating": 4.4,
+    "avg_check": 8000,
+    "cuisine": "Японская"
+  },
+  {
+    "id": "rest_140",
+    "name": "Keremet",
+    "city": "Семей",
+    "rating": 4.4,
+    "avg_check": 19500,
+    "cuisine": "Американская"
+  },
+  {
+    "id": "rest_141",
+    "name": "China Town",
+    "city": "Астана",
+    "rating": 4.6,
+    "avg_check": 8500,
+    "cuisine": "Японская"
+  },
+  {
+    "id": "rest_142",
+    "name": "Oriental Spice",
+    "city": "Караганда",
+    "rating": 4.9,
+    "avg_check": 9000,
+    "cuisine": "Китайская"
+  },
+  {
+    "id": "rest_143",
+    "name": "Smoke House",
+    "city": "Костанай",
+    "rating": 3.9,
+    "avg_check": 2000,
+    "cuisine": "Французская"
+  },
+  {
+    "id": "rest_144",
+    "name": "Trattoria Roma",
+    "city": "Караганда",
+    "rating": 5.0,
+    "avg_check": 9500,
+    "cuisine": "Японская"
+  },
+  {
+    "id": "rest_145",
+    "name": "Tokyo Garden",
+    "city": "Тараз",
+    "rating": 4.3,
+    "avg_check": 5500,
+    "cuisine": "Американская"
+  },
+  {
+    "id": "rest_146",
+    "name": "Craft Brothers",
+    "city": "Семей",
+    "rating": 4.8,
+    "avg_check": 18500,
+    "cuisine": "Казахская"
+  },
+  {
+    "id": "rest_147",
+    "name": "Meat & Fire",
+    "city": "Караганда",
+    "rating": 4.3,
+    "avg_check": 18500,
+    "cuisine": "Вегетарианская"
+  },
+  {
+    "id": "rest_148",
+    "name": "Craft Brothers",
+    "city": "Алматы",
+    "rating": 4.2,
+    "avg_check": 8000,
+    "cuisine": "Тайская"
+  },
+  {
+    "id": "rest_149",
+    "name": "Khan Tengri",
+    "city": "Астана",
+    "rating": 4.4,
+    "avg_check": 19500,
+    "cuisine": "Итальянская"
+  },
+  {
+    "id": "rest_150",
+    "name": "Besh Qoshaq",
+    "city": "Тараз",
+    "rating": 4.8,
+    "avg_check": 8500,
+    "cuisine": "Японская"
   }
 ]

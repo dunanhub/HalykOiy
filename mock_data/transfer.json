@@ -1,22 +1,1502 @@
 [
   {
     "id": "transfer_1",
+    "provider": "CityDrive",
+    "car_type": "эконом",
+    "base_price": 1410,
+    "price_per_pax": 700,
+    "luggage_price": 1500,
+    "eta_minutes": 25,
+    "duration_minutes": 24
+  },
+  {
+    "id": "transfer_2",
+    "provider": "inDrive Partner",
+    "car_type": "эконом",
+    "base_price": 1670,
+    "price_per_pax": 800,
+    "luggage_price": 1200,
+    "eta_minutes": 6,
+    "duration_minutes": 25
+  },
+  {
+    "id": "transfer_3",
+    "provider": "Yandex Go Partner",
+    "car_type": "эконом",
+    "base_price": 1382,
+    "price_per_pax": 500,
+    "luggage_price": 0,
+    "eta_minutes": 7,
+    "duration_minutes": 56
+  },
+  {
+    "id": "transfer_4",
+    "provider": "Bolt Partner",
+    "car_type": "комфорт+",
+    "base_price": 3317,
+    "price_per_pax": 600,
+    "luggage_price": 1500,
+    "eta_minutes": 25,
+    "duration_minutes": 45
+  },
+  {
+    "id": "transfer_5",
+    "provider": "CityDrive",
+    "car_type": "комфорт+",
+    "base_price": 2917,
+    "price_per_pax": 600,
+    "luggage_price": 800,
+    "eta_minutes": 22,
+    "duration_minutes": 20
+  },
+  {
+    "id": "transfer_6",
+    "provider": "Yandex Go Partner",
+    "car_type": "премиум",
+    "base_price": 6299,
+    "price_per_pax": 300,
+    "luggage_price": 800,
+    "eta_minutes": 16,
+    "duration_minutes": 52
+  },
+  {
+    "id": "transfer_7",
+    "provider": "Yandex Go Partner",
+    "car_type": "комфорт+",
+    "base_price": 3602,
+    "price_per_pax": 500,
+    "luggage_price": 0,
+    "eta_minutes": 7,
+    "duration_minutes": 38
+  },
+  {
+    "id": "transfer_8",
+    "provider": "AirportShuttle",
+    "car_type": "бизнес",
+    "base_price": 4104,
+    "price_per_pax": 800,
+    "luggage_price": 800,
+    "eta_minutes": 20,
+    "duration_minutes": 30
+  },
+  {
+    "id": "transfer_9",
+    "provider": "Bolt Partner",
+    "car_type": "комфорт",
+    "base_price": 2964,
+    "price_per_pax": 600,
+    "luggage_price": 0,
+    "eta_minutes": 14,
+    "duration_minutes": 60
+  },
+  {
+    "id": "transfer_10",
+    "provider": "inDrive Partner",
+    "car_type": "комфорт+",
+    "base_price": 3593,
+    "price_per_pax": 800,
+    "luggage_price": 1200,
+    "eta_minutes": 5,
+    "duration_minutes": 55
+  },
+  {
+    "id": "transfer_11",
+    "provider": "inDrive Partner",
+    "car_type": "эконом",
+    "base_price": 1242,
+    "price_per_pax": 300,
+    "luggage_price": 0,
+    "eta_minutes": 24,
+    "duration_minutes": 45
+  },
+  {
+    "id": "transfer_12",
+    "provider": "Yandex Go Partner",
+    "car_type": "комфорт+",
+    "base_price": 3115,
+    "price_per_pax": 800,
+    "luggage_price": 1200,
+    "eta_minutes": 11,
+    "duration_minutes": 46
+  },
+  {
+    "id": "transfer_13",
+    "provider": "inDrive Partner",
+    "car_type": "комфорт",
+    "base_price": 2388,
+    "price_per_pax": 400,
+    "luggage_price": 0,
+    "eta_minutes": 13,
+    "duration_minutes": 32
+  },
+  {
+    "id": "transfer_14",
+    "provider": "Yandex Go Partner",
+    "car_type": "комфорт",
+    "base_price": 2887,
+    "price_per_pax": 700,
+    "luggage_price": 800,
+    "eta_minutes": 22,
+    "duration_minutes": 49
+  },
+  {
+    "id": "transfer_15",
+    "provider": "Yandex Go Partner",
+    "car_type": "комфорт+",
+    "base_price": 3587,
+    "price_per_pax": 300,
+    "luggage_price": 1200,
+    "eta_minutes": 8,
+    "duration_minutes": 32
+  },
+  {
+    "id": "transfer_16",
+    "provider": "AirportShuttle",
+    "car_type": "комфорт+",
+    "base_price": 3265,
+    "price_per_pax": 400,
+    "luggage_price": 1000,
+    "eta_minutes": 8,
+    "duration_minutes": 38
+  },
+  {
+    "id": "transfer_17",
+    "provider": "Yandex Go Partner",
+    "car_type": "комфорт",
+    "base_price": 2525,
+    "price_per_pax": 600,
+    "luggage_price": 1500,
+    "eta_minutes": 15,
+    "duration_minutes": 59
+  },
+  {
+    "id": "transfer_18",
+    "provider": "Uber Partner",
+    "car_type": "премиум",
+    "base_price": 6298,
+    "price_per_pax": 400,
+    "luggage_price": 0,
+    "eta_minutes": 23,
+    "duration_minutes": 43
+  },
+  {
+    "id": "transfer_19",
+    "provider": "GreenTaxi",
+    "car_type": "бизнес",
+    "base_price": 3872,
+    "price_per_pax": 300,
+    "luggage_price": 1200,
+    "eta_minutes": 12,
+    "duration_minutes": 70
+  },
+  {
+    "id": "transfer_20",
+    "provider": "Bolt Partner",
+    "car_type": "премиум",
+    "base_price": 6457,
+    "price_per_pax": 800,
+    "luggage_price": 1500,
+    "eta_minutes": 13,
+    "duration_minutes": 43
+  },
+  {
+    "id": "transfer_21",
+    "provider": "inDrive Partner",
+    "car_type": "премиум",
+    "base_price": 6450,
+    "price_per_pax": 500,
+    "luggage_price": 1500,
+    "eta_minutes": 19,
+    "duration_minutes": 48
+  },
+  {
+    "id": "transfer_22",
+    "provider": "GreenTaxi",
+    "car_type": "комфорт+",
+    "base_price": 3398,
+    "price_per_pax": 700,
+    "luggage_price": 800,
+    "eta_minutes": 10,
+    "duration_minutes": 61
+  },
+  {
+    "id": "transfer_23",
+    "provider": "Yandex Go Partner",
+    "car_type": "комфорт+",
+    "base_price": 3043,
+    "price_per_pax": 700,
+    "luggage_price": 1000,
+    "eta_minutes": 13,
+    "duration_minutes": 66
+  },
+  {
+    "id": "transfer_24",
+    "provider": "Yandex Go Partner",
+    "car_type": "премиум",
+    "base_price": 5777,
+    "price_per_pax": 300,
+    "luggage_price": 0,
+    "eta_minutes": 25,
+    "duration_minutes": 21
+  },
+  {
+    "id": "transfer_25",
+    "provider": "CityDrive",
+    "car_type": "минивэн",
+    "base_price": 3417,
+    "price_per_pax": 300,
+    "luggage_price": 0,
+    "eta_minutes": 13,
+    "duration_minutes": 54
+  },
+  {
+    "id": "transfer_26",
+    "provider": "AirportShuttle",
+    "car_type": "премиум",
+    "base_price": 6493,
+    "price_per_pax": 400,
+    "luggage_price": 1200,
+    "eta_minutes": 17,
+    "duration_minutes": 34
+  },
+  {
+    "id": "transfer_27",
+    "provider": "Uber Partner",
+    "car_type": "комфорт",
+    "base_price": 2675,
+    "price_per_pax": 700,
+    "luggage_price": 0,
+    "eta_minutes": 7,
+    "duration_minutes": 45
+  },
+  {
+    "id": "transfer_28",
+    "provider": "GreenTaxi",
+    "car_type": "минивэн",
+    "base_price": 3210,
+    "price_per_pax": 800,
+    "luggage_price": 1000,
+    "eta_minutes": 24,
+    "duration_minutes": 63
+  },
+  {
+    "id": "transfer_29",
+    "provider": "inDrive Partner",
+    "car_type": "минивэн",
+    "base_price": 3343,
+    "price_per_pax": 600,
+    "luggage_price": 1000,
+    "eta_minutes": 10,
+    "duration_minutes": 56
+  },
+  {
+    "id": "transfer_30",
+    "provider": "inDrive Partner",
+    "car_type": "премиум",
+    "base_price": 6449,
+    "price_per_pax": 600,
+    "luggage_price": 1200,
+    "eta_minutes": 6,
+    "duration_minutes": 34
+  },
+  {
+    "id": "transfer_31",
+    "provider": "AirportShuttle",
+    "car_type": "комфорт",
+    "base_price": 2264,
+    "price_per_pax": 500,
+    "luggage_price": 1200,
+    "eta_minutes": 12,
+    "duration_minutes": 22
+  },
+  {
+    "id": "transfer_32",
+    "provider": "Bolt Partner",
+    "car_type": "минивэн",
+    "base_price": 3569,
+    "price_per_pax": 600,
+    "luggage_price": 1500,
+    "eta_minutes": 19,
+    "duration_minutes": 22
+  },
+  {
+    "id": "transfer_33",
     "provider": "Halyk Taxi Partner",
-    "car_type": "comfort",
-    "base_price": 2500,
+    "car_type": "премиум",
+    "base_price": 6031,
+    "price_per_pax": 300,
+    "luggage_price": 0,
+    "eta_minutes": 25,
+    "duration_minutes": 37
+  },
+  {
+    "id": "transfer_34",
+    "provider": "Uber Partner",
+    "car_type": "минивэн",
+    "base_price": 3757,
+    "price_per_pax": 700,
+    "luggage_price": 1000,
+    "eta_minutes": 17,
+    "duration_minutes": 61
+  },
+  {
+    "id": "transfer_35",
+    "provider": "CityDrive",
+    "car_type": "комфорт+",
+    "base_price": 3501,
+    "price_per_pax": 800,
+    "luggage_price": 800,
+    "eta_minutes": 21,
+    "duration_minutes": 36
+  },
+  {
+    "id": "transfer_36",
+    "provider": "CityDrive",
+    "car_type": "комфорт",
+    "base_price": 2728,
+    "price_per_pax": 600,
+    "luggage_price": 1200,
+    "eta_minutes": 16,
+    "duration_minutes": 51
+  },
+  {
+    "id": "transfer_37",
+    "provider": "AirportShuttle",
+    "car_type": "минивэн",
+    "base_price": 3206,
+    "price_per_pax": 700,
+    "luggage_price": 1000,
+    "eta_minutes": 19,
+    "duration_minutes": 30
+  },
+  {
+    "id": "transfer_38",
+    "provider": "Bolt Partner",
+    "car_type": "эконом",
+    "base_price": 1726,
+    "price_per_pax": 800,
+    "luggage_price": 1200,
+    "eta_minutes": 11,
+    "duration_minutes": 29
+  },
+  {
+    "id": "transfer_39",
+    "provider": "inDrive Partner",
+    "car_type": "комфорт",
+    "base_price": 2570,
+    "price_per_pax": 700,
+    "luggage_price": 800,
+    "eta_minutes": 12,
+    "duration_minutes": 46
+  },
+  {
+    "id": "transfer_40",
+    "provider": "GreenTaxi",
+    "car_type": "премиум",
+    "base_price": 5816,
+    "price_per_pax": 600,
+    "luggage_price": 1500,
+    "eta_minutes": 20,
+    "duration_minutes": 33
+  },
+  {
+    "id": "transfer_41",
+    "provider": "inDrive Partner",
+    "car_type": "премиум",
+    "base_price": 6120,
+    "price_per_pax": 300,
+    "luggage_price": 1000,
+    "eta_minutes": 6,
+    "duration_minutes": 28
+  },
+  {
+    "id": "transfer_42",
+    "provider": "inDrive Partner",
+    "car_type": "комфорт",
+    "base_price": 2844,
+    "price_per_pax": 700,
+    "luggage_price": 800,
+    "eta_minutes": 23,
+    "duration_minutes": 29
+  },
+  {
+    "id": "transfer_43",
+    "provider": "Halyk Taxi Partner",
+    "car_type": "комфорт",
+    "base_price": 2464,
+    "price_per_pax": 400,
+    "luggage_price": 0,
+    "eta_minutes": 17,
+    "duration_minutes": 58
+  },
+  {
+    "id": "transfer_44",
+    "provider": "Halyk Taxi Partner",
+    "car_type": "премиум",
+    "base_price": 6445,
+    "price_per_pax": 800,
+    "luggage_price": 1200,
+    "eta_minutes": 7,
+    "duration_minutes": 33
+  },
+  {
+    "id": "transfer_45",
+    "provider": "AirportShuttle",
+    "car_type": "минивэн",
+    "base_price": 3682,
+    "price_per_pax": 600,
+    "luggage_price": 1000,
+    "eta_minutes": 12,
+    "duration_minutes": 46
+  },
+  {
+    "id": "transfer_46",
+    "provider": "inDrive Partner",
+    "car_type": "минивэн",
+    "base_price": 3985,
+    "price_per_pax": 400,
+    "luggage_price": 0,
+    "eta_minutes": 21,
+    "duration_minutes": 36
+  },
+  {
+    "id": "transfer_47",
+    "provider": "inDrive Partner",
+    "car_type": "премиум",
+    "base_price": 6402,
+    "price_per_pax": 500,
+    "luggage_price": 1500,
+    "eta_minutes": 24,
+    "duration_minutes": 57
+  },
+  {
+    "id": "transfer_48",
+    "provider": "Yandex Go Partner",
+    "car_type": "комфорт",
+    "base_price": 2587,
+    "price_per_pax": 600,
+    "luggage_price": 1000,
+    "eta_minutes": 8,
+    "duration_minutes": 21
+  },
+  {
+    "id": "transfer_49",
+    "provider": "Bolt Partner",
+    "car_type": "минивэн",
+    "base_price": 3716,
+    "price_per_pax": 800,
+    "luggage_price": 1500,
+    "eta_minutes": 9,
+    "duration_minutes": 58
+  },
+  {
+    "id": "transfer_50",
+    "provider": "Yandex Go Partner",
+    "car_type": "комфорт",
+    "base_price": 2687,
+    "price_per_pax": 700,
+    "luggage_price": 0,
+    "eta_minutes": 6,
+    "duration_minutes": 70
+  },
+  {
+    "id": "transfer_51",
+    "provider": "Yandex Go Partner",
+    "car_type": "эконом",
+    "base_price": 1693,
+    "price_per_pax": 800,
+    "luggage_price": 1000,
+    "eta_minutes": 24,
+    "duration_minutes": 54
+  },
+  {
+    "id": "transfer_52",
+    "provider": "Halyk Taxi Partner",
+    "car_type": "премиум",
+    "base_price": 6364,
+    "price_per_pax": 600,
+    "luggage_price": 0,
+    "eta_minutes": 18,
+    "duration_minutes": 43
+  },
+  {
+    "id": "transfer_53",
+    "provider": "Halyk Taxi Partner",
+    "car_type": "премиум",
+    "base_price": 6242,
+    "price_per_pax": 600,
+    "luggage_price": 1000,
+    "eta_minutes": 20,
+    "duration_minutes": 70
+  },
+  {
+    "id": "transfer_54",
+    "provider": "CityDrive",
+    "car_type": "комфорт+",
+    "base_price": 3503,
+    "price_per_pax": 800,
+    "luggage_price": 0,
+    "eta_minutes": 8,
+    "duration_minutes": 47
+  },
+  {
+    "id": "transfer_55",
+    "provider": "inDrive Partner",
+    "car_type": "комфорт+",
+    "base_price": 3388,
+    "price_per_pax": 400,
+    "luggage_price": 800,
+    "eta_minutes": 14,
+    "duration_minutes": 58
+  },
+  {
+    "id": "transfer_56",
+    "provider": "CityDrive",
+    "car_type": "комфорт+",
+    "base_price": 3093,
+    "price_per_pax": 300,
+    "luggage_price": 800,
+    "eta_minutes": 23,
+    "duration_minutes": 53
+  },
+  {
+    "id": "transfer_57",
+    "provider": "Yandex Go Partner",
+    "car_type": "минивэн",
+    "base_price": 3207,
+    "price_per_pax": 600,
+    "luggage_price": 1000,
+    "eta_minutes": 15,
+    "duration_minutes": 46
+  },
+  {
+    "id": "transfer_58",
+    "provider": "GreenTaxi",
+    "car_type": "эконом",
+    "base_price": 1358,
+    "price_per_pax": 600,
+    "luggage_price": 0,
+    "eta_minutes": 13,
+    "duration_minutes": 36
+  },
+  {
+    "id": "transfer_59",
+    "provider": "CityDrive",
+    "car_type": "минивэн",
+    "base_price": 3574,
+    "price_per_pax": 700,
+    "luggage_price": 1200,
+    "eta_minutes": 17,
+    "duration_minutes": 68
+  },
+  {
+    "id": "transfer_60",
+    "provider": "Bolt Partner",
+    "car_type": "бизнес",
+    "base_price": 4265,
+    "price_per_pax": 700,
+    "luggage_price": 1500,
+    "eta_minutes": 10,
+    "duration_minutes": 43
+  },
+  {
+    "id": "transfer_61",
+    "provider": "AirportShuttle",
+    "car_type": "комфорт+",
+    "base_price": 3214,
+    "price_per_pax": 700,
+    "luggage_price": 1200,
+    "eta_minutes": 17,
+    "duration_minutes": 67
+  },
+  {
+    "id": "transfer_62",
+    "provider": "inDrive Partner",
+    "car_type": "премиум",
+    "base_price": 5821,
+    "price_per_pax": 800,
+    "luggage_price": 1000,
+    "eta_minutes": 19,
+    "duration_minutes": 70
+  },
+  {
+    "id": "transfer_63",
+    "provider": "inDrive Partner",
+    "car_type": "эконом",
+    "base_price": 1419,
+    "price_per_pax": 700,
+    "luggage_price": 1500,
+    "eta_minutes": 15,
+    "duration_minutes": 55
+  },
+  {
+    "id": "transfer_64",
+    "provider": "Halyk Taxi Partner",
+    "car_type": "комфорт",
+    "base_price": 2598,
+    "price_per_pax": 800,
+    "luggage_price": 800,
+    "eta_minutes": 7,
+    "duration_minutes": 29
+  },
+  {
+    "id": "transfer_65",
+    "provider": "AirportShuttle",
+    "car_type": "минивэн",
+    "base_price": 3645,
+    "price_per_pax": 300,
+    "luggage_price": 800,
+    "eta_minutes": 13,
+    "duration_minutes": 34
+  },
+  {
+    "id": "transfer_66",
+    "provider": "GreenTaxi",
+    "car_type": "эконом",
+    "base_price": 1823,
+    "price_per_pax": 300,
+    "luggage_price": 1500,
+    "eta_minutes": 17,
+    "duration_minutes": 59
+  },
+  {
+    "id": "transfer_67",
+    "provider": "Uber Partner",
+    "car_type": "премиум",
+    "base_price": 6311,
+    "price_per_pax": 300,
+    "luggage_price": 1000,
+    "eta_minutes": 25,
+    "duration_minutes": 51
+  },
+  {
+    "id": "transfer_68",
+    "provider": "AirportShuttle",
+    "car_type": "эконом",
+    "base_price": 1406,
+    "price_per_pax": 800,
+    "luggage_price": 0,
+    "eta_minutes": 14,
+    "duration_minutes": 32
+  },
+  {
+    "id": "transfer_69",
+    "provider": "Halyk Taxi Partner",
+    "car_type": "минивэн",
+    "base_price": 3722,
+    "price_per_pax": 700,
+    "luggage_price": 1000,
+    "eta_minutes": 24,
+    "duration_minutes": 30
+  },
+  {
+    "id": "transfer_70",
+    "provider": "Halyk Taxi Partner",
+    "car_type": "комфорт+",
+    "base_price": 3144,
+    "price_per_pax": 800,
+    "luggage_price": 800,
+    "eta_minutes": 10,
+    "duration_minutes": 25
+  },
+  {
+    "id": "transfer_71",
+    "provider": "Uber Partner",
+    "car_type": "бизнес",
+    "base_price": 4061,
+    "price_per_pax": 800,
+    "luggage_price": 1500,
+    "eta_minutes": 17,
+    "duration_minutes": 57
+  },
+  {
+    "id": "transfer_72",
+    "provider": "Bolt Partner",
+    "car_type": "минивэн",
+    "base_price": 3215,
+    "price_per_pax": 800,
+    "luggage_price": 800,
+    "eta_minutes": 7,
+    "duration_minutes": 55
+  },
+  {
+    "id": "transfer_73",
+    "provider": "Uber Partner",
+    "car_type": "премиум",
+    "base_price": 6272,
+    "price_per_pax": 700,
+    "luggage_price": 1200,
+    "eta_minutes": 16,
+    "duration_minutes": 37
+  },
+  {
+    "id": "transfer_74",
+    "provider": "Bolt Partner",
+    "car_type": "минивэн",
+    "base_price": 3399,
+    "price_per_pax": 600,
+    "luggage_price": 1500,
+    "eta_minutes": 23,
+    "duration_minutes": 20
+  },
+  {
+    "id": "transfer_75",
+    "provider": "Uber Partner",
+    "car_type": "комфорт",
+    "base_price": 2616,
+    "price_per_pax": 700,
+    "luggage_price": 800,
+    "eta_minutes": 22,
+    "duration_minutes": 24
+  },
+  {
+    "id": "transfer_76",
+    "provider": "Uber Partner",
+    "car_type": "комфорт+",
+    "base_price": 3019,
+    "price_per_pax": 700,
+    "luggage_price": 1200,
+    "eta_minutes": 22,
+    "duration_minutes": 70
+  },
+  {
+    "id": "transfer_77",
+    "provider": "Uber Partner",
+    "car_type": "премиум",
+    "base_price": 6153,
+    "price_per_pax": 600,
+    "luggage_price": 0,
+    "eta_minutes": 20,
+    "duration_minutes": 69
+  },
+  {
+    "id": "transfer_78",
+    "provider": "Bolt Partner",
+    "car_type": "комфорт+",
+    "base_price": 3694,
+    "price_per_pax": 600,
+    "luggage_price": 1500,
+    "eta_minutes": 23,
+    "duration_minutes": 21
+  },
+  {
+    "id": "transfer_79",
+    "provider": "AirportShuttle",
+    "car_type": "эконом",
+    "base_price": 1464,
+    "price_per_pax": 300,
+    "luggage_price": 1500,
+    "eta_minutes": 25,
+    "duration_minutes": 70
+  },
+  {
+    "id": "transfer_80",
+    "provider": "Bolt Partner",
+    "car_type": "премиум",
+    "base_price": 6418,
+    "price_per_pax": 400,
+    "luggage_price": 1200,
+    "eta_minutes": 18,
+    "duration_minutes": 42
+  },
+  {
+    "id": "transfer_81",
+    "provider": "Halyk Taxi Partner",
+    "car_type": "премиум",
+    "base_price": 5969,
+    "price_per_pax": 400,
+    "luggage_price": 1200,
+    "eta_minutes": 7,
+    "duration_minutes": 45
+  },
+  {
+    "id": "transfer_82",
+    "provider": "GreenTaxi",
+    "car_type": "эконом",
+    "base_price": 1767,
+    "price_per_pax": 400,
+    "luggage_price": 1500,
+    "eta_minutes": 15,
+    "duration_minutes": 42
+  },
+  {
+    "id": "transfer_83",
+    "provider": "Bolt Partner",
+    "car_type": "минивэн",
+    "base_price": 3475,
+    "price_per_pax": 400,
+    "luggage_price": 1000,
+    "eta_minutes": 20,
+    "duration_minutes": 67
+  },
+  {
+    "id": "transfer_84",
+    "provider": "Bolt Partner",
+    "car_type": "комфорт",
+    "base_price": 2953,
+    "price_per_pax": 400,
+    "luggage_price": 1200,
+    "eta_minutes": 11,
+    "duration_minutes": 34
+  },
+  {
+    "id": "transfer_85",
+    "provider": "Bolt Partner",
+    "car_type": "комфорт",
+    "base_price": 2833,
     "price_per_pax": 500,
     "luggage_price": 1000,
+    "eta_minutes": 8,
+    "duration_minutes": 27
+  },
+  {
+    "id": "transfer_86",
+    "provider": "Yandex Go Partner",
+    "car_type": "премиум",
+    "base_price": 6379,
+    "price_per_pax": 600,
+    "luggage_price": 0,
+    "eta_minutes": 5,
+    "duration_minutes": 68
+  },
+  {
+    "id": "transfer_87",
+    "provider": "Halyk Taxi Partner",
+    "car_type": "бизнес",
+    "base_price": 4080,
+    "price_per_pax": 700,
+    "luggage_price": 1200,
+    "eta_minutes": 20,
+    "duration_minutes": 56
+  },
+  {
+    "id": "transfer_88",
+    "provider": "Uber Partner",
+    "car_type": "бизнес",
+    "base_price": 3887,
+    "price_per_pax": 700,
+    "luggage_price": 1200,
+    "eta_minutes": 17,
+    "duration_minutes": 34
+  },
+  {
+    "id": "transfer_89",
+    "provider": "inDrive Partner",
+    "car_type": "эконом",
+    "base_price": 1738,
+    "price_per_pax": 600,
+    "luggage_price": 1500,
+    "eta_minutes": 22,
+    "duration_minutes": 22
+  },
+  {
+    "id": "transfer_90",
+    "provider": "GreenTaxi",
+    "car_type": "бизнес",
+    "base_price": 4402,
+    "price_per_pax": 400,
+    "luggage_price": 1500,
+    "eta_minutes": 8,
+    "duration_minutes": 64
+  },
+  {
+    "id": "transfer_91",
+    "provider": "AirportShuttle",
+    "car_type": "комфорт+",
+    "base_price": 3605,
+    "price_per_pax": 300,
+    "luggage_price": 800,
+    "eta_minutes": 11,
+    "duration_minutes": 44
+  },
+  {
+    "id": "transfer_92",
+    "provider": "Yandex Go Partner",
+    "car_type": "комфорт+",
+    "base_price": 3270,
+    "price_per_pax": 700,
+    "luggage_price": 1200,
+    "eta_minutes": 10,
+    "duration_minutes": 55
+  },
+  {
+    "id": "transfer_93",
+    "provider": "Uber Partner",
+    "car_type": "комфорт",
+    "base_price": 2475,
+    "price_per_pax": 600,
+    "luggage_price": 0,
+    "eta_minutes": 15,
+    "duration_minutes": 43
+  },
+  {
+    "id": "transfer_94",
+    "provider": "inDrive Partner",
+    "car_type": "бизнес",
+    "base_price": 4134,
+    "price_per_pax": 400,
+    "luggage_price": 1500,
+    "eta_minutes": 16,
+    "duration_minutes": 43
+  },
+  {
+    "id": "transfer_95",
+    "provider": "CityDrive",
+    "car_type": "комфорт+",
+    "base_price": 3361,
+    "price_per_pax": 400,
+    "luggage_price": 0,
+    "eta_minutes": 9,
+    "duration_minutes": 56
+  },
+  {
+    "id": "transfer_96",
+    "provider": "Bolt Partner",
+    "car_type": "эконом",
+    "base_price": 1938,
+    "price_per_pax": 500,
+    "luggage_price": 1000,
+    "eta_minutes": 22,
+    "duration_minutes": 47
+  },
+  {
+    "id": "transfer_97",
+    "provider": "CityDrive",
+    "car_type": "комфорт",
+    "base_price": 2349,
+    "price_per_pax": 800,
+    "luggage_price": 1000,
+    "eta_minutes": 20,
+    "duration_minutes": 20
+  },
+  {
+    "id": "transfer_98",
+    "provider": "inDrive Partner",
+    "car_type": "бизнес",
+    "base_price": 4211,
+    "price_per_pax": 400,
+    "luggage_price": 0,
+    "eta_minutes": 22,
+    "duration_minutes": 66
+  },
+  {
+    "id": "transfer_99",
+    "provider": "GreenTaxi",
+    "car_type": "бизнес",
+    "base_price": 4007,
+    "price_per_pax": 500,
+    "luggage_price": 0,
+    "eta_minutes": 23,
+    "duration_minutes": 23
+  },
+  {
+    "id": "transfer_100",
+    "provider": "CityDrive",
+    "car_type": "эконом",
+    "base_price": 1907,
+    "price_per_pax": 400,
+    "luggage_price": 800,
+    "eta_minutes": 11,
+    "duration_minutes": 36
+  },
+  {
+    "id": "transfer_101",
+    "provider": "AirportShuttle",
+    "car_type": "премиум",
+    "base_price": 5798,
+    "price_per_pax": 600,
+    "luggage_price": 1200,
+    "eta_minutes": 13,
+    "duration_minutes": 43
+  },
+  {
+    "id": "transfer_102",
+    "provider": "GreenTaxi",
+    "car_type": "минивэн",
+    "base_price": 3770,
+    "price_per_pax": 500,
+    "luggage_price": 1200,
+    "eta_minutes": 5,
+    "duration_minutes": 46
+  },
+  {
+    "id": "transfer_103",
+    "provider": "Yandex Go Partner",
+    "car_type": "комфорт+",
+    "base_price": 3595,
+    "price_per_pax": 700,
+    "luggage_price": 1000,
+    "eta_minutes": 23,
+    "duration_minutes": 56
+  },
+  {
+    "id": "transfer_104",
+    "provider": "inDrive Partner",
+    "car_type": "комфорт+",
+    "base_price": 3263,
+    "price_per_pax": 500,
+    "luggage_price": 0,
+    "eta_minutes": 20,
+    "duration_minutes": 69
+  },
+  {
+    "id": "transfer_105",
+    "provider": "AirportShuttle",
+    "car_type": "эконом",
+    "base_price": 1590,
+    "price_per_pax": 700,
+    "luggage_price": 1200,
+    "eta_minutes": 19,
+    "duration_minutes": 60
+  },
+  {
+    "id": "transfer_106",
+    "provider": "inDrive Partner",
+    "car_type": "комфорт",
+    "base_price": 2855,
+    "price_per_pax": 500,
+    "luggage_price": 1500,
+    "eta_minutes": 25,
+    "duration_minutes": 59
+  },
+  {
+    "id": "transfer_107",
+    "provider": "CityDrive",
+    "car_type": "эконом",
+    "base_price": 1281,
+    "price_per_pax": 400,
+    "luggage_price": 1200,
+    "eta_minutes": 12,
+    "duration_minutes": 40
+  },
+  {
+    "id": "transfer_108",
+    "provider": "GreenTaxi",
+    "car_type": "премиум",
+    "base_price": 5998,
+    "price_per_pax": 800,
+    "luggage_price": 1200,
+    "eta_minutes": 24,
+    "duration_minutes": 61
+  },
+  {
+    "id": "transfer_109",
+    "provider": "CityDrive",
+    "car_type": "комфорт+",
+    "base_price": 3355,
+    "price_per_pax": 500,
+    "luggage_price": 0,
+    "eta_minutes": 21,
+    "duration_minutes": 48
+  },
+  {
+    "id": "transfer_110",
+    "provider": "CityDrive",
+    "car_type": "комфорт",
+    "base_price": 2388,
+    "price_per_pax": 300,
+    "luggage_price": 1000,
+    "eta_minutes": 12,
+    "duration_minutes": 62
+  },
+  {
+    "id": "transfer_111",
+    "provider": "Uber Partner",
+    "car_type": "премиум",
+    "base_price": 6417,
+    "price_per_pax": 800,
+    "luggage_price": 800,
+    "eta_minutes": 11,
+    "duration_minutes": 30
+  },
+  {
+    "id": "transfer_112",
+    "provider": "CityDrive",
+    "car_type": "эконом",
+    "base_price": 1297,
+    "price_per_pax": 300,
+    "luggage_price": 1500,
+    "eta_minutes": 22,
+    "duration_minutes": 23
+  },
+  {
+    "id": "transfer_113",
+    "provider": "Halyk Taxi Partner",
+    "car_type": "бизнес",
+    "base_price": 4236,
+    "price_per_pax": 300,
+    "luggage_price": 800,
+    "eta_minutes": 13,
+    "duration_minutes": 59
+  },
+  {
+    "id": "transfer_114",
+    "provider": "inDrive Partner",
+    "car_type": "эконом",
+    "base_price": 1870,
+    "price_per_pax": 600,
+    "luggage_price": 1200,
     "eta_minutes": 12,
     "duration_minutes": 35
   },
   {
-    "id": "transfer_2",
-    "provider": "Yandex Go Partner",
-    "car_type": "business",
-    "base_price": 4000,
+    "id": "transfer_115",
+    "provider": "Uber Partner",
+    "car_type": "бизнес",
+    "base_price": 4341,
+    "price_per_pax": 400,
+    "luggage_price": 1000,
+    "eta_minutes": 21,
+    "duration_minutes": 30
+  },
+  {
+    "id": "transfer_116",
+    "provider": "Halyk Taxi Partner",
+    "car_type": "эконом",
+    "base_price": 1879,
+    "price_per_pax": 500,
+    "luggage_price": 1200,
+    "eta_minutes": 20,
+    "duration_minutes": 49
+  },
+  {
+    "id": "transfer_117",
+    "provider": "Uber Partner",
+    "car_type": "минивэн",
+    "base_price": 3655,
+    "price_per_pax": 400,
+    "luggage_price": 0,
+    "eta_minutes": 10,
+    "duration_minutes": 57
+  },
+  {
+    "id": "transfer_118",
+    "provider": "AirportShuttle",
+    "car_type": "премиум",
+    "base_price": 6466,
+    "price_per_pax": 800,
+    "luggage_price": 0,
+    "eta_minutes": 18,
+    "duration_minutes": 53
+  },
+  {
+    "id": "transfer_119",
+    "provider": "Uber Partner",
+    "car_type": "комфорт+",
+    "base_price": 3393,
+    "price_per_pax": 700,
+    "luggage_price": 1000,
+    "eta_minutes": 7,
+    "duration_minutes": 48
+  },
+  {
+    "id": "transfer_120",
+    "provider": "Uber Partner",
+    "car_type": "комфорт+",
+    "base_price": 3322,
+    "price_per_pax": 500,
+    "luggage_price": 1000,
+    "eta_minutes": 14,
+    "duration_minutes": 20
+  },
+  {
+    "id": "transfer_121",
+    "provider": "Halyk Taxi Partner",
+    "car_type": "минивэн",
+    "base_price": 3976,
+    "price_per_pax": 400,
+    "luggage_price": 1200,
+    "eta_minutes": 14,
+    "duration_minutes": 50
+  },
+  {
+    "id": "transfer_122",
+    "provider": "Halyk Taxi Partner",
+    "car_type": "премиум",
+    "base_price": 6203,
+    "price_per_pax": 600,
+    "luggage_price": 1200,
+    "eta_minutes": 5,
+    "duration_minutes": 69
+  },
+  {
+    "id": "transfer_123",
+    "provider": "CityDrive",
+    "car_type": "комфорт+",
+    "base_price": 3511,
+    "price_per_pax": 400,
+    "luggage_price": 800,
+    "eta_minutes": 22,
+    "duration_minutes": 43
+  },
+  {
+    "id": "transfer_124",
+    "provider": "Bolt Partner",
+    "car_type": "бизнес",
+    "base_price": 4274,
+    "price_per_pax": 600,
+    "luggage_price": 1500,
+    "eta_minutes": 12,
+    "duration_minutes": 30
+  },
+  {
+    "id": "transfer_125",
+    "provider": "CityDrive",
+    "car_type": "бизнес",
+    "base_price": 3925,
+    "price_per_pax": 500,
+    "luggage_price": 800,
+    "eta_minutes": 18,
+    "duration_minutes": 60
+  },
+  {
+    "id": "transfer_126",
+    "provider": "Bolt Partner",
+    "car_type": "минивэн",
+    "base_price": 3982,
     "price_per_pax": 700,
     "luggage_price": 1200,
+    "eta_minutes": 14,
+    "duration_minutes": 61
+  },
+  {
+    "id": "transfer_127",
+    "provider": "Uber Partner",
+    "car_type": "бизнес",
+    "base_price": 3892,
+    "price_per_pax": 300,
+    "luggage_price": 1000,
     "eta_minutes": 9,
-    "duration_minutes": 30
+    "duration_minutes": 38
+  },
+  {
+    "id": "transfer_128",
+    "provider": "Yandex Go Partner",
+    "car_type": "премиум",
+    "base_price": 6166,
+    "price_per_pax": 700,
+    "luggage_price": 1500,
+    "eta_minutes": 13,
+    "duration_minutes": 64
+  },
+  {
+    "id": "transfer_129",
+    "provider": "AirportShuttle",
+    "car_type": "комфорт",
+    "base_price": 2528,
+    "price_per_pax": 300,
+    "luggage_price": 1000,
+    "eta_minutes": 6,
+    "duration_minutes": 54
+  },
+  {
+    "id": "transfer_130",
+    "provider": "Halyk Taxi Partner",
+    "car_type": "комфорт",
+    "base_price": 2304,
+    "price_per_pax": 500,
+    "luggage_price": 1200,
+    "eta_minutes": 9,
+    "duration_minutes": 65
+  },
+  {
+    "id": "transfer_131",
+    "provider": "AirportShuttle",
+    "car_type": "премиум",
+    "base_price": 5708,
+    "price_per_pax": 400,
+    "luggage_price": 800,
+    "eta_minutes": 9,
+    "duration_minutes": 20
+  },
+  {
+    "id": "transfer_132",
+    "provider": "AirportShuttle",
+    "car_type": "комфорт",
+    "base_price": 2550,
+    "price_per_pax": 600,
+    "luggage_price": 1200,
+    "eta_minutes": 20,
+    "duration_minutes": 43
+  },
+  {
+    "id": "transfer_133",
+    "provider": "AirportShuttle",
+    "car_type": "премиум",
+    "base_price": 5732,
+    "price_per_pax": 500,
+    "luggage_price": 800,
+    "eta_minutes": 9,
+    "duration_minutes": 23
+  },
+  {
+    "id": "transfer_134",
+    "provider": "Uber Partner",
+    "car_type": "бизнес",
+    "base_price": 3773,
+    "price_per_pax": 700,
+    "luggage_price": 1500,
+    "eta_minutes": 10,
+    "duration_minutes": 32
+  },
+  {
+    "id": "transfer_135",
+    "provider": "Uber Partner",
+    "car_type": "бизнес",
+    "base_price": 3712,
+    "price_per_pax": 300,
+    "luggage_price": 1000,
+    "eta_minutes": 17,
+    "duration_minutes": 69
+  },
+  {
+    "id": "transfer_136",
+    "provider": "AirportShuttle",
+    "car_type": "комфорт",
+    "base_price": 2955,
+    "price_per_pax": 300,
+    "luggage_price": 1000,
+    "eta_minutes": 19,
+    "duration_minutes": 67
+  },
+  {
+    "id": "transfer_137",
+    "provider": "Yandex Go Partner",
+    "car_type": "минивэн",
+    "base_price": 3881,
+    "price_per_pax": 400,
+    "luggage_price": 1500,
+    "eta_minutes": 17,
+    "duration_minutes": 63
+  },
+  {
+    "id": "transfer_138",
+    "provider": "Uber Partner",
+    "car_type": "комфорт+",
+    "base_price": 3062,
+    "price_per_pax": 800,
+    "luggage_price": 800,
+    "eta_minutes": 22,
+    "duration_minutes": 53
+  },
+  {
+    "id": "transfer_139",
+    "provider": "Yandex Go Partner",
+    "car_type": "комфорт+",
+    "base_price": 3392,
+    "price_per_pax": 800,
+    "luggage_price": 1200,
+    "eta_minutes": 11,
+    "duration_minutes": 43
+  },
+  {
+    "id": "transfer_140",
+    "provider": "Halyk Taxi Partner",
+    "car_type": "премиум",
+    "base_price": 5923,
+    "price_per_pax": 300,
+    "luggage_price": 1000,
+    "eta_minutes": 25,
+    "duration_minutes": 47
+  },
+  {
+    "id": "transfer_141",
+    "provider": "GreenTaxi",
+    "car_type": "эконом",
+    "base_price": 1371,
+    "price_per_pax": 500,
+    "luggage_price": 0,
+    "eta_minutes": 8,
+    "duration_minutes": 45
+  },
+  {
+    "id": "transfer_142",
+    "provider": "Bolt Partner",
+    "car_type": "эконом",
+    "base_price": 1243,
+    "price_per_pax": 700,
+    "luggage_price": 1500,
+    "eta_minutes": 24,
+    "duration_minutes": 29
+  },
+  {
+    "id": "transfer_143",
+    "provider": "GreenTaxi",
+    "car_type": "эконом",
+    "base_price": 1454,
+    "price_per_pax": 400,
+    "luggage_price": 1500,
+    "eta_minutes": 7,
+    "duration_minutes": 63
+  },
+  {
+    "id": "transfer_144",
+    "provider": "GreenTaxi",
+    "car_type": "премиум",
+    "base_price": 5761,
+    "price_per_pax": 300,
+    "luggage_price": 1200,
+    "eta_minutes": 25,
+    "duration_minutes": 29
+  },
+  {
+    "id": "transfer_145",
+    "provider": "Yandex Go Partner",
+    "car_type": "комфорт",
+    "base_price": 2699,
+    "price_per_pax": 400,
+    "luggage_price": 1200,
+    "eta_minutes": 22,
+    "duration_minutes": 70
+  },
+  {
+    "id": "transfer_146",
+    "provider": "GreenTaxi",
+    "car_type": "бизнес",
+    "base_price": 4450,
+    "price_per_pax": 400,
+    "luggage_price": 800,
+    "eta_minutes": 17,
+    "duration_minutes": 42
+  },
+  {
+    "id": "transfer_147",
+    "provider": "inDrive Partner",
+    "car_type": "комфорт+",
+    "base_price": 2940,
+    "price_per_pax": 600,
+    "luggage_price": 1500,
+    "eta_minutes": 22,
+    "duration_minutes": 38
+  },
+  {
+    "id": "transfer_148",
+    "provider": "AirportShuttle",
+    "car_type": "комфорт",
+    "base_price": 2780,
+    "price_per_pax": 400,
+    "luggage_price": 0,
+    "eta_minutes": 16,
+    "duration_minutes": 40
+  },
+  {
+    "id": "transfer_149",
+    "provider": "AirportShuttle",
+    "car_type": "комфорт+",
+    "base_price": 3513,
+    "price_per_pax": 700,
+    "luggage_price": 1000,
+    "eta_minutes": 7,
+    "duration_minutes": 53
+  },
+  {
+    "id": "transfer_150",
+    "provider": "inDrive Partner",
+    "car_type": "бизнес",
+    "base_price": 4002,
+    "price_per_pax": 500,
+    "luggage_price": 0,
+    "eta_minutes": 16,
+    "duration_minutes": 49
   }
 ]
