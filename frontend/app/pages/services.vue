@@ -3,6 +3,12 @@ import { mdiArrowLeft, mdiPencil } from '@mdi/js'
 
 const router = useRouter()
 const { mainServices, services, personal, support } = useServices()
+
+const openService = (item: any) => {
+  if (item.route) {
+    router.push(item.route)
+  }
+}
 </script>
 
 <template>
@@ -31,6 +37,7 @@ const { mainServices, services, personal, support } = useServices()
             :title="item.title"
             :icon="item.icon"
             large
+            @click="openService(item)"
           />
         </div>
 
@@ -52,6 +59,7 @@ const { mainServices, services, personal, support } = useServices()
             :title="item.title"
             :icon="item.icon"
             large
+            @click="openService(item)"
           />
         </div>
       </section>

@@ -9,6 +9,7 @@ from app.routers.pharmacy import router as pharmacy_router
 from app.routers.pay import router as pay_router
 from app.routers.restaurants import router as restaurants_router
 from app.routers.insurance import router as insurance_router
+from app.routers.travel import router as travel_router
 
 app = FastAPI(title="Halyk Travel AI")
 
@@ -28,6 +29,7 @@ app.include_router(pharmacy_router)
 app.include_router(pay_router)
 app.include_router(restaurants_router)
 app.include_router(insurance_router)
+app.include_router(travel_router)
 
 @app.get("/")
 async def root():

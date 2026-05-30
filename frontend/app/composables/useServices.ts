@@ -44,6 +44,11 @@ export const useServices = () => {
   ]
 
   const services = [
+    {
+      title: 'Halyk Sapar',
+      icon: mdiAirplane,
+      route: '/travel'
+    },
     { title: 'Курсы вал...', icon: mdiCurrencyUsd },
     { title: 'Halyk Easy', icon: mdiCashMultiple },
     { title: 'Аптека', icon: mdiPlusThick },

@@ -45,6 +45,7 @@ services:
       - "8000:8000"
     volumes:
       - ./backend:/app   # hot reload — код монтируется внутрь
+      - ./mock_data:/mock_data:ro
     depends_on:
       postgres:
         condition: service_healthy
