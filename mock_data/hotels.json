@@ -1,0 +1,20 @@
+[
+  {
+    "id": "hotel_1",
+    "title": "Comfort Hotel Astana",
+    "city": "Astana",
+    "rating": 4.6,
+    "distance_to_center": "2.1 km",
+    "price_per_night": 15000,
+    "family_friendly": true
+  },
+  {
+    "id": "hotel_2",
+    "title": "Nomad Family Hotel",
+    "city": "Astana",
+    "rating": 4.4,
+    "distance_to_center": "3.5 km",
+    "price_per_night": 13000,
+    "family_friendly": true
+  }
+]

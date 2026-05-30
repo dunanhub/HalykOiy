@@ -1,0 +1,20 @@
+[
+  {
+    "id": "activity_1",
+    "title": "Oceanarium Astana",
+    "city": "Astana",
+    "audience": "family_kids",
+    "duration": "2 hours",
+    "price": 6000,
+    "rating": 4.7
+  },
+  {
+    "id": "activity_2",
+    "title": "Family walk near Baiterek",
+    "city": "Astana",
+    "audience": "family_kids",
+    "duration": "1.5 hours",
+    "price": 0,
+    "rating": 4.8
+  }
+]

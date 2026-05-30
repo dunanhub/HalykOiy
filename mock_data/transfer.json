@@ -1,0 +1,22 @@
+[
+  {
+    "id": "transfer_1",
+    "provider": "Halyk Taxi Partner",
+    "car_type": "comfort",
+    "base_price": 2500,
+    "price_per_pax": 500,
+    "luggage_price": 1000,
+    "eta_minutes": 12,
+    "duration_minutes": 35
+  },
+  {
+    "id": "transfer_2",
+    "provider": "Yandex Go Partner",
+    "car_type": "business",
+    "base_price": 4000,
+    "price_per_pax": 700,
+    "luggage_price": 1200,
+    "eta_minutes": 9,
+    "duration_minutes": 30
+  }
+]

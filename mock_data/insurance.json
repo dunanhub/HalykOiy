@@ -1,0 +1,16 @@
+[
+  {
+    "id": "insurance_1",
+    "provider": "Halyk Insurance",
+    "title": "Family Travel Insurance",
+    "coverage": 1000000,
+    "price": 2500
+  },
+  {
+    "id": "insurance_2",
+    "provider": "Nomad Insurance",
+    "title": "Standard Travel Package",
+    "coverage": 750000,
+    "price": 1800
+  }
+]

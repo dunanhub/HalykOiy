@@ -1,0 +1,23 @@
+[
+  {
+    "id": "pharmacy_1",
+    "title": "Children fever reducer",
+    "trip_type": "family",
+    "price": 1800,
+    "required": true
+  },
+  {
+    "id": "pharmacy_2",
+    "title": "Antiseptic spray",
+    "trip_type": "family",
+    "price": 1200,
+    "required": true
+  },
+  {
+    "id": "pharmacy_3",
+    "title": "Plasters",
+    "trip_type": "family",
+    "price": 700,
+    "required": false
+  }
+]

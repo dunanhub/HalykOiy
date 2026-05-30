@@ -1,0 +1,22 @@
+[
+  {
+    "id": "flight_1",
+    "airline": "Air Astana",
+    "from": "ALA",
+    "to": "NQZ",
+    "departure": "08:20",
+    "arrival": "10:05",
+    "duration": "1h 45m",
+    "price_per_person": 25000
+  },
+  {
+    "id": "flight_2",
+    "airline": "FlyArystan",
+    "from": "ALA",
+    "to": "NQZ",
+    "departure": "14:40",
+    "arrival": "16:25",
+    "duration": "1h 45m",
+    "price_per_person": 22000
+  }
+]

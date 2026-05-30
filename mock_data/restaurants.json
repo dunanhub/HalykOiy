@@ -1,0 +1,18 @@
+[
+  {
+    "id": "rest_1",
+    "name": "Navat",
+    "city": "Astana",
+    "rating": 4.8,
+    "avg_check": 6000,
+    "cuisine": "Kazakh"
+  },
+  {
+    "id": "rest_2",
+    "name": "Line Brew",
+    "city": "Astana",
+    "rating": 4.7,
+    "avg_check": 9000,
+    "cuisine": "European"
+  }
+]

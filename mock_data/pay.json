@@ -1,0 +1,6 @@
+{
+  "provider": "Halyk Pay Mock",
+  "bonus_rate": 0.02,
+  "currency": "KZT",
+  "status": "mock"
+}
