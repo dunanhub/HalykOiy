@@ -15,3 +15,8 @@ frontend/.env
 .DS_Store
 Thumbs.db
 EOF
+
+
+.agents
+.claude
+.codex
