@@ -16,7 +16,8 @@ import {
   mdiMapMarkerOutline,
   mdiInformationOutline,
   mdiPlusThick,
-  mdiCurrencyUsd
+  mdiCurrencyUsd,
+  mdiBagPersonal
 } from '@mdi/js'
 
 export const useServices = () => {
@@ -46,7 +47,7 @@ export const useServices = () => {
   const services = [
     {
       title: 'Halyk Sapar',
-      icon: mdiAirplane,
+      icon: mdiBagPersonal,
       route: '/travel'
     },
     { title: 'Курсы вал...', icon: mdiCurrencyUsd },
@@ -55,7 +56,7 @@ export const useServices = () => {
     { title: 'Рестораны', icon: mdiSilverwareForkKnife },
     { title: 'Kundelik pro', icon: mdiInformationOutline },
     { title: 'Airba fresh', icon: mdiHomeOutline },
-    { title: 'Halyk FX', icon: mdiCurrencyUsd },
+    // { title: 'Halyk FX', icon: mdiCurrencyUsd },
     { title: 'inDrive', icon: mdiCar },
     { title: 'Mektep Me...', icon: mdiHomeOutline },
     { title: 'Детям', icon: mdiPiggyBankOutline }

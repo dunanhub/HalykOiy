@@ -32,6 +32,1233 @@
     "city": "Актобе",
     "audience": "активный отдых",
     "duration": "4 часа",
+<<<<<<< HEAD
+=======
+    "price": 0,
+    "rating": 4.4
+  },
+  {
+    "id": "activity_5",
+    "title": "Тур на квадроциклах по пустыне Семей",
+    "city": "Семей",
+    "audience": "активный отдых",
+    "duration": "1.5 часа",
+    "price": 0,
+    "rating": 4.4
+  },
+  {
+    "id": "activity_6",
+    "title": "Горные лыжи на Шымбулаке Шымкент",
+    "city": "Шымкент",
+    "audience": "соло",
+    "duration": "2 часа",
+    "price": 2500,
+    "rating": 4.4
+  },
+  {
+    "id": "activity_7",
+    "title": "Квест-комната Актау",
+    "city": "Актау",
+    "audience": "группа",
+    "duration": "1 час",
+    "price": 4000,
+    "rating": 4.4
+  },
+  {
+    "id": "activity_8",
+    "title": "Музей науки Шымкент",
+    "city": "Шымкент",
+    "audience": "культурный",
+    "duration": "2 часа",
+    "price": 2000,
+    "rating": 4.8
+  },
+  {
+    "id": "activity_9",
+    "title": "Фотопрогулка Костанай",
+    "city": "Костанай",
+    "audience": "культурный",
+    "duration": "2 часа",
+    "price": 500,
+    "rating": 4.3
+  },
+  {
+    "id": "activity_10",
+    "title": "Батутный парк Актобе",
+    "city": "Актобе",
+    "audience": "культурный",
+    "duration": "Целый день",
+    "price": 8000,
+    "rating": 4.8
+  },
+  {
+    "id": "activity_11",
+    "title": "Прогулка на катере Орал",
+    "city": "Орал",
+    "audience": "семья с детьми",
+    "duration": "4 часа",
+    "price": 1500,
+    "rating": 4.5
+  },
+  {
+    "id": "activity_12",
+    "title": "Поход в Чарынский каньон Тараз",
+    "city": "Тараз",
+    "audience": "активный отдых",
+    "duration": "Целый день",
+    "price": 2500,
+    "rating": 4.6
+  },
+  {
+    "id": "activity_13",
+    "title": "Велосипедный маршрут Атырау",
+    "city": "Атырау",
+    "audience": "соло",
+    "duration": "1 час",
+    "price": 10000,
+    "rating": 5.0
+  },
+  {
+    "id": "activity_14",
+    "title": "Сёрфинг по песку Костанай",
+    "city": "Костанай",
+    "audience": "группа",
+    "duration": "2 часа",
+    "price": 500,
+    "rating": 4.5
+  },
+  {
+    "id": "activity_15",
+    "title": "Музей современного искусства Тараз",
+    "city": "Тараз",
+    "audience": "культурный",
+    "duration": "2.5 часа",
+    "price": 0,
+    "rating": 4.6
+  },
+  {
+    "id": "activity_16",
+    "title": "Вечер вина и сыра Алматы",
+    "city": "Алматы",
+    "audience": "пара",
+    "duration": "Полдня",
+    "price": 2000,
+    "rating": 4.4
+  },
+  {
+    "id": "activity_17",
+    "title": "Рыбалка Семей",
+    "city": "Семей",
+    "audience": "семья с детьми",
+    "duration": "2 часа",
+    "price": 5000,
+    "rating": 4.9
+  },
+  {
+    "id": "activity_18",
+    "title": "Пейнтбол Семей",
+    "city": "Семей",
+    "audience": "группа",
+    "duration": "Полдня",
+    "price": 4000,
+    "rating": 4.3
+  },
+  {
+    "id": "activity_19",
+    "title": "Базар под открытым небом Караганда",
+    "city": "Караганда",
+    "audience": "соло",
+    "duration": "3 часа",
+    "price": 3000,
+    "rating": 4.9
+  },
+  {
+    "id": "activity_20",
+    "title": "Сёрфинг по песку Костанай",
+    "city": "Костанай",
+    "audience": "соло",
+    "duration": "2.5 часа",
+    "price": 1000,
+    "rating": 5.0
+  },
+  {
+    "id": "activity_21",
+    "title": "Рыбалка Атырау",
+    "city": "Атырау",
+    "audience": "группа",
+    "duration": "4 часа",
+    "price": 1500,
+    "rating": 4.7
+  },
+  {
+    "id": "activity_22",
+    "title": "Параглайдинг Павлодар",
+    "city": "Павлодар",
+    "audience": "группа",
+    "duration": "3 часа",
+    "price": 4000,
+    "rating": 4.9
+  },
+  {
+    "id": "activity_23",
+    "title": "Прогулка на катере Астана",
+    "city": "Астана",
+    "audience": "активный отдых",
+    "duration": "2 часа",
+    "price": 6000,
+    "rating": 4.5
+  },
+  {
+    "id": "activity_24",
+    "title": "Верёвочный парк Атырау",
+    "city": "Атырау",
+    "audience": "семья с детьми",
+    "duration": "Целый день",
+    "price": 1500,
+    "rating": 5.0
+  },
+  {
+    "id": "activity_25",
+    "title": "Шоу беркутчи Тараз",
+    "city": "Тараз",
+    "audience": "пара",
+    "duration": "3 часа",
+    "price": 8000,
+    "rating": 4.5
+  },
+  {
+    "id": "activity_26",
+    "title": "Горные лыжи на Шымбулаке Шымкент",
+    "city": "Шымкент",
+    "audience": "активный отдых",
+    "duration": "1 час",
+    "price": 5000,
+    "rating": 4.7
+  },
+  {
+    "id": "activity_27",
+    "title": "Тур по уличной еде Тараз",
+    "city": "Тараз",
+    "audience": "культурный",
+    "duration": "Полдня",
+    "price": 1000,
+    "rating": 4.6
+  },
+  {
+    "id": "activity_28",
+    "title": "Музей науки Караганда",
+    "city": "Караганда",
+    "audience": "семья с детьми",
+    "duration": "2 часа",
+    "price": 3000,
+    "rating": 4.1
+  },
+  {
+    "id": "activity_29",
+    "title": "Велосипедный маршрут Актобе",
+    "city": "Актобе",
+    "audience": "активный отдых",
+    "duration": "2.5 часа",
+    "price": 15000,
+    "rating": 4.9
+  },
+  {
+    "id": "activity_30",
+    "title": "Боулинг Атырау",
+    "city": "Атырау",
+    "audience": "семья с детьми",
+    "duration": "1 час",
+    "price": 1500,
+    "rating": 4.6
+  },
+  {
+    "id": "activity_31",
+    "title": "Кинотеатр под открытым небом Шымкент",
+    "city": "Шымкент",
+    "audience": "семья с детьми",
+    "duration": "Целый день",
+    "price": 15000,
+    "rating": 4.8
+  },
+  {
+    "id": "activity_32",
+    "title": "Колесо обозрения Шымкент",
+    "city": "Шымкент",
+    "audience": "семья с детьми",
+    "duration": "3 часа",
+    "price": 12000,
+    "rating": 4.9
+  },
+  {
+    "id": "activity_33",
+    "title": "Квест-комната Костанай",
+    "city": "Костанай",
+    "audience": "соло",
+    "duration": "Целый день",
+    "price": 0,
+    "rating": 4.9
+  },
+  {
+    "id": "activity_34",
+    "title": "Верблюжья прогулка Тараз",
+    "city": "Тараз",
+    "audience": "пара",
+    "duration": "3 часа",
+    "price": 4000,
+    "rating": 4.5
+  },
+  {
+    "id": "activity_35",
+    "title": "Поход в Чарынский каньон Актау",
+    "city": "Актау",
+    "audience": "активный отдых",
+    "duration": "2 часа",
+    "price": 2000,
+    "rating": 4.2
+  },
+  {
+    "id": "activity_36",
+    "title": "Колесо обозрения Алматы",
+    "city": "Алматы",
+    "audience": "семья с детьми",
+    "duration": "2 часа",
+    "price": 2000,
+    "rating": 4.8
+  },
+  {
+    "id": "activity_37",
+    "title": "Стрельба из лука Костанай",
+    "city": "Костанай",
+    "audience": "активный отдых",
+    "duration": "1.5 часа",
+    "price": 15000,
+    "rating": 4.4
+  },
+  {
+    "id": "activity_38",
+    "title": "СПА-день Актобе",
+    "city": "Актобе",
+    "audience": "пара",
+    "duration": "4 часа",
+    "price": 0,
+    "rating": 4.2
+  },
+  {
+    "id": "activity_39",
+    "title": "Океанариум Актау",
+    "city": "Актау",
+    "audience": "активный отдых",
+    "duration": "4 часа",
+    "price": 1500,
+    "rating": 4.4
+  },
+  {
+    "id": "activity_40",
+    "title": "Ночная экскурсия по городу Атырау",
+    "city": "Атырау",
+    "audience": "соло",
+    "duration": "2.5 часа",
+    "price": 8000,
+    "rating": 4.6
+  },
+  {
+    "id": "activity_41",
+    "title": "СПА-день Алматы",
+    "city": "Алматы",
+    "audience": "пара",
+    "duration": "3 часа",
+    "price": 0,
+    "rating": 4.5
+  },
+  {
+    "id": "activity_42",
+    "title": "Поход в Чарынский каньон Орал",
+    "city": "Орал",
+    "audience": "соло",
+    "duration": "2.5 часа",
+    "price": 6000,
+    "rating": 4.9
+  },
+  {
+    "id": "activity_43",
+    "title": "Каток Медеу Актау",
+    "city": "Актау",
+    "audience": "группа",
+    "duration": "Полдня",
+    "price": 3000,
+    "rating": 4.2
+  },
+  {
+    "id": "activity_44",
+    "title": "Сафари на квадроциклах Орал",
+    "city": "Орал",
+    "audience": "активный отдых",
+    "duration": "2.5 часа",
+    "price": 15000,
+    "rating": 4.5
+  },
+  {
+    "id": "activity_45",
+    "title": "Аквапарк Тараз",
+    "city": "Тараз",
+    "audience": "семья с детьми",
+    "duration": "4 часа",
+    "price": 5000,
+    "rating": 4.9
+  },
+  {
+    "id": "activity_46",
+    "title": "Прогулка на катере Астана",
+    "city": "Астана",
+    "audience": "активный отдых",
+    "duration": "2 часа",
+    "price": 0,
+    "rating": 4.1
+  },
+  {
+    "id": "activity_47",
+    "title": "Боулинг Шымкент",
+    "city": "Шымкент",
+    "audience": "семья с детьми",
+    "duration": "Целый день",
+    "price": 12000,
+    "rating": 4.5
+  },
+  {
+    "id": "activity_48",
+    "title": "Фотопрогулка Астана",
+    "city": "Астана",
+    "audience": "соло",
+    "duration": "Полдня",
+    "price": 3000,
+    "rating": 4.8
+  },
+  {
+    "id": "activity_49",
+    "title": "Прогулка на катере Павлодар",
+    "city": "Павлодар",
+    "audience": "группа",
+    "duration": "1 час",
+    "price": 0,
+    "rating": 4.6
+  },
+  {
+    "id": "activity_50",
+    "title": "Шоу беркутчи Актобе",
+    "city": "Актобе",
+    "audience": "культурный",
+    "duration": "1 час",
+    "price": 12000,
+    "rating": 4.0
+  },
+  {
+    "id": "activity_51",
+    "title": "Параглайдинг Актобе",
+    "city": "Актобе",
+    "audience": "активный отдых",
+    "duration": "Целый день",
+    "price": 8000,
+    "rating": 4.1
+  },
+  {
+    "id": "activity_52",
+    "title": "Тур на квадроциклах по пустыне Алматы",
+    "city": "Алматы",
+    "audience": "пара",
+    "duration": "4 часа",
+    "price": 2500,
+    "rating": 4.2
+  },
+  {
+    "id": "activity_53",
+    "title": "Вечер вина и сыра Актобе",
+    "city": "Актобе",
+    "audience": "активный отдых",
+    "duration": "1.5 часа",
+    "price": 12000,
+    "rating": 4.9
+  },
+  {
+    "id": "activity_54",
+    "title": "СПА-день Тараз",
+    "city": "Тараз",
+    "audience": "группа",
+    "duration": "1.5 часа",
+    "price": 12000,
+    "rating": 4.5
+  },
+  {
+    "id": "activity_55",
+    "title": "Верблюжья прогулка Шымкент",
+    "city": "Шымкент",
+    "audience": "семья с детьми",
+    "duration": "1 час",
+    "price": 2500,
+    "rating": 4.5
+  },
+  {
+    "id": "activity_56",
+    "title": "Пешая прогулка по городу Алматы",
+    "city": "Алматы",
+    "audience": "культурный",
+    "duration": "Полдня",
+    "price": 3000,
+    "rating": 4.7
+  },
+  {
+    "id": "activity_57",
+    "title": "Музей современного искусства Актау",
+    "city": "Актау",
+    "audience": "культурный",
+    "duration": "1.5 часа",
+    "price": 3000,
+    "rating": 4.3
+  },
+  {
+    "id": "activity_58",
+    "title": "СПА-день Алматы",
+    "city": "Алматы",
+    "audience": "пара",
+    "duration": "2.5 часа",
+    "price": 2500,
+    "rating": 4.6
+  },
+  {
+    "id": "activity_59",
+    "title": "Горные лыжи на Шымбулаке Астана",
+    "city": "Астана",
+    "audience": "активный отдых",
+    "duration": "2.5 часа",
+    "price": 5000,
+    "rating": 4.0
+  },
+  {
+    "id": "activity_60",
+    "title": "Верёвочный парк Орал",
+    "city": "Орал",
+    "audience": "активный отдых",
+    "duration": "1 час",
+    "price": 2500,
+    "rating": 4.4
+  },
+  {
+    "id": "activity_61",
+    "title": "Фотопрогулка Шымкент",
+    "city": "Шымкент",
+    "audience": "группа",
+    "duration": "4 часа",
+    "price": 1500,
+    "rating": 4.2
+  },
+  {
+    "id": "activity_62",
+    "title": "Пешая прогулка по городу Актау",
+    "city": "Актау",
+    "audience": "пара",
+    "duration": "Полдня",
+    "price": 15000,
+    "rating": 4.1
+  },
+  {
+    "id": "activity_63",
+    "title": "Гончарная мастерская Атырау",
+    "city": "Атырау",
+    "audience": "пара",
+    "duration": "Полдня",
+    "price": 0,
+    "rating": 4.6
+  },
+  {
+    "id": "activity_64",
+    "title": "Йога в парке Семей",
+    "city": "Семей",
+    "audience": "группа",
+    "duration": "4 часа",
+    "price": 0,
+    "rating": 5.0
+  },
+  {
+    "id": "activity_65",
+    "title": "Кинотеатр под открытым небом Орал",
+    "city": "Орал",
+    "audience": "пара",
+    "duration": "Целый день",
+    "price": 2500,
+    "rating": 4.1
+  },
+  {
+    "id": "activity_66",
+    "title": "Лазертаг Актау",
+    "city": "Актау",
+    "audience": "пара",
+    "duration": "1 час",
+    "price": 1500,
+    "rating": 4.9
+  },
+  {
+    "id": "activity_67",
+    "title": "Кинотеатр под открытым небом Семей",
+    "city": "Семей",
+    "audience": "пара",
+    "duration": "2.5 часа",
+    "price": 2500,
+    "rating": 4.6
+  },
+  {
+    "id": "activity_68",
+    "title": "Пейнтбол Атырау",
+    "city": "Атырау",
+    "audience": "активный отдых",
+    "duration": "1.5 часа",
+    "price": 2000,
+    "rating": 4.6
+  },
+  {
+    "id": "activity_69",
+    "title": "Исторический тур Семей",
+    "city": "Семей",
+    "audience": "соло",
+    "duration": "1 час",
+    "price": 12000,
+    "rating": 4.2
+  },
+  {
+    "id": "activity_70",
+    "title": "Конная прогулка Астана",
+    "city": "Астана",
+    "audience": "семья с детьми",
+    "duration": "Целый день",
+    "price": 10000,
+    "rating": 4.8
+  },
+  {
+    "id": "activity_71",
+    "title": "Скалодром Актау",
+    "city": "Актау",
+    "audience": "активный отдых",
+    "duration": "2.5 часа",
+    "price": 1500,
+    "rating": 5.0
+  },
+  {
+    "id": "activity_72",
+    "title": "Поход в Чарынский каньон Орал",
+    "city": "Орал",
+    "audience": "активный отдых",
+    "duration": "2.5 часа",
+    "price": 8000,
+    "rating": 5.0
+  },
+  {
+    "id": "activity_73",
+    "title": "Музей современного искусства Актобе",
+    "city": "Актобе",
+    "audience": "соло",
+    "duration": "Целый день",
+    "price": 4000,
+    "rating": 4.3
+  },
+  {
+    "id": "activity_74",
+    "title": "Велосипедный маршрут Семей",
+    "city": "Семей",
+    "audience": "соло",
+    "duration": "Целый день",
+    "price": 2000,
+    "rating": 4.3
+  },
+  {
+    "id": "activity_75",
+    "title": "Исторический тур Астана",
+    "city": "Астана",
+    "audience": "культурный",
+    "duration": "4 часа",
+    "price": 3000,
+    "rating": 4.8
+  },
+  {
+    "id": "activity_76",
+    "title": "Кинотеатр под открытым небом Караганда",
+    "city": "Караганда",
+    "audience": "пара",
+    "duration": "1 час",
+    "price": 0,
+    "rating": 4.6
+  },
+  {
+    "id": "activity_77",
+    "title": "Сафари на квадроциклах Атырау",
+    "city": "Атырау",
+    "audience": "группа",
+    "duration": "3 часа",
+    "price": 15000,
+    "rating": 4.6
+  },
+  {
+    "id": "activity_78",
+    "title": "Конная прогулка Шымкент",
+    "city": "Шымкент",
+    "audience": "семья с детьми",
+    "duration": "Целый день",
+    "price": 2000,
+    "rating": 4.2
+  },
+  {
+    "id": "activity_79",
+    "title": "Велосипедный маршрут Семей",
+    "city": "Семей",
+    "audience": "активный отдых",
+    "duration": "Целый день",
+    "price": 6000,
+    "rating": 4.3
+  },
+  {
+    "id": "activity_80",
+    "title": "Исторический тур Шымкент",
+    "city": "Шымкент",
+    "audience": "пара",
+    "duration": "2 часа",
+    "price": 10000,
+    "rating": 4.4
+  },
+  {
+    "id": "activity_81",
+    "title": "Велосипедный маршрут Семей",
+    "city": "Семей",
+    "audience": "соло",
+    "duration": "1 час",
+    "price": 0,
+    "rating": 4.5
+  },
+  {
+    "id": "activity_82",
+    "title": "Каток Медеу Актобе",
+    "city": "Актобе",
+    "audience": "семья с детьми",
+    "duration": "1 час",
+    "price": 12000,
+    "rating": 4.6
+  },
+  {
+    "id": "activity_83",
+    "title": "Фотопрогулка Актау",
+    "city": "Актау",
+    "audience": "культурный",
+    "duration": "Целый день",
+    "price": 3000,
+    "rating": 4.4
+  },
+  {
+    "id": "activity_84",
+    "title": "Океанариум Алматы",
+    "city": "Алматы",
+    "audience": "семья с детьми",
+    "duration": "3 часа",
+    "price": 4000,
+    "rating": 4.6
+  },
+  {
+    "id": "activity_85",
+    "title": "Тур на квадроциклах по пустыне Семей",
+    "city": "Семей",
+    "audience": "группа",
+    "duration": "2 часа",
+    "price": 0,
+    "rating": 4.5
+  },
+  {
+    "id": "activity_86",
+    "title": "Горные лыжи на Шымбулаке Астана",
+    "city": "Астана",
+    "audience": "пара",
+    "duration": "4 часа",
+    "price": 4000,
+    "rating": 4.1
+  },
+  {
+    "id": "activity_87",
+    "title": "Мастерская традиционного войлока Атырау",
+    "city": "Атырау",
+    "audience": "активный отдых",
+    "duration": "2.5 часа",
+    "price": 0,
+    "rating": 4.4
+  },
+  {
+    "id": "activity_88",
+    "title": "Лазертаг Орал",
+    "city": "Орал",
+    "audience": "группа",
+    "duration": "1.5 часа",
+    "price": 1500,
+    "rating": 4.7
+  },
+  {
+    "id": "activity_89",
+    "title": "Кулинарный мастер-класс Актобе",
+    "city": "Актобе",
+    "audience": "культурный",
+    "duration": "2 часа",
+    "price": 2500,
+    "rating": 4.6
+  },
+  {
+    "id": "activity_90",
+    "title": "Йога в парке Астана",
+    "city": "Астана",
+    "audience": "соло",
+    "duration": "1 час",
+    "price": 12000,
+    "rating": 4.4
+  },
+  {
+    "id": "activity_91",
+    "title": "Пейнтбол Актау",
+    "city": "Актау",
+    "audience": "культурный",
+    "duration": "3 часа",
+    "price": 15000,
+    "rating": 4.9
+  },
+  {
+    "id": "activity_92",
+    "title": "Национальный музей Алматы",
+    "city": "Алматы",
+    "audience": "культурный",
+    "duration": "2 часа",
+    "price": 6000,
+    "rating": 4.9
+  },
+  {
+    "id": "activity_93",
+    "title": "Детский парк Караганда",
+    "city": "Караганда",
+    "audience": "группа",
+    "duration": "1.5 часа",
+    "price": 1000,
+    "rating": 4.6
+  },
+  {
+    "id": "activity_94",
+    "title": "Прогулка в ботаническом саду Атырау",
+    "city": "Атырау",
+    "audience": "активный отдых",
+    "duration": "Полдня",
+    "price": 5000,
+    "rating": 4.2
+  },
+  {
+    "id": "activity_95",
+    "title": "Каток Медеу Орал",
+    "city": "Орал",
+    "audience": "семья с детьми",
+    "duration": "4 часа",
+    "price": 10000,
+    "rating": 5.0
+  },
+  {
+    "id": "activity_96",
+    "title": "Горные лыжи на Шымбулаке Алматы",
+    "city": "Алматы",
+    "audience": "семья с детьми",
+    "duration": "Полдня",
+    "price": 2500,
+    "rating": 4.2
+  },
+  {
+    "id": "activity_97",
+    "title": "Детский парк Караганда",
+    "city": "Караганда",
+    "audience": "активный отдых",
+    "duration": "2.5 часа",
+    "price": 6000,
+    "rating": 4.3
+  },
+  {
+    "id": "activity_98",
+    "title": "Сафари на квадроциклах Караганда",
+    "city": "Караганда",
+    "audience": "группа",
+    "duration": "1.5 часа",
+    "price": 2500,
+    "rating": 4.4
+  },
+  {
+    "id": "activity_99",
+    "title": "Тур на квадроциклах по пустыне Костанай",
+    "city": "Костанай",
+    "audience": "активный отдых",
+    "duration": "3 часа",
+    "price": 10000,
+    "rating": 4.2
+  },
+  {
+    "id": "activity_100",
+    "title": "Кулинарный мастер-класс Шымкент",
+    "city": "Шымкент",
+    "audience": "пара",
+    "duration": "4 часа",
+    "price": 8000,
+    "rating": 4.8
+  },
+  {
+    "id": "activity_101",
+    "title": "Горные лыжи на Шымбулаке Караганда",
+    "city": "Караганда",
+    "audience": "соло",
+    "duration": "4 часа",
+    "price": 0,
+    "rating": 4.0
+  },
+  {
+    "id": "activity_102",
+    "title": "Горные лыжи на Шымбулаке Атырау",
+    "city": "Атырау",
+    "audience": "активный отдых",
+    "duration": "Полдня",
+    "price": 500,
+    "rating": 4.1
+  },
+  {
+    "id": "activity_103",
+    "title": "Детский парк Астана",
+    "city": "Астана",
+    "audience": "семья с детьми",
+    "duration": "Полдня",
+    "price": 0,
+    "rating": 4.4
+  },
+  {
+    "id": "activity_104",
+    "title": "Тур на квадроциклах по пустыне Алматы",
+    "city": "Алматы",
+    "audience": "активный отдых",
+    "duration": "2 часа",
+    "price": 2500,
+    "rating": 4.4
+  },
+  {
+    "id": "activity_105",
+    "title": "Кулинарный мастер-класс Тараз",
+    "city": "Тараз",
+    "audience": "соло",
+    "duration": "Целый день",
+    "price": 500,
+    "rating": 4.1
+  },
+  {
+    "id": "activity_106",
+    "title": "Национальный музей Шымкент",
+    "city": "Шымкент",
+    "audience": "активный отдых",
+    "duration": "Целый день",
+    "price": 500,
+    "rating": 4.4
+  },
+  {
+    "id": "activity_107",
+    "title": "Каякинг на озере Астана",
+    "city": "Астана",
+    "audience": "группа",
+    "duration": "2.5 часа",
+    "price": 1500,
+    "rating": 4.9
+  },
+  {
+    "id": "activity_108",
+    "title": "Горные лыжи на Шымбулаке Павлодар",
+    "city": "Павлодар",
+    "audience": "активный отдых",
+    "duration": "Полдня",
+    "price": 500,
+    "rating": 4.3
+  },
+  {
+    "id": "activity_109",
+    "title": "Вечер вина и сыра Караганда",
+    "city": "Караганда",
+    "audience": "пара",
+    "duration": "3 часа",
+    "price": 2000,
+    "rating": 4.4
+  },
+  {
+    "id": "activity_110",
+    "title": "Квест-комната Караганда",
+    "city": "Караганда",
+    "audience": "группа",
+    "duration": "Полдня",
+    "price": 8000,
+    "rating": 4.2
+  },
+  {
+    "id": "activity_111",
+    "title": "Тур на квадроциклах по пустыне Караганда",
+    "city": "Караганда",
+    "audience": "активный отдых",
+    "duration": "4 часа",
+    "price": 8000,
+    "rating": 4.7
+  },
+  {
+    "id": "activity_112",
+    "title": "Гончарная мастерская Актобе",
+    "city": "Актобе",
+    "audience": "пара",
+    "duration": "2.5 часа",
+    "price": 12000,
+    "rating": 4.8
+  },
+  {
+    "id": "activity_113",
+    "title": "Верблюжья прогулка Костанай",
+    "city": "Костанай",
+    "audience": "семья с детьми",
+    "duration": "Целый день",
+    "price": 500,
+    "rating": 4.7
+  },
+  {
+    "id": "activity_114",
+    "title": "Пейнтбол Орал",
+    "city": "Орал",
+    "audience": "группа",
+    "duration": "Полдня",
+    "price": 3000,
+    "rating": 4.8
+  },
+  {
+    "id": "activity_115",
+    "title": "Йога в парке Тараз",
+    "city": "Тараз",
+    "audience": "пара",
+    "duration": "2 часа",
+    "price": 500,
+    "rating": 4.6
+  },
+  {
+    "id": "activity_116",
+    "title": "Стендап-вечер Орал",
+    "city": "Орал",
+    "audience": "активный отдых",
+    "duration": "Полдня",
+    "price": 10000,
+    "rating": 4.4
+  },
+  {
+    "id": "activity_117",
+    "title": "Фотопрогулка Семей",
+    "city": "Семей",
+    "audience": "группа",
+    "duration": "1 час",
+    "price": 15000,
+    "rating": 4.9
+  },
+  {
+    "id": "activity_118",
+    "title": "Планетарий Караганда",
+    "city": "Караганда",
+    "audience": "семья с детьми",
+    "duration": "1.5 часа",
+    "price": 15000,
+    "rating": 4.8
+  },
+  {
+    "id": "activity_119",
+    "title": "СПА-день Актау",
+    "city": "Актау",
+    "audience": "пара",
+    "duration": "Полдня",
+    "price": 6000,
+    "rating": 4.4
+  },
+  {
+    "id": "activity_120",
+    "title": "Стендап-вечер Караганда",
+    "city": "Караганда",
+    "audience": "группа",
+    "duration": "2.5 часа",
+    "price": 0,
+    "rating": 4.0
+  },
+  {
+    "id": "activity_121",
+    "title": "Каякинг на озере Павлодар",
+    "city": "Павлодар",
+    "audience": "активный отдых",
+    "duration": "4 часа",
+    "price": 2500,
+    "rating": 4.5
+  },
+  {
+    "id": "activity_122",
+    "title": "Сёрфинг по песку Алматы",
+    "city": "Алматы",
+    "audience": "активный отдых",
+    "duration": "2 часа",
+    "price": 0,
+    "rating": 4.3
+  },
+  {
+    "id": "activity_123",
+    "title": "Пешая прогулка по городу Караганда",
+    "city": "Караганда",
+    "audience": "пара",
+    "duration": "4 часа",
+    "price": 2000,
+    "rating": 4.5
+  },
+  {
+    "id": "activity_124",
+    "title": "Горные лыжи на Шымбулаке Павлодар",
+    "city": "Павлодар",
+    "audience": "активный отдых",
+    "duration": "1.5 часа",
+    "price": 3000,
+    "rating": 4.7
+  },
+  {
+    "id": "activity_125",
+    "title": "Верёвочный парк Атырау",
+    "city": "Атырау",
+    "audience": "семья с детьми",
+    "duration": "1.5 часа",
+    "price": 10000,
+    "rating": 4.7
+  },
+  {
+    "id": "activity_126",
+    "title": "Прогулка в ботаническом саду Тараз",
+    "city": "Тараз",
+    "audience": "пара",
+    "duration": "2 часа",
+    "price": 15000,
+    "rating": 5.0
+  },
+  {
+    "id": "activity_127",
+    "title": "Сафари на квадроциклах Караганда",
+    "city": "Караганда",
+    "audience": "пара",
+    "duration": "2 часа",
+    "price": 2500,
+    "rating": 5.0
+  },
+  {
+    "id": "activity_128",
+    "title": "Стрельба из лука Шымкент",
+    "city": "Шымкент",
+    "audience": "группа",
+    "duration": "Целый день",
+    "price": 6000,
+    "rating": 4.4
+  },
+  {
+    "id": "activity_129",
+    "title": "Стендап-вечер Костанай",
+    "city": "Костанай",
+    "audience": "группа",
+    "duration": "3 часа",
+    "price": 2500,
+    "rating": 4.0
+  },
+  {
+    "id": "activity_130",
+    "title": "Национальный музей Орал",
+    "city": "Орал",
+    "audience": "культурный",
+    "duration": "4 часа",
+    "price": 5000,
+    "rating": 4.1
+  },
+  {
+    "id": "activity_131",
+    "title": "Конная прогулка Караганда",
+    "city": "Караганда",
+    "audience": "группа",
+    "duration": "4 часа",
+    "price": 3000,
+    "rating": 4.1
+  },
+  {
+    "id": "activity_132",
+    "title": "Кулинарный мастер-класс Костанай",
+    "city": "Костанай",
+    "audience": "семья с детьми",
+    "duration": "4 часа",
+    "price": 5000,
+    "rating": 4.4
+  },
+  {
+    "id": "activity_133",
+    "title": "Батутный парк Павлодар",
+    "city": "Павлодар",
+    "audience": "группа",
+    "duration": "1.5 часа",
+    "price": 500,
+    "rating": 4.8
+  },
+  {
+    "id": "activity_134",
+    "title": "Каток Медеу Тараз",
+    "city": "Тараз",
+    "audience": "семья с детьми",
+    "duration": "2 часа",
+    "price": 2000,
+    "rating": 4.1
+  },
+  {
+    "id": "activity_135",
+    "title": "Планетарий Караганда",
+    "city": "Караганда",
+    "audience": "семья с детьми",
+    "duration": "Полдня",
+    "price": 500,
+    "rating": 4.5
+  },
+  {
+    "id": "activity_136",
+    "title": "Базар под открытым небом Актобе",
+    "city": "Актобе",
+    "audience": "культурный",
+    "duration": "2 часа",
+    "price": 3000,
+    "rating": 4.6
+  },
+  {
+    "id": "activity_137",
+    "title": "Тур на квадроциклах по пустыне Павлодар",
+    "city": "Павлодар",
+    "audience": "активный отдых",
+    "duration": "4 часа",
+    "price": 500,
+    "rating": 4.2
+  },
+  {
+    "id": "activity_138",
+    "title": "Йога в парке Алматы",
+    "city": "Алматы",
+    "audience": "активный отдых",
+    "duration": "Полдня",
+    "price": 500,
+    "rating": 4.2
+  },
+  {
+    "id": "activity_139",
+    "title": "Йога в парке Тараз",
+    "city": "Тараз",
+    "audience": "активный отдых",
+    "duration": "2 часа",
+    "price": 2500,
+    "rating": 4.7
+  },
+  {
+    "id": "activity_140",
+    "title": "Прогулка на катере Астана",
+    "city": "Астана",
+    "audience": "пара",
+    "duration": "1 час",
+>>>>>>> dev
     "price": 0,
     "rating": 4.4
   },
@@ -1348,5 +2575,158 @@
     "duration": "Целый день",
     "price": 2000,
     "rating": 4.8
+  },
+  {
+    "id": "activity_141",
+    "title": "Лазертаг Атырау",
+    "city": "Атырау",
+    "audience": "активный отдых",
+    "duration": "1.5 часа",
+    "price": 4000,
+    "rating": 4.3
+  },
+  {
+    "id": "activity_142",
+    "title": "Поход в Чарынский каньон Костанай",
+    "city": "Костанай",
+    "audience": "активный отдых",
+    "duration": "Целый день",
+    "price": 1500,
+    "rating": 4.8
+  },
+  {
+    "id": "activity_143",
+    "title": "Пейнтбол Семей",
+    "city": "Семей",
+    "audience": "группа",
+    "duration": "3 часа",
+    "price": 2500,
+    "rating": 4.1
+  },
+  {
+    "id": "activity_144",
+    "title": "Вечер вина и сыра Алматы",
+    "city": "Алматы",
+    "audience": "семья с детьми",
+    "duration": "1.5 часа",
+    "price": 1500,
+    "rating": 4.3
+  },
+  {
+    "id": "activity_145",
+    "title": "Пейнтбол Актау",
+    "city": "Актау",
+    "audience": "группа",
+    "duration": "Полдня",
+    "price": 10000,
+    "rating": 4.7
+  },
+  {
+    "id": "activity_146",
+    "title": "Батутный парк Шымкент",
+    "city": "Шымкент",
+    "audience": "семья с детьми",
+    "duration": "4 часа",
+    "price": 500,
+    "rating": 4.8
+  },
+  {
+    "id": "activity_147",
+    "title": "Гончарная мастерская Семей",
+    "city": "Семей",
+    "audience": "соло",
+    "duration": "3 часа",
+    "price": 5000,
+    "rating": 4.5
+  },
+  {
+    "id": "activity_148",
+    "title": "Гончарная мастерская Костанай",
+    "city": "Костанай",
+    "audience": "пара",
+    "duration": "2 часа",
+    "price": 12000,
+    "rating": 4.5
+  },
+  {
+    "id": "activity_149",
+    "title": "Велотур по городу Актобе",
+    "city": "Актобе",
+    "audience": "пара",
+    "duration": "2.5 часа",
+    "price": 1500,
+    "rating": 4.9
+  },
+  {
+    "id": "activity_150",
+    "title": "Музей науки Шымкент",
+    "city": "Шымкент",
+    "audience": "группа",
+    "duration": "Целый день",
+    "price": 2000,
+    "rating": 4.8
+  },
+  {
+    "id": "cinema_astana_1",
+    "title": "Кино · Kino.kz Астана",
+    "city": "Астана",
+    "type": "cinema",
+    "provider": "kino.kz",
+    "audience": "все",
+    "duration": "2 часа",
+    "price": 1800,
+    "rating": 4.6,
+    "link": "https://kino.kz"
+  },
+  {
+    "id": "cinema_almaty_1",
+    "title": "Кино · Kino.kz Алматы",
+    "city": "Алматы",
+    "type": "cinema",
+    "provider": "kino.kz",
+    "audience": "все",
+    "duration": "2 часа",
+    "price": 2000,
+    "rating": 4.7,
+    "link": "https://kino.kz"
+  },
+  {
+    "id": "cinema_aktobe_1",
+    "title": "Кино · Kino.kz Актобе",
+    "city": "Актобе",
+    "type": "cinema",
+    "provider": "kino.kz",
+    "audience": "все",
+    "duration": "2 часа",
+    "price": 1500,
+    "rating": 4.4,
+    "link": "https://kino.kz"
+  },
+  {
+    "id": "baiterek_astana",
+    "title": "Байтерек — смотровая башня",
+    "city": "Астана",
+    "audience": "семья с детьми",
+    "duration": "1.5 часа",
+    "price": 500,
+    "rating": 4.8
+  },
+  {
+    "id": "khan_shatyr_astana",
+    "title": "Хан Шатыр — торгово-развлекательный центр",
+    "city": "Астана",
+    "audience": "семья с детьми",
+    "duration": "3 часа",
+    "price": 0,
+    "rating": 4.5
+  },
+  {
+    "id": "koktobe_almaty",
+    "title": "Кок-Тобе — горный парк",
+    "city": "Алматы",
+    "audience": "семья с детьми",
+    "duration": "3 часа",
+    "price": 1500,
+    "rating": 4.7
   }
 ]
